@@ -6,6 +6,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require("../../config/keys");
 const passport = require('passport')
+const validateRegisterInput = require("../../validation/register");
+const validateLoginInput = require("../../validation/login");
 
 
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
@@ -17,11 +19,18 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 });
 // signup controller
 router.post('/signup', (req, res) => {
+    //deconstruct validation errors
+    const { errors, isValid } = validateRegisterInput(req.body);
+
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
     //see if user already exists
     User.findOne({email: req.body.email})
         .then(user => {
             if (user) {
-                return res.status(400).json({email: "Email has already been taken"})
+                errors.email = 'Email already exists';
+                return res.status(400).json(errors);
             } else {
                 const newUser = new User ({
                     handle: req.body.handle,
@@ -48,11 +57,17 @@ router.post('/signup', (req, res) => {
 router.post('/login', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
+    const { errors, isValid } = validateLoginInput(req.body);
+
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
 
     User.findOne({email})
         .then(user => {
             if(!user) {
-                return res.status(404).json({email: 'That surfer does not exist'})
+                errors.email = "Can't find that surfer"
+                return res.status(404).json(errors);
             }
             bcrypt.compare(password, user.password)
                 .then(isMatch => {
