@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     
     let store=configureStore();
     
-    // ReactDOM.render(<Root store={store} />, document.getElementById('root'));
+    ReactDOM.render(<Root store={store} />, document.getElementById('root'));
 
 })
 
