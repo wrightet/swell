@@ -4,10 +4,13 @@ const express = require("express");
 const app = express();
 const users = require("./routes/api/users");
 const User = require("./models/User");
-
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+const passport = require("passport");
+
+app.use(passport.initialize());
+require("./config/passport")(passport);
 
 mongoose
   .connect(db, { useNewUrlParser: true })
