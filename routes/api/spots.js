@@ -2,6 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const Spot = require('../../models/Spot');
+const Review = require('../../models/Review')
 const jwt = require('jsonwebtoken');
 const keys = require("../../config/keys");
 const passport = require('passport')
@@ -81,6 +82,82 @@ router.patch('/:id',
           .catch(err => console.log(err));
       });
   });
+
+// get all reviews for a surf spot
+router.get('/:id/reviews', (req, res) => {
+  Review
+    .find({ spotId: req.params.id })
+    .sort({ createdAt: -1 })
+    .then(reviews => res.json(reviews))
+    .catch(err => res.status(400).json(err));
+})
+
+// create a review for a surf spot
+router.post('/:id/reviews', 
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const newReview = new Review ({
+      creatorId: req.user.id,
+      spotId: req.params.id,
+      quality: req.body.quality,
+      difficulty: req.body.difficulty,
+      title: req.body.title,
+      body: req.body.body
+    });
+    newReview.save()
+      .then( review => res.json(review))
+      .catch(err => res.status(400).json(err))
+  });
+
+// delete a review
+router.delete('/:id/reviews/:reviewId',
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Review
+      .findById(req.params.reviewId)
+      .then(review => {
+        if (!review) {
+          return res.status(404).json({ error: "Can't find that review" })
+        }
+        Review.deleteOne(review)
+          .then(review => res.status(200).json({ msg: "review deleted" }))
+          .catch(err => console.log(err));
+      });
+  })
+
+// update a review
+router.patch('/:id/reviews/:reviewId',
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Review
+      .findById(req.params.reviewId)
+      .then(review => {
+        if (!review) {
+          return res.status(404).json({ error: "Can't find that review" })
+        }
+        Review.updateOne(review, req.body)
+          .then(review => res.status(200).json({ msg: "review updated" }))
+          .catch(err => console.log(err));
+      });
+  })
+
+// try to update and return review
+// router.patch('/:id/reviews/:reviewId',
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res) => {
+//     Review
+//       .findOneAndUpdate(
+//         {id: req.params.reviewId},
+//         req.body,
+//         {returnNewDocument: true}), 
+//         (review) => {
+//         if (!review) {
+//           return res.status(404).json({ error: "Can't find that review" })
+//         }
+//         return res.json(review)
+//       }
+//   })
+
 
 module.exports = router;
 
