@@ -10,20 +10,15 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
 //User profile route
-router.get('/users/:id', passport.authenticate('jwt', {session:false}), (req, res) => {
-    res.json({
-        id: req.user.id,
-        handle: req.user.handle,
-        firstName: req.user.firstName,
-        lastName: req.user.lastName,
-        email: req.user.email,
-        password: req.user.password,
-        location: req.user.location,
-        bio: req.user.bio,
-        gear: req.user.gear,
-        createdAt: req.user.createdAt
-
-    })
+router.get('/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
+    User
+        .findById(req.params.id)
+        .then(user => {
+            if (!user) {
+                return res.status(404).json({ error: "Can't find profile" })
+            }
+            return res.json(user)
+        })
 })
 
 
