@@ -9,7 +9,7 @@ const SurfSessionSchema = new Schema({
   },
   spotId: {
     type: Schema.Types.ObjectId,
-    ref: 'Sport',
+    ref: 'Spot',
     required: true
   },
   createdAt: {
