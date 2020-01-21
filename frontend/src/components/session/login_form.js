@@ -3,6 +3,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+import login from './login.css'
+
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
@@ -62,13 +64,17 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form className='loginform' onSubmit={this.handleSubmit}>
                     <div>
+                        <br/>
+                        <h2>Log In</h2>
+                        <br/>
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
                         />
+                        <br />
                         <br />
                         <input type="password"
                             value={this.state.password}
@@ -76,8 +82,10 @@ class LoginForm extends React.Component {
                             placeholder="Password"
                         />
                         <br />
-                        <input type="submit" value="Submit" />
+                        <br />
+                        <input id='login-submit' type="submit" value="Submit" />
                         {this.renderErrors()}
+                        <br/>
                     </div>
                 </form>
             </div>
