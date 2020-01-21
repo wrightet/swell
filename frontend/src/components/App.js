@@ -16,10 +16,11 @@ function App() {
       </header>
       <Switch>
         <body>
-        <AuthRoute exact path="/login" component={LoginFormContainer} />
-        <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        <Route exact path='/' component={Splash}/>
-          some text
+          <AuthRoute exact path="/login" component={LoginFormContainer} />
+          <AuthRoute exact path="/signup" component={SignupFormContainer} />
+          <Route exact path='/' component={Splash}/>
+            some text
+        </body>
       </Switch>
       <footer>
         <Footer />
