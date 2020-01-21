@@ -3,6 +3,7 @@ const db = require("./config/keys").mongoURI;
 const express = require("express");
 const app = express();
 const users = require("./routes/api/users");
+const spots = require("./routes/api/spots");
 const User = require("./models/User");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -30,6 +31,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", users);
+app.use('/api/spots', spots);
 
 const port = process.env.PORT || 5000;
 
