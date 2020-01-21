@@ -1,0 +1,28 @@
+.SiteHeader {
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 5px;
+  align-items: center;
+  background-color: rgb(211, 237, 253);
+  height: 60px;
+  border-bottom: 1px solid lightsteelblue;
+}
+
+.SiteHeader ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.SiteHeader li {
+  padding-right: 30px;
+  /* margin-bottom: 10px; */
+  font-size: 14px;
+}
+
+.SiteHeader img {
+  max-height: 58px;
+  width: auto;
+}
+.SiteHeader a {
+  text-decoration: none;
+}

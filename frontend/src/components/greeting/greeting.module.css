@@ -1,0 +1,13 @@
+.SiteHeaderRight {
+  /* display: flex; */
+  /* align-items: flex-end; */
+  font-size: 12px;
+  color: #CACACA;
+  /* text-align: right; */
+  padding-bottom: 20px;
+}
+
+.SiteHeaderRight a {
+  color: grey;
+  /* margin: 2px; */
+}
