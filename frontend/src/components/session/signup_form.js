@@ -3,6 +3,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+import signup from './signup.css'
+
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
@@ -66,11 +68,15 @@ class SignupForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div className="signup-form">
                         <br />
+                        Signup
+                        <br />
+                        <br />
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
                         />
+                        <br />
                         <br />
                         <input type="text"
                             value={this.state.handle}
@@ -78,11 +84,13 @@ class SignupForm extends React.Component {
                             placeholder="Handle"
                         />
                         <br />
+                        <br />
                         <input type="text"
                             value={this.state.firstName}
                             onChange={this.update('firstName')}
                             placeholder="first name"
                         />
+                        <br />
                         <br />
                         <input type="text"
                             value={this.state.lastName}
@@ -90,11 +98,13 @@ class SignupForm extends React.Component {
                             placeholder="last name"
                         />
                         <br />
+                        <br />
                         <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
                         />
+                        <br />
                         <br />
                         <input type="password"
                             value={this.state.password2}
@@ -102,8 +112,11 @@ class SignupForm extends React.Component {
                             placeholder="Confirm Password"
                         />
                         <br />
-                        <input type="submit" value="Submit" />
+                        <br />
+                        <input id="signup-button"type="submit" value="Submit" />
                         {this.renderErrors()}
+                        <br />
+
                     </div>
                 </form>
             </div>
