@@ -20,7 +20,7 @@ class Navbar extends Component {
     if (this.props.loggedIn) {
       return (
         <div>
-          Hello, &nbsp;
+          Hello, &nbsp; 
           {this.props.currentUser.handle}
           <button onClick={this.logoutUser}>Logout</button>
         </div>
