@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import Mapping from '../maps/map'
+import { Link } from "react-router-dom";
 
 export default class Splash extends Component {
     constructor(props){
@@ -37,7 +38,7 @@ export default class Splash extends Component {
         return (
             <div>
                 <h1>Welcome to Swell</h1>
-                
+                <Link to="/profile">Profile</Link>
                 <Mapping currentPos={this.state.currentPos}/>
 
             </div>
