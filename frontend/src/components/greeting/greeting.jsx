@@ -15,7 +15,7 @@ const Greeting = ({ currentUser, logout }) => {
     <div>
       <ul className={classes.SiteHeaderRight}>
         <li>{currentUser.username}</li>
-        <li><img src={avatar} /></li>
+        <li><img src={avatar} alt="logo" /></li>
         <button onClick={logout}>Log Out</button>
       </ul>
     </div>
