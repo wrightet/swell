@@ -2,6 +2,9 @@
 
 /frontend/node_modules
 
+#keys info
 /config/keys.js
 
 /config/keys_dev.js
+
+
