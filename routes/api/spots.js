@@ -1,11 +1,12 @@
-//surfspots routes
+// surfspots routes
 const express = require("express");
 const router = express.Router();
 const Spot = require('../../models/Spot');
-const Review = require('../../models/Review')
+const Review = require('../../models/Review');
+const Favorite = require('../../models/Favorite');
 const jwt = require('jsonwebtoken');
 const keys = require("../../config/keys");
-const passport = require('passport')
+const passport = require('passport');
 
 // create surf spot
 // require user to be logged in to create surf spot
@@ -141,23 +142,31 @@ router.patch('/:id/reviews/:reviewId',
       });
   })
 
-// try to update and return review
-// router.patch('/:id/reviews/:reviewId',
-//   passport.authenticate("jwt", { session: false }),
-//   (req, res) => {
-//     Review
-//       .findOneAndUpdate(
-//         {id: req.params.reviewId},
-//         req.body,
-//         {returnNewDocument: true}), 
-//         (review) => {
-//         if (!review) {
-//           return res.status(404).json({ error: "Can't find that review" })
-//         }
-//         return res.json(review)
-//       }
-//   })
+// get spot's favorites
+router.get('/:id/favorites',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Favorite
+      .find({ spotId: req.params.id })
+      .sort({ createdAt: -1 })
+      .then(favorites => res.json(favorites))
+      .catch(err => res.status(400).json(err))
+  })
 
+// create a favorite
+router.post('/:id/favorites',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const newFavorite = new Favorite({
+      creatorId: req.user.id,
+      spotId: req.params.id,
+    });
+    newFavorite.save()
+      .then(favorite => res.json(favorite))
+      .catch(err => res.status(400).json(err))
+  });
+
+// delete a favorite
 
 module.exports = router;
 
