@@ -8,6 +8,7 @@ import Splash from './splash/splash'
 import reset from './reset.css';
 import Footer from './footer/footer';
 
+
 function App() {
   return (
     <div>
