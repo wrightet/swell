@@ -4,15 +4,24 @@ import classes from './map.modules.css'
 class Mapping extends Component {
     constructor(props){
         super(props);
-        this.initMap=this.initMap.bind(this)
     }
 
+    //auto center to SF, will go to current location if allowed
     initMap(){
-       new window.google.maps.Map(document.getElementById('map'), {
-            center: { lat: 37.773972, lng: -122.431297 },
+        let gMap=new window.google.maps.Map(document.getElementById('map'), {
+             center: { lat: 37.773972, lng: -122.431297 },
             zoom: 13,
             maxZoom: 15
         });
+
+        navigator.geolocation.getCurrentPosition(function (position) {
+            // Center on user's current location if geolocation prompt allowed
+            var initialLocation = new window.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            gMap.setCenter(initialLocation);
+            gMap.setZoom(13);
+        })
+
+
 
     }
 
