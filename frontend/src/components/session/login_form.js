@@ -1,7 +1,7 @@
 // src/components/session/login_form.js
 
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link  } from 'react-router-dom';
 
 import login from './login.css'
 
@@ -29,6 +29,11 @@ class LoginForm extends React.Component {
         this.setState({ errors: nextProps.errors })
     }
 
+    componentDidMount() {
+        this.props.clearErrors();
+    }
+    
+    
     // Handle field updates (called in the render method)
     update(field) {
         return e => this.setState({
@@ -40,21 +45,17 @@ class LoginForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        let user = {
-            email: this.state.email,
-            password: this.state.password
-        };
-
-        this.props.login(user);
+        const user = Object.assign({}, this.state);
+        this.props.processForm(user);
     }
 
     // Render the session errors if there are any
     renderErrors() {
         return (
             <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
+                {Object.keys(this.props.errors).map((error, i) => (
                     <li key={`error-${i}`}>
-                        {this.state.errors[error]}
+                        {this.props.errors[error]}
                     </li>
                 ))}
             </ul>
@@ -86,6 +87,9 @@ class LoginForm extends React.Component {
                         <input id='login-submit' type="submit" value="Submit" />
                         {this.renderErrors()}
                         <br/>
+                        New to Swell?
+                        &nbsp;
+                        <Link to="/signup">Sign Up</Link>
                     </div>
                 </form>
             </div>

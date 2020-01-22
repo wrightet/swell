@@ -1,7 +1,7 @@
 // src/components/session/signup_form.js
 
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import signup from './signup.css'
 
@@ -19,16 +19,21 @@ class SignupForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.clearedErrors = false;
+        // this.clearedErrors = false;
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.signedIn === true) {
-            this.props.history.push('/login');
-        }
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.signedIn === true) {
+    //         this.props.history.push('/login');
+    //     }
 
-        this.setState({ errors: nextProps.errors })
+    //     this.setState({ errors: nextProps.errors })
+    // }
+
+    componentDidMount() {
+        this.props.clearErrors();
     }
+    
 
     update(field) {
         return e => this.setState({
@@ -38,16 +43,16 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let user = {
-            email: this.state.email,
-            handle: this.state.handle,
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            password: this.state.password,
-            password2: this.state.password2
-        };
-
-        this.props.signup(user, this.props.history);
+        // let user = {
+        //     email: this.state.email,
+        //     handle: this.state.handle,
+        //     firstName: this.state.firstName,
+        //     lastName: this.state.lastName,
+        //     password: this.state.password,
+        //     password2: this.state.password2
+        // };
+        const user = Object.assign({}, this.state);
+        this.props.processForm(user);
     }
 
     renderErrors() {
@@ -116,7 +121,7 @@ class SignupForm extends React.Component {
                         <input id="signup-button"type="submit" value="Submit" />
                         {this.renderErrors()}
                         <br />
-
+                        <p>Already a member? &nbsp; <Link to='/login'>Login</Link></p>
                     </div>
                 </form>
             </div>
