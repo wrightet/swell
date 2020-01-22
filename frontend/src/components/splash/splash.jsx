@@ -37,8 +37,7 @@ export default class Splash extends Component {
         return (
             <div>
                 <h1>Welcome to Swell</h1>
-
-
+                
                 <Mapping currentPos={this.state.currentPos}/>
 
             </div>
