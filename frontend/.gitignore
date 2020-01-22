@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
+=======
+
+#api keys
+.env
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7

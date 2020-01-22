@@ -12,6 +12,10 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.1",
     "babel-loader": "^8.0.6",
+<<<<<<< HEAD
+=======
+    "google-maps-react": "^2.0.2",
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
     "jwt-decode": "^2.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

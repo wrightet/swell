@@ -7,6 +7,10 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
+<<<<<<< HEAD
+=======
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
 
 // We'll dispatch this when our user signs in
 export const receiveCurrentUser = currentUser => ({
@@ -30,6 +34,13 @@ export const logoutUser = () => ({
     type: RECEIVE_USER_LOGOUT
 });
 
+<<<<<<< HEAD
+=======
+export const clearErrors = () => ({
+    type: CLEAR_ERRORS
+});
+
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
 // Upon signup, dispatch the approporiate action depending on which type of response we receieve from the backend
 export const signup = user => dispatch => (
     APIUtil.signup(user).then(() => (

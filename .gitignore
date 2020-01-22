@@ -1,7 +1,12 @@
 /node_modules
+<<<<<<< HEAD
 
 /frontend/node_modules
 
 /config/keys.js
 
+=======
+/frontend/node_modules
+#keys info
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
 /config/keys_dev.js

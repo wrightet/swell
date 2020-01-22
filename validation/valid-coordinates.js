@@ -14,4 +14,10 @@ const validCoordinates = arr => {
         return true;
     } else 
     { return false}
+<<<<<<< HEAD
 }
+=======
+}
+
+module.exports = validCoordinates;
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7

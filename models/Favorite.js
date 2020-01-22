@@ -8,7 +8,11 @@ const FavoriteSchema = new Schema({
   },
   spotId: {
     type: Schema.Types.ObjectId,
+<<<<<<< HEAD
     ref: 'Sport'
+=======
+    ref: 'Spot'
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
   },
   createdAt: {
     type: Date,

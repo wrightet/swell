@@ -1,7 +1,11 @@
 // src/components/session/login_form.js
 
 import React from 'react';
+<<<<<<< HEAD
 import { withRouter } from 'react-router-dom';
+=======
+import { withRouter, Link  } from 'react-router-dom';
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
 
 import login from './login.css'
 
@@ -29,6 +33,14 @@ class LoginForm extends React.Component {
         this.setState({ errors: nextProps.errors })
     }
 
+<<<<<<< HEAD
+=======
+    componentDidMount() {
+        this.props.clearErrors();
+    }
+    
+    
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
     // Handle field updates (called in the render method)
     update(field) {
         return e => this.setState({
@@ -40,21 +52,32 @@ class LoginForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
+<<<<<<< HEAD
         let user = {
             email: this.state.email,
             password: this.state.password
         };
 
         this.props.login(user);
+=======
+        const user = Object.assign({}, this.state);
+        this.props.processForm(user);
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
     }
 
     // Render the session errors if there are any
     renderErrors() {
         return (
             <ul>
+<<<<<<< HEAD
                 {Object.keys(this.state.errors).map((error, i) => (
                     <li key={`error-${i}`}>
                         {this.state.errors[error]}
+=======
+                {Object.keys(this.props.errors).map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {this.props.errors[error]}
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
                     </li>
                 ))}
             </ul>
@@ -86,6 +109,12 @@ class LoginForm extends React.Component {
                         <input id='login-submit' type="submit" value="Submit" />
                         {this.renderErrors()}
                         <br/>
+<<<<<<< HEAD
+=======
+                        New to Swell?
+                        &nbsp;
+                        <Link to="/signup">Sign Up</Link>
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
                     </div>
                 </form>
             </div>

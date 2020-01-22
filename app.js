@@ -3,8 +3,24 @@ const db = require("./config/keys").mongoURI;
 const express = require("express");
 const app = express();
 const users = require("./routes/api/users");
+<<<<<<< HEAD
 const User = require("./models/User");
 const bodyParser = require("body-parser");
+=======
+const spots = require("./routes/api/spots");
+const User = require("./models/User");
+const bodyParser = require("body-parser");
+const path = require('path');
+
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
+
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 const passport = require("passport");
@@ -17,6 +33,7 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
+<<<<<<< HEAD
 app.get("/", (req, res) => {
     const user = new User({
         handle: "surf_dude",
@@ -30,6 +47,11 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/users", users);
+=======
+app.use("/api/users", users);
+app.use('/api/spots', spots);
+
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
 
 const port = process.env.PORT || 5000;
 

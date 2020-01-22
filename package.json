@@ -9,7 +9,12 @@
     "server": "nodemon app.js",
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
+<<<<<<< HEAD
     "dev": "concurrently \"npm run server\" \"npm run frontend\""
+=======
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
   },
   "repository": {
     "type": "git",

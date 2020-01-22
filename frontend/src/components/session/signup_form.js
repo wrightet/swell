@@ -1,7 +1,11 @@
 // src/components/session/signup_form.js
 
 import React from 'react';
+<<<<<<< HEAD
 import { withRouter } from 'react-router-dom';
+=======
+import { withRouter, Link } from 'react-router-dom';
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
 
 import signup from './signup.css'
 
@@ -19,6 +23,7 @@ class SignupForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+<<<<<<< HEAD
         this.clearedErrors = false;
     }
 
@@ -29,6 +34,23 @@ class SignupForm extends React.Component {
 
         this.setState({ errors: nextProps.errors })
     }
+=======
+        // this.clearedErrors = false;
+    }
+
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.signedIn === true) {
+    //         this.props.history.push('/login');
+    //     }
+
+    //     this.setState({ errors: nextProps.errors })
+    // }
+
+    componentDidMount() {
+        this.props.clearErrors();
+    }
+    
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
 
     update(field) {
         return e => this.setState({
@@ -38,6 +60,7 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+<<<<<<< HEAD
         let user = {
             email: this.state.email,
             handle: this.state.handle,
@@ -48,6 +71,18 @@ class SignupForm extends React.Component {
         };
 
         this.props.signup(user, this.props.history);
+=======
+        // let user = {
+        //     email: this.state.email,
+        //     handle: this.state.handle,
+        //     firstName: this.state.firstName,
+        //     lastName: this.state.lastName,
+        //     password: this.state.password,
+        //     password2: this.state.password2
+        // };
+        const user = Object.assign({}, this.state);
+        this.props.processForm(user);
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
     }
 
     renderErrors() {
@@ -116,7 +151,11 @@ class SignupForm extends React.Component {
                         <input id="signup-button"type="submit" value="Submit" />
                         {this.renderErrors()}
                         <br />
+<<<<<<< HEAD
 
+=======
+                        <p>Already a member? &nbsp; <Link to='/login'>Login</Link></p>
+>>>>>>> d819945c5f491230cbe46e19c4f6d2c9fb9724c7
                     </div>
                 </form>
             </div>

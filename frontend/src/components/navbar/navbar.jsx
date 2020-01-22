@@ -5,6 +5,34 @@ import classes from './navbar.module.css';
 import Greeting from '../greeting/greeting';
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.logoutUser = this.logoutUser.bind(this);
+    this.getLinks = this.getLinks.bind(this);
+  }
+
+  logoutUser(e) {
+    e.preventDefault();
+    this.props.logout();
+  }
+
+  getLinks() {
+    if (this.props.loggedIn) {
+      return (
+        <div>
+          Hello, &nbsp; 
+          {this.props.currentUser.handle}
+          <br />
+          <button onClick={this.logoutUser}>Logout</button>
+        </div>
+      );
+    } else {
+      return (
+        <Greeting />
+      )
+    }
+  }
+  
   render() {
     return (
       <div className={classes.SiteHeader}>
@@ -14,9 +42,13 @@ class Navbar extends Component {
               <Logo/>
             </Link>
           </li>
-          <li>Surf Spots</li>
-          <li>Local Weather Conditions</li>
-          <li><Greeting /></li>
+          {/* <div className={classes.MenuItems}> */}
+            <li className={classes.MenuItems}>Surf Spots</li>
+            <li className={classes.MenuItems}>Local Weather Conditions</li>
+          {/* </div> */}
+          <div className={classes.Greeting}>
+            {this.getLinks()}
+          </div>
         </ul>
       </div>
     );
