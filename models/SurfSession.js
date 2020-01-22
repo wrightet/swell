@@ -20,10 +20,12 @@ const SurfSessionSchema = new Schema({
     type: String,
     required: true
   },
-  coSurfers: {
-    type: Array,
-    default: []
-  }
+  coSurfers: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }
+  ]
 })
 
 const SurfSession = mongoose.model('SurfSession', SurfSessionSchema);

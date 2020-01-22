@@ -8,6 +8,7 @@ const keys = require("../../config/keys");
 const passport = require('passport')
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
+const sessions = require('./session');
 
 //User profile route
 router.get('/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -107,5 +108,5 @@ router.post('/login', (req, res) => {
                 })
         })
 })
-
+router.use("/:id/sessions", sessions)
 module.exports = router;
