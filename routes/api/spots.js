@@ -167,6 +167,20 @@ router.post('/:id/favorites',
   });
 
 // delete a favorite
+router.delete('/:id/favorites/:favoriteId',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Favorite
+      .findById(req.params.favoriteId)
+      .then(favorite => {
+        if(!favorite) {
+          return res.status(404).json({ error: "Can't find that review" })
+        }
+        Favorite.deleteOne(favorite)
+          .then(favorite => res.json({ msg: "favorite deleted" }))
+          .catch(err => console.log(err))
+      });
+  });
 
 module.exports = router;
 
