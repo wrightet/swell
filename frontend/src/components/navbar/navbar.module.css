@@ -26,3 +26,13 @@
 .SiteHeader a {
   text-decoration: none;
 }
+
+.MenuItems {
+  padding-bottom: 10px;
+}
+
+.Greeting {
+  padding: 10px;
+  line-height: 20px;
+  text-align: end;
+}

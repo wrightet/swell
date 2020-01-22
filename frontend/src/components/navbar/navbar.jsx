@@ -22,6 +22,7 @@ class Navbar extends Component {
         <div>
           Hello, &nbsp; 
           {this.props.currentUser.handle}
+          <br />
           <button onClick={this.logoutUser}>Logout</button>
         </div>
       );
@@ -41,10 +42,13 @@ class Navbar extends Component {
               <Logo/>
             </Link>
           </li>
-          <li>Surf Spots</li>
-          <li>Local Weather Conditions</li>
-          <li>{this.getLinks()}</li>
-          {/* <li><Greeting /></li> */}
+          {/* <div className={classes.MenuItems}> */}
+            <li className={classes.MenuItems}>Surf Spots</li>
+            <li className={classes.MenuItems}>Local Weather Conditions</li>
+          {/* </div> */}
+          <div className={classes.Greeting}>
+            {this.getLinks()}
+          </div>
         </ul>
       </div>
     );
