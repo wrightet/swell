@@ -20,11 +20,12 @@ router.post("/",
     passport.authenticate('jwt', {session: false}),
     (req, res) => {
         const newSession  = new SurfSession({
-            creatorId: req.user._id,
+            creatorId: req.user.id,
             spotId: req.body.spotId,
             body: req.body.body,
             coSurfers: req.body.coSurfers
-        })
+        });
+        newSession.save().then(session => res.json(session));
     }
 )
 
@@ -37,8 +38,8 @@ router.delete('/:id',
             if(!session) {
                 return res.status(404).json({error: "Cannot find that surf session"})
             }
-            Spot.updateOne(session, req.body)
-            .then(session => res.json(session))
+            SurfSession.deleteOne(session, req.body)
+            .then(session => res.status(200).json({msg: "session deleted"}))
             .catch(err => console.log(err));
         });
  });
