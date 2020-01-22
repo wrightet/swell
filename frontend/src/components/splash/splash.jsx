@@ -1,12 +1,13 @@
 
 import React, { Component } from 'react'
+import Mapping from '../maps/map'
 
 export default class Splash extends Component {
     constructor(props){
         super(props);
     
         this.state={
-            currentPos: []
+            currentPos: {}
         }
 
         this.lat_lng=this.lat_lng.bind(this);
@@ -18,7 +19,11 @@ export default class Splash extends Component {
 
         console.log(`Longitude: ${crd.longitude}`);
         console.log(`Latitude : ${crd.latitude}`);
-        this.setState({currentPos: [{lat: crd.latitude},{lng: crd.longitude}]})
+        const {currentPos}=this.state;
+        currentPos['lat']=crd.latitude;
+        currentPos['lng']=crd.longitude;
+        console.log(this.state.currentPos)
+        
     }
 
     //get current location
@@ -33,6 +38,8 @@ export default class Splash extends Component {
             <div>
                 <h1>Welcome to Swell</h1>
 
+
+                <Mapping currentPos={this.state.currentPos}/>
 
             </div>
         )
