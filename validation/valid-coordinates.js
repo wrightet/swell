@@ -15,3 +15,5 @@ const validCoordinates = arr => {
     } else 
     { return false}
 }
+
+module.exports = validCoordinates;
