@@ -4,7 +4,6 @@ const express = require('express');
 const router = express.Router({mergeParams: true});
 const SurfSession = require('../../models/SurfSession');
 const jwt = require('jsonwebtoken');
-const keys = require('../../config/keys_dev');
 const passport = require('passport');
 
 // get all surf sessions
