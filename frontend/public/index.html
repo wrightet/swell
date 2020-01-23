@@ -12,15 +12,16 @@
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
-    <!-- <script type="text/javascript">
-      console.log("%REACT_APP_GOOGLE_API_KEY%") 
-    </script>  async defer -->
+    <script type="text/javascript">
+      // console.log(process.env.REACT_APP_GOOGLE_API_KEY)
+      console.log("https://maps.googleapis.com/maps/api/js?key=%REACT_APP_GOOGLE_API_KEY%")
+    </script>  
+   
 
-       
+      
     
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=%REACT_APP_GOOGLE_MAPS_API_KEY%"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=%REACT_APP_GOOGLE_API_KEY%">
+    </script>
 
         <!-- &callback=initMap
       manifest.json provides metadata used when your web app is installed on a
