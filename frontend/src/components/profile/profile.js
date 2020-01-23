@@ -1,4 +1,5 @@
 import React from 'react';
+import './profile.css';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -7,10 +8,10 @@ class Profile extends React.Component {
   }
   
   render() {
-    // debugger
     return (
-      <div>
+      <div className="Profile">
         {this.props.currentUser.handle}
+        {this.props.currentUser.firstName}
       </div>
     );
   }
