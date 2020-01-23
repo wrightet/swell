@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import Root from './components/Root';
 import configureStore from './store/store';
-import { fetchProfile } from './util/profile_api_util';
+import { updateReview, fetchReviews, deleteReview } from './actions/review_actions';
 
 document.addEventListener('DOMContentLoaded',()=>{
   let store;
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   } else {
       store = configureStore();
   }
-  window.fetchProfile = fetchProfile
+
   ReactDOM.render(<Root store={store} />, document.getElementById('root'));
 })
 
