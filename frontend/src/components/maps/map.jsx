@@ -7,13 +7,21 @@ class Mapping extends Component {
         this.initMap=this.initMap.bind(this)
     }
 
-    initMap(){
-       new window.google.maps.Map(document.getElementById('map'), {
-            center: { lat: 37.773972, lng: -122.431297 },
+    //goes to current location if allowed, otherwise centers on SF
+    initMap() {
+        let gMap = new window.google.maps.Map(document.getElementById('map'), {
             zoom: 13,
             maxZoom: 15
         });
 
+        navigator.geolocation.getCurrentPosition(function (position) {
+            // Center on user's current location if geolocation prompt allowed
+            var initialLocation = new window.google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            gMap.setCenter(initialLocation);
+            gMap.setZoom(13);
+        }, function () {
+            gMap.setCenter({ lat: 37.773972, lng: -122.431297 })
+        })
     }
 
     componentDidMount(){
