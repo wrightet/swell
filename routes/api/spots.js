@@ -73,15 +73,12 @@ router.patch('/:id',
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Spot
-      .findById(req.params.id)
-      .then(spot => {
-        if (!spot) {
-          return res.status(404).json({ error: "Can't find that spot" })
-        }
-        Spot.updateOne(spot, req.body)
-          .then(spot => res.json(spot))
+      .findByIdAndUpdate(
+        req.params.id, 
+        req.body, 
+        { new: true }
+        ).then(spot => res.json(spot))
           .catch(err => console.log(err));
-      });
   });
 
 // get all reviews for a surf spot
@@ -130,17 +127,13 @@ router.delete('/:id/reviews/:reviewId',
 router.patch('/:id/reviews/:reviewId',
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    Review
-      .findById(req.params.reviewId)
-      .then(review => {
-        if (!review) {
-          return res.status(404).json({ error: "Can't find that review" })
-        }
-        Review.updateOne(review, req.body)
-          .then(review => res.status(200).json({ msg: "review updated" }))
-          .catch(err => console.log(err));
-      });
-  })
+    Review.findByIdAndUpdate(
+      req.params.reviewId,
+      req.body,
+      { new: true }
+      ).then(review => res.json(review))
+        .catch(err => console.log(err))
+  });
 
 // get spot's favorites
 router.get('/:id/favorites',
