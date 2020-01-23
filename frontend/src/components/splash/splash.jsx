@@ -18,13 +18,11 @@ export default class Splash extends Component {
         var crd = pos.coords;
         //NOTE! only works with longitude first, then latitude!
 
-        console.log(`Longitude: ${crd.longitude}`);
-        console.log(`Latitude : ${crd.latitude}`);
+        // console.log(`Longitude: ${crd.longitude}`);
+        // console.log(`Latitude : ${crd.latitude}`);
         const {currentPos}=this.state;
         currentPos['lat']=crd.latitude;
-        currentPos['lng']=crd.longitude;
-        console.log(this.state.currentPos)
-        
+        currentPos['lng']=crd.longitude;        
     }
 
     //get current location
