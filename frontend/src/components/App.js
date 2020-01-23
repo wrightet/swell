@@ -8,7 +8,7 @@ import Splash from './splash/splash'
 import reset from './reset.css';
 import Footer from './footer/footer';
 import ProfileContainer from './profile/profile_container';
-
+import SurfSpotContainer from './surfspots/surf_spot_container'
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
         </Switch>
         <Route exact path='/' component={Splash}/>
         <ProtectedRoute exact path='/profile' component={ProfileContainer} />
+        <Route exact path='/surfspots' component={SurfSpotContainer} />
       <footer>
         <Footer />
       </footer>
