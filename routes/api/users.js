@@ -23,7 +23,7 @@ router.get('/:id',
             }
             return res.json(user)
         })
-})
+      })
 
 //do we need this?
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
@@ -117,6 +117,19 @@ router.post('/login', (req, res) => {
         })
     })
 })
+
+//update user profile
+router.patch('/:id',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    User
+      .findByIdAndUpdate(
+        req.user.id, 
+        req.body, 
+        { new: true }
+        ).then(user => res.json(user))
+          .catch(err => console.log(err));
+  });
 
 // user's favorites route
 router.get('/:id/favorites', 
