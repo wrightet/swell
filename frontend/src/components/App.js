@@ -16,18 +16,18 @@ function App() {
       <header>
         <NavbarContainer />
       </header>
-      <body>
-        <Switch>
-          <AuthRoute exact path="/login" component={LoginFormContainer} />
-          <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        </Switch>
-        <Route exact path='/' component={Splash}/>
-        <ProtectedRoute exact path='/profile' component={ProfileContainer} />
 
-      </body>
-
-        <Route exact path='/surfspots' component={SurfSpotContainer} />
-
+        <div className="body">
+            <Switch>
+              <AuthRoute exact path="/login" component={LoginFormContainer} />
+              <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            </Switch>
+            
+            <Route exact path='/' component={Splash}/>
+            <ProtectedRoute exact path='/profile' component={ProfileContainer} />
+            <Route exact path='/surfspots' component={SurfSpotContainer} />
+        </div>
+      
       <footer>
         <Footer />
       </footer>
