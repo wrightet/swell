@@ -8,7 +8,6 @@ class Profile extends React.Component {
   }
   
   render() {
-    debugger
     return (
       <div className="Profile">
         {this.props.currentUser.handle}
