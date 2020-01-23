@@ -27,7 +27,8 @@ class SurfSpot extends Component {
         this.state.checkMarker=new window.google.maps.Marker({
             position:this.state.checkpos,
             map: this.state.gMap,
-            animation: window.google.maps.Animation.DROP
+            animation: window.google.maps.Animation.DROP,
+            label:'SurfSpot'
         });
 
     }
