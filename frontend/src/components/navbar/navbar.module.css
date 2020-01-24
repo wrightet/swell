@@ -12,13 +12,23 @@
 .SiteHeader img {
   width: 50%;
   border-radius: 5px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .SiteHeader a {
   text-decoration: none;
   color: lightgray;
+}
+
+.Logo {
+  padding-top: 10px;
+  height: 70px;
+}
+
+.Logo img {
+  left: 45%;
+  position: absolute;
+  height: 50px;
+  width: auto;
 }
 
 .MenuItems {
@@ -29,10 +39,7 @@
 .MenuItems li {
   padding: 10px;
   margin: 0;
-  /* border: 1px solid black; */
   color: lightgray;
-  /* background: rgb(2, 77, 9); */
-  /* border-radius: 5px; */
 }
 
 .MenuItems li:hover {
@@ -42,8 +49,12 @@
 }
 
 .Greeting {
+  position: absolute;
+  right: 5%;
+  padding-top: 20px;
   color: white;
 }
 
-.Greeting button {
+.Greeting a:hover {
+  text-decoration: underline;
 }
