@@ -81,19 +81,18 @@ class SurfSpot extends Component {
         const {checkpos}=this.state;
 
         return (
-            <div>
+            <div className='create-spot'>
+                <span className='spot-form'>
                 <h1>Add a surf spot!</h1>
                 <br/>
                 <h3>Click on the map to checkout out spots</h3>
                 <br/>
                 Current spot: 
-                <br/>
+                 <br/>
                     lat:{this.state.checkpos['lat']},
                     lng:{this.state.checkpos['lng']}
                 <br/>
                 <br/>
-
-            {checkpos ? 
                 <form onSubmit={this.handleSubmit}>
                     <label>Spot Title <br/>
                     <input type='text' value={this.state.spotTitle} onChange={this.update('spotTitle')}/>
@@ -107,7 +106,7 @@ class SurfSpot extends Component {
                         <br />
                 <input type='submit' value='Create Surf Spot'/>
                 </form>
-            :''}
+                </span>
 
 
                 <div id='add-spots-map'>
