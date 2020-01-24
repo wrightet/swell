@@ -1,7 +1,7 @@
 .footer {
   box-sizing: border-box;
   height: 246px;
-  background-color: rgb(206, 204, 204);
+  background: transparent;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-flow: column wrap;
@@ -24,10 +24,16 @@
   text-decoration: underline;
 }
 
+.footer ul {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: black;
+  color: lightgray;
+}
+
 .footer li {
-  margin-top: 10px;
+  line-height: 26px;
   font-size: 14px;
-  color: rgb(29, 24, 56);
 }
 
 .footer img {
@@ -36,7 +42,7 @@
 }
 
 .footer a {
-  color: black;
+  color: lightgray;
   text-decoration: none;
 }
 
