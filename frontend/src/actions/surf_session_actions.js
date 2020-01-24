@@ -29,10 +29,6 @@ export const createSurfSession = (userId, sessionData) => dispatch => (
     .catch(err => console.log(err))
 );
 
-export const updateSurfSession = (userId, ssId, sessionData) => dispatch => (
-    APIUtil.updateSurfSession(userId, ssId, sessionData)
-    .then(session => dispatch(receiveSurfSession(session)))
-);
 
 export const deleteReview = (userId, ssId) => dispatch => (
     APIUtil.deleteSurfSession(userId, ssId)
