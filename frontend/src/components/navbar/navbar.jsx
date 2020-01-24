@@ -37,17 +37,18 @@ class Navbar extends Component {
     return (
       <div className={classes.SiteHeader}>
         <ul>
-          <li>
+          {/* <li>
             <Link to="/">
               <Logo/>
             </Link>
-          </li>
-          {/* <div className={classes.MenuItems}> */}
-            <Link to='/surfspots' className={classes.MenuItems}>Surf Spots</Link>
+          </li> */}
+          <div className={classes.MenuItems}>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/surfspots'>Surf Spots</Link></li>
             <li className={classes.MenuItems}>Local Weather Conditions</li>
-          {/* </div> */}
-          <div className={classes.Greeting}>
-            {this.getLinks()}
+            <div className={classes.Greeting}>
+              {this.getLinks()}
+            </div>
           </div>
         </ul>
       </div>
