@@ -7,6 +7,7 @@ import configureStore from './store/store';
 import { fetchProfile } from './util/profile_api_util';
 import {login, logout} from './actions/session_actions';
 import { createReview } from './actions/review_actions';
+import {createSurfSession} from './actions/surf_session_actions';
 
 document.addEventListener('DOMContentLoaded',()=>{
   let store;
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   window.dispatch = store.dispatch;
   window.fetchProfile = fetchProfile;
   window.createReview = createReview;
+  window.createSurfSession = createSurfSession;
   window.login = login;
   window.logout = logout;
   ReactDOM.render(<Root store={store} />, document.getElementById('root'));
