@@ -1,0 +1,19 @@
+.Splash {
+  color: lightgray;
+  display: block;
+  text-align: center;
+}
+
+.Splash h1 {
+  font-size: 18px;
+  padding: 10px;
+}
+
+.Splash p {
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid grey;
+  margin-bottom: 20px;
+}

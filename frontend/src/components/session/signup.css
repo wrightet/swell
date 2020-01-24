@@ -3,10 +3,20 @@
     border-radius: 5px;
     display:flex;
     justify-content: center;
-    margin-right:30%;
-    margin-left: 30%;
+    /* margin-right:30%; */
+    margin-left: 40%;
+    padding-bottom: 20px;
+    width: 300px;
     margin-top: 2em;
     background: lightblue;
+}
+
+.signup-form-container h2 {
+    text-align: center;
+}
+
+.signup-form-container input {
+    width: 100%;
 }
 
 #signup-button{
