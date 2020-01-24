@@ -1,0 +1,10 @@
+/* .Body {
+  z-index: -2;
+  background-color: black;
+} */
+
+.background-image {
+  z-index: -1;
+  position: absolute;
+  
+}

@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-
-import signup from './signup.css'
+import './signup.css'
 
 class SignupForm extends React.Component {
     constructor(props) {
