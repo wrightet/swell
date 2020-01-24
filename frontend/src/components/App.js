@@ -19,9 +19,6 @@ function App() {
       <div className="background-image">
         <img src={wave} />
       </div>
-      <div className="Logo">
-        <img src={logo} />
-      </div>
       <header>
         <NavbarContainer />
       </header>
