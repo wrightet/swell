@@ -41,7 +41,8 @@ export default class Splash extends Component {
                 your next surf adventure</p>
                 <p>Check out our surf map and sign in to create your own surf spots, surf logs, and to edit your user profile</p>
                 <br />
-                <Mapping currentPos={this.state.currentPos}/>
+                {/* <Mapping currentPos={this.state.currentPos}/> */}
+                <br />
 
             </div>
         )
