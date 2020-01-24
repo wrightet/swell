@@ -10,13 +10,17 @@ import Footer from './footer/footer';
 import ProfileContainer from './profile/profile_container';
 import SurfSpotContainer from './surfspots/surf_spot_container';
 import './App.css';
-import surfer from '../assets/images/surfer-sunset.jpg';
+import wave from '../assets/images/wave.jpg';
+import logo from '../assets/images/Swell.png';
 
 function App() {
   return (
     <div className="Body">
       <div className="background-image">
-        <img src={surfer} />
+        <img src={wave} />
+      </div>
+      <div className="Logo">
+        <img src={logo} />
       </div>
       <header>
         <NavbarContainer />
@@ -27,7 +31,7 @@ function App() {
         </Switch>
         <Route exact path='/' component={Splash}/>
         <ProtectedRoute exact path='/profile' component={ProfileContainer} />
-        <Route exact path='/surfspots' component={SurfSpotContainer} />
+        <ProtectedRoute exact path='/surfspots' component={SurfSpotContainer} />
 
       <footer>
         <Footer />
