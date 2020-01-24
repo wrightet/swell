@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../logo/logo';
 import classes from './navbar.module.css';
 import Greeting from '../greeting/greeting';
 
