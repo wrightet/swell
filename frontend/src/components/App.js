@@ -27,7 +27,7 @@ function App() {
         </Switch>
         <Route exact path='/' component={Splash}/>
         <ProtectedRoute exact path='/profile' component={ProfileContainer} />
-        <Route exact path='/surfspots' component={SurfSpotContainer} />
+        <ProtectedRoute exact path='/surfspots' component={SurfSpotContainer} />
 
       <footer>
         <Footer />
