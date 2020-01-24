@@ -5,7 +5,7 @@ import jwt_decode from 'jwt-decode';
 import Root from './components/Root';
 import configureStore from './store/store';
 import { fetchProfile } from './util/profile_api_util';
-import {login, logout} from './util/session_api_util'
+import {login, logout} from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded',()=>{
   let store;
