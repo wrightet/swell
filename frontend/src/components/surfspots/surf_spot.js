@@ -14,6 +14,7 @@ class SurfSpot extends Component {
         
         this.useLatLng=this.useLatLng.bind(this);
         this.handleSubmit=this.handleSubmit.bind(this);
+        this.renderErrors=this.renderErrors.bind(this);
     }
 
     //change clicked lat and lng into usable variables, save temporarily in state
@@ -63,6 +64,7 @@ class SurfSpot extends Component {
 
     componentDidMount() {
         this.initMap();
+        this.props.clearSpotErrors();
     }
 
     update(field) {
@@ -74,11 +76,34 @@ class SurfSpot extends Component {
     }
 
     handleSubmit(e){
-        // e.preventDefault;
+        e.preventDefault();
+
+        const{currentUser,createSurfSpot} = this.props;
+        const {spotTitle,spotDescription, checkpos} = this.state;
+        const surfSpot={
+            creatorId: currentUser.id,
+            name: spotTitle,
+            description: spotDescription,
+            coordinates: [checkpos['lat'],checkpos['lng']]
+        }
+
+        createSurfSpot(surfSpot);
+    }
+
+    // Render the session errors if there are any
+    renderErrors() {
+        return (
+            <ul>
+                {Object.values(this.props.errors).map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
     }
 
     render() {
-        const {checkpos}=this.state;
 
         return (
             <div className='create-spot'>
@@ -105,6 +130,7 @@ class SurfSpot extends Component {
                         </label>
                         <br />
                 <input type='submit' value='Create Surf Spot'/>
+                {this.renderErrors()}
                 </form>
                 </span>
 
