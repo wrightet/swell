@@ -8,6 +8,7 @@ const jwt = require('jsonwebtoken');
 const keys = require("../../config/keys");
 const passport = require('passport');
 const reviews = require('./reviews');
+const validateSpot = require('../../validation/spot')
 
 // create surf spot
 // require user to be logged in to create surf spot
@@ -15,13 +16,14 @@ const reviews = require('./reviews');
 router.post("/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    // const { isValid, errors } = validateTweetInput(req.body);
-    // if (!isValid) {
-    //   return res.status(400).json(errors);
-    // }
+    const { isValid, errors } = validateSpot(req.body);
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
+    // .split(',')
     const newSpot = new Spot({
       name: req.body.name,
-      coordinates: req.body.coordinates.split(',').map(coord => parseFloat(coord, 10)),
+      coordinates: req.body.coordinates.map(coord => parseFloat(coord, 10)),
       description: req.body.description,
       creatorId: req.user.id,
       createdAt: req.body.createdAt
