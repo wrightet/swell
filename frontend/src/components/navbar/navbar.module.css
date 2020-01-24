@@ -9,10 +9,10 @@
 }
 
 .SiteHeader img {
-  background-color: black;
-  width: auto;
+  width: 50%;
   border-radius: 5px;
-  /* opacity: 60%; */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .SiteHeader a {
@@ -32,4 +32,8 @@
   color: lightgray;
   background: rgb(2, 77, 9);
   border-radius: 5px;
+}
+
+.MenuItems li:hover {
+  background: rgb(1, 39, 5);
 }

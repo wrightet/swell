@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import swellLogo from '../../assets/images/Swell.png';
 import classes from './footer.module.css';
+import { Link } from "react-router-dom";
 
 class Footer extends Component {
   render() {
@@ -11,7 +12,7 @@ class Footer extends Component {
           <div>
             <h1>Categories</h1>
             <ul>
-              <li>Surf Spots</li>
+              <li><Link to="surfspots">Surf Spots</Link></li>
               <li>Weather</li>
             </ul>
           </div>
