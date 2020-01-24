@@ -7,10 +7,13 @@ class SurfSpot extends Component {
         this.state={
             checkpos:'',
             checkMarker:'',
-            gMap:''
+            gMap:'',
+            spotTitle:'',
+            spotDescription:''
         }
         
         this.useLatLng=this.useLatLng.bind(this);
+        this.handleSubmit=this.handleSubmit.bind(this);
     }
 
     //change clicked lat and lng into usable variables, save temporarily in state
@@ -62,7 +65,21 @@ class SurfSpot extends Component {
         this.initMap();
     }
 
+    update(field) {
+        return (
+            e => {
+                this.setState({ [field]: e.target.value })
+            }
+        )
+    }
+
+    handleSubmit(e){
+        // e.preventDefault;
+    }
+
     render() {
+        const {checkpos}=this.state;
+
         return (
             <div>
                 <h1>Add a surf spot!</h1>
@@ -73,6 +90,26 @@ class SurfSpot extends Component {
                 <br/>
                     lat:{this.state.checkpos['lat']},
                     lng:{this.state.checkpos['lng']}
+                <br/>
+                <br/>
+
+            {checkpos ? 
+                <form onSubmit={this.handleSubmit}>
+                    <label>Spot Title <br/>
+                    <input type='text' value={this.state.spotTitle} onChange={this.update('spotTitle')}/>
+                    </label>
+                        <br/>
+                        Created by:{this.props.currentUser.handle}
+                        <br/>
+                    <label>Description <br />
+                    <textarea cols="30" rows="10" value={this.state.spotDescription} onChange={this.update('spotDescription')}/>
+                        </label>
+                        <br />
+                <input type='submit' value='Create Surf Spot'/>
+                </form>
+            :''}
+
+
                 <div id='add-spots-map'>
                 </div>
             </div>
