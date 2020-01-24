@@ -98,7 +98,8 @@ class SurfSpot extends Component {
                     <label>Spot Title <br/>
                     <input type='text' value={this.state.spotTitle} onChange={this.update('spotTitle')}/>
                     </label>
-                        
+                        <br/>
+                        Created by:{this.props.currentUser.handle}
                         <br/>
                     <label>Description <br />
                     <textarea cols="30" rows="10" value={this.state.spotDescription} onChange={this.update('spotDescription')}/>
