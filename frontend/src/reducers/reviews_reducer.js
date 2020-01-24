@@ -17,7 +17,6 @@ import {
       newState[action.review.data._id] = action.review.data;
       return newState
     case REMOVE_REVIEW:
-      debugger;
       delete newState[action.reviewId];
       return newState
     default:
