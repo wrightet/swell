@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-// import Mapping from '../maps/map';
+import Mapping from '../maps/map';
 import './splash.css';
 
 export default class Splash extends Component {
