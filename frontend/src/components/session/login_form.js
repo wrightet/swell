@@ -17,6 +17,7 @@ class LoginForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
     }
 
     // Once the user has been authenticated, redirect to the Tweets page
@@ -49,6 +50,10 @@ class LoginForm extends React.Component {
         this.props.processForm(user);
     }
 
+    handleDemo() {
+        // const user = Object.assign({email: 'demo', password: '123456'}, this.state)
+        this.props.processForm({ email: 'demo1@demo.com', password: '123456' });
+    }
     // Render the session errors if there are any
     renderErrors() {
         return (
@@ -90,8 +95,10 @@ class LoginForm extends React.Component {
                         New to Swell?
                         &nbsp;
                         <Link to="/signup">Sign Up</Link>
-                    </div>
+                    </div> 
+                    <button className="login-submit-button" onClick={this.handleDemo}>Demo</button>
                 </form>
+               
             </div>
         );
     }
