@@ -86,7 +86,7 @@ class SurfSpot extends Component {
             description: spotDescription,
             coordinates: [checkpos['lat'],checkpos['lng']]
         }
-
+        debugger
         createSurfSpot(surfSpot);
     }
 
