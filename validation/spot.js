@@ -3,7 +3,7 @@
 const Validator = require("validator");
 const validText = require("./valid-text");
 const validCoordinates = require("./valid-coordinates")
-module.exports = function valdiateSpot(data) {
+module.exports = function validateSpot(data) {
     let errors = {};
 
     data.name = validText(data.name) ? data.name : "";
