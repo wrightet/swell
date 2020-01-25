@@ -10,12 +10,38 @@
 }
 
 .Splash p {
-  margin-left: 10%;
-  margin-right: 10%;
+  padding: 10px;
   line-height: 26px;
+  background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
   text-shadow: 1px 1px black;
-  padding-bottom: 20px;
+  border-radius: 5px;
+}
+
+.Splash ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.Splash a {
+  background-color: rgb(6, 55, 201);
+  padding: 10px;
+  color: rgb(227, 227, 227);
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid rgb(40, 1, 180);
+}
+
+.Splash a:hover {
+  background-color: rgba(3, 3, 190, 1);
+}
+
+.Text-wrapper {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 70%;
+  padding: 40px;
   border-bottom: 1px solid grey;
-  margin-bottom: 20px;
+  border-top: 1px solid grey;
 }
