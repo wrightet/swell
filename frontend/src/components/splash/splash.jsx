@@ -1,37 +1,13 @@
 
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-// import Mapping from '../maps/map';
+import Mapping from '../maps/map_container';
+import {Link} from 'react-router-dom'
 import './splash.css';
 
 export default class Splash extends Component {
     constructor(props){
         super(props);
-    
-        this.state={
-            currentPos: {}
-        }
-
-        this.lat_lng=this.lat_lng.bind(this);
     }
-
-    lat_lng(pos) {
-        var crd = pos.coords;
-        //NOTE! only works with longitude first, then latitude!
-
-        // console.log(`Longitude: ${crd.longitude}`);
-        // console.log(`Latitude : ${crd.latitude}`);
-        const {currentPos}=this.state;
-        currentPos['lat']=crd.latitude;
-        currentPos['lng']=crd.longitude;        
-    }
-
-    //get current location
-    componentDidMount(){
-        navigator.geolocation.getCurrentPosition(this.lat_lng);
-    }
-
-
 
     render() {
         return (
@@ -48,7 +24,7 @@ export default class Splash extends Component {
                     </ul>
                 </div>
                 <br />
-                {/* <Mapping currentPos={this.state.currentPos}/> */}
+                <Mapping/>
                 <br />
 
             </div>

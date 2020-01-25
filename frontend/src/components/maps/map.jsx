@@ -4,15 +4,22 @@ import classes from './map.modules.css'
 class Mapping extends Component {
     constructor(props){
         super(props);
-        this.initMap=this.initMap.bind(this)
+        
+        this.state={
+            gMap:''
+        }
+
+        this.initMap=this.initMap.bind(this);
+        this.makeSpots=this.makeSpots.bind(this);
     }
 
     //goes to current location if allowed, otherwise centers on SF
     initMap() {
-        let gMap = new window.google.maps.Map(document.getElementById('map'), {
+        this.state.gMap = new window.google.maps.Map(document.getElementById('map'), {
             zoom: 13,
             maxZoom: 15
         });
+        const {gMap}=this.state
 
         navigator.geolocation.getCurrentPosition(function (position) {
             // Center on user's current location if geolocation prompt allowed
@@ -24,8 +31,26 @@ class Mapping extends Component {
         })
     }
 
+    makeSpots(spotRes){
+
+        spotRes.spots.data.map(spot=>{
+            let lat=spot.coordinates[0];
+            let lng=spot.coordinates[1];
+
+            new window.google.maps.Marker({
+                position: {lat:lat,lng:lng},
+                map: this.state.gMap,
+                label: spot.name
+            })
+        })
+
+    }
+
+    //create map, get current spots, mark on map:
     componentDidMount(){
         this.initMap();
+        this.props.requestSurfSpots()
+            .then(spotRes=>this.makeSpots(spotRes));
 }
 
     render(){
@@ -40,23 +65,3 @@ class Mapping extends Component {
 
 
 export default Mapping;
-
-
-
-
-//npm google maps react, don't use
-// import {Map,Marker,GoogleApiWrapper} from 'google-maps-react'
-
-
-// style = {{ position: 'relative', width: '100vw', height: '40vh' }}
-{/* <br/>
-                <Map google={this.props.google} 
-                style={style} 
-                center={this.props.currentPos}/> */}
-
-
-
-// GoogleApiWrapper
-// ({
-//     apiKey: (process.env.REACT_APP_GOOGLE_API_KEY)
-// })(Mapping);
