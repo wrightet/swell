@@ -5,7 +5,8 @@ const profileReducer = (state = {}, action) => {
   let newState = Object.assign({}, state);
   switch(action.type) {
     case RECEIVE_PROFILE:
-      newState.action.profile._id = action.profile
+      debugger;
+      newState[action.profile.data._id] = action.profile.data
       return newState;
     default:
       return state;

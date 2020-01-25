@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const users = require("./routes/api/users");
 const spots = require("./routes/api/spots");
+const spitcast = require("./routes/api/spitcast");
 const User = require("./models/User");
 const bodyParser = require("body-parser");
 const path = require('path');
@@ -28,8 +29,9 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
-app.use("/api/users", users);
+app.use('/api/users', users);
 app.use('/api/spots', spots);
+app.use('/api/spitcast', spitcast);
 
 
 const port = process.env.PORT || 5000;
