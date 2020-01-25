@@ -9,7 +9,7 @@ class SurfSessionForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        debugger
+        
         this.props.action(this.props.currentUser.id, this.state)
 
     }
