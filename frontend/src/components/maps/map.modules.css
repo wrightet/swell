@@ -1,7 +1,8 @@
 #map{
-    height:300px;
-    width:50%;
+    height:500px;
+    /* width:50%; */
     border: 5px solid lightcyan;
     border-radius: 5px;
-    margin-left:45%;
+    margin-left:20%;
+    margin-right:20%;
 }
