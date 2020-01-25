@@ -1,36 +1,34 @@
 import React from 'react';
-import SurfSpotContainer from '../surfspots/surf_spot_container';
-import MapsContainer from '../../components/maps/map_container';
+
 class SurfSessionForm extends React.Component {
     constructor(props){
         super(props);
-        this.state = this.props
+        this.state = this.props.session
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.action(this.state)
+        debugger
+        this.props.action(this.props.currentUser.id, this.state)
 
     }
-
+    update(field) {
+        return e => this.setState({ [field]: e.target.value });
+    }
     render(){
         return (
             <div className="surf-session-form">
 
                 <form onSubmit={this.handleSubmit}>
                     <label>
-                        <input type="textarea"
+                        <textarea
                         value={this.state.body}
-                        placeholder="How was your surf?"/>
+                        placeholder="How was your surf?" 
+                        onChange={this.update('body')}/>
                     </label>
                    
                     <input type="submit" value={this.props.formType}/>
-                    <select name="" id="">
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                    </select>
                 </form>
             </div>
         );
