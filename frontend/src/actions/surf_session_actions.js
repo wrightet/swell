@@ -23,14 +23,16 @@ export const fetchSurfSessions = (userId) => dispatch => (
     .catch(err => console.log(err))
 );
 
-export const createSurfSession = (userId, sessionData) => dispatch => (
-    APIUtil.createSurfSession(userId, sessionData)
-    .then(session => dispatch(receiveSurfSession(session)))
-    .catch(err => console.log(err))
-);
+export const createSurfSession = (userId, sessionData) => dispatch => {
+   
+   return(
+       APIUtil.createSurfSession(userId, sessionData)
+        .then(session => dispatch(receiveSurfSession(session)))
+        .catch(err => console.log(err))
+   ) 
+}
 
-
-export const deleteReview = (userId, ssId) => dispatch => (
+export const deleteSurfSession = (userId, ssId) => dispatch => (
     APIUtil.deleteSurfSession(userId, ssId)
     .then(() => dispatch(removeSurfSession(ssId)))
 );

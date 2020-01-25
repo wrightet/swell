@@ -7,8 +7,8 @@ const receiveProfile = (profile) => ({
   profile
 })
 
-export const fetchProfile = () => (dispatch) => (
-  APIUtil.fetchProfile()
+export const fetchProfile = (profileId) => (dispatch) => (
+  APIUtil.fetchProfile(profileId)
     .then( profile => dispatch(receiveProfile(profile)))
     .catch( err => console.log(err))
 );

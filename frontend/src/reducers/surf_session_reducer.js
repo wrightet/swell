@@ -6,6 +6,7 @@ import {
 
 const surfSessionReducer = (state ={}, action) => {
     Object.freeze(state);
+    
     let newState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_SURF_SESSIONS:
@@ -14,6 +15,7 @@ const surfSessionReducer = (state ={}, action) => {
             })
             return newState;
         case RECEIVE_SURF_SESSION:
+           
             newState[action.session.data._id] = action.session.data;
             return newState;
         case REMOVE_SURF_SESSION:

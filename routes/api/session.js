@@ -24,6 +24,7 @@ router.post("/",
             body: req.body.body,
             coSurfers: req.body.coSurfers
         });
+        
         newSession.save().then(session => res.json(session));
     }
 )
