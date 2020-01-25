@@ -43,16 +43,14 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // let user = {
-        //     email: this.state.email,
-        //     handle: this.state.handle,
-        //     firstName: this.state.firstName,
-        //     lastName: this.state.lastName,
-        //     password: this.state.password,
-        //     password2: this.state.password2
-        // };
+   
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        let loggyUser={
+            email:this.state.email,
+            password:this.state.password
+        }
+        this.props.processForm(user)
+            .then(()=>(this.props.login(loggyUser)))
     }
 
     handleDemo() {
@@ -63,9 +61,9 @@ class SignupForm extends React.Component {
     renderErrors() {
         return (
             <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
+                {Object.keys(this.props.errors).map((error, i) => (
                     <li key={`error-${i}`}>
-                        {this.state.errors[error]}
+                        {this.props.errors[error]}
                     </li>
                 ))}
             </ul>
