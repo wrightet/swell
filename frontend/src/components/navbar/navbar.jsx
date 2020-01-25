@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import classes from './navbar.module.css';
 import Greeting from '../greeting/greeting';
-import logo from '../../assets/images/Swell.png';
+import logo from '../../assets/images/swell-white.png';
 
 class Navbar extends Component {
   constructor(props) {
