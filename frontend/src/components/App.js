@@ -10,13 +10,14 @@ import Footer from './footer/footer';
 import ProfileContainer from './profile/profile_container';
 import SurfSpotContainer from './surfspots/surf_spot_container';
 import './App.css';
-import surfer from '../assets/images/surfer-sunset.jpg';
+import wave from '../assets/images/wave.jpg';
+import logo from '../assets/images/Swell.png';
 
 function App() {
   return (
     <div className="Body">
       <div className="background-image">
-        <img src={surfer} />
+        <img src={wave} />
       </div>
       <header>
         <NavbarContainer />

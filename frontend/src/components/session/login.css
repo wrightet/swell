@@ -3,14 +3,23 @@
     border-radius: 5px;
     display:flex;
     justify-content: center;
-    margin-right:30%;
-    margin-left: 30%;
+    margin-left: 40%;
+    width: 200px;
+    padding: 10px;
     margin-top: 2em;
     background: lightblue;
 }
 
+.loginform h2 {
+    text-align: center;
+}
+
+.loginform input {
+    width: 100%;
+}
+
 #login-submit{
-    width:100%;
+    /* width:100%; */
     border-radius: 5px;
     
 }

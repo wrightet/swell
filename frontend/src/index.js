@@ -4,10 +4,8 @@ import {setAuthToken} from './util/session_api_util';
 import jwt_decode from 'jwt-decode';
 import Root from './components/Root';
 import configureStore from './store/store';
-import { fetchProfile } from './actions/profile_actions';
-import {login, logout} from './actions/session_actions';
-import { createReview } from './actions/review_actions';
-import { fetchNearbySpots, fetchForecast, fetchSpitCastSpots } from './util/spitcast_api_util';
+import {logout} from './actions/session_actions';
+
 
 document.addEventListener('DOMContentLoaded',()=>{
   let store;
@@ -29,19 +27,5 @@ document.addEventListener('DOMContentLoaded',()=>{
   } else {
     store = configureStore({});
   }
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.fetchProfile = fetchProfile;
-  window.createReview = createReview;
-  window.fetchNearbySpots = fetchNearbySpots;
-  window.fetchForecast = fetchForecast;
-  window.fetchSpitCastSpots = fetchSpitCastSpots;
-  window.login = login;
-  window.logout = logout;
   ReactDOM.render(<Root store={store} />, document.getElementById('root'));
 })
-
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
