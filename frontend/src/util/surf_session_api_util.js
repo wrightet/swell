@@ -7,11 +7,13 @@ export const fetchSurfSessions = (userId) => (
 );
 
 // create a session
-export const createSurfSession = (userId, sessionData) => (
-    axios.post(`/api/users/${userId}/sessions`, sessionData)
-)
+export const createSurfSession = (userId, sessionData) => {
+   
+    return(axios.post(`/api/users/${userId}/sessions`, sessionData))
+    
+}
 
-//delete a session
+// delete a session
 export const deleteSurfSession = (userId, ssId) => (
     axios.delete(`/api/users/${userId}/sessions/${ssId}`)
 )
