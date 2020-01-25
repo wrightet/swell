@@ -36,7 +36,7 @@ class Navbar extends Component {
     return (
       <div className={classes.SiteHeader}>
         <div className={classes.Logo}>
-          <img src={logo} />
+          <Link to="/"><img src={logo} /></Link>
           <div className={classes.Greeting}>
             {this.getLinks()}
           </div>
