@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import Mapping from '../maps/map';
+import Mapping from '../maps/map_container';
 import './splash.css';
 
 export default class Splash extends Component {
