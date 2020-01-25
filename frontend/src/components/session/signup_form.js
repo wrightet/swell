@@ -18,6 +18,7 @@ class SignupForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
         // this.clearedErrors = false;
     }
 
@@ -52,6 +53,11 @@ class SignupForm extends React.Component {
         // };
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+    }
+
+    handleDemo() {
+        // const user = Object.assign({email: 'demo', password: '123456'}, this.state)
+        this.props.login({ email: 'demo1@demo.com', password: '123456' });
     }
 
     renderErrors() {
@@ -121,6 +127,8 @@ class SignupForm extends React.Component {
                         {this.renderErrors()}
                         <br />
                         <p>Already a member? &nbsp; <Link to='/login'>Login</Link></p>
+                        <button className="login-submit-button" onClick={this.handleDemo}>Demo</button>
+
                     </div>
                 </form>
             </div>

@@ -12,7 +12,7 @@ import SurfSpotContainer from './surfspots/surf_spot_container';
 import './App.css';
 import wave from '../assets/images/wave.jpg';
 import logo from '../assets/images/Swell.png';
-
+import SurfSessionContainer from './surf_session/surf_session_container'
 function App() {
   return (
     <div className="Body">
@@ -27,7 +27,7 @@ function App() {
           <AuthRoute exact path="/signup" component={SignupFormContainer} />
         </Switch>
         <Route exact path='/' component={Splash}/>
-        <ProtectedRoute exact path='/profile' component={ProfileContainer} />
+        <ProtectedRoute exact path='/profile' component={ProfileContainer, SurfSessionContainer} />
         <ProtectedRoute exact path='/surfspots' component={SurfSpotContainer} />
 
       <footer>
