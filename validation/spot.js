@@ -14,9 +14,11 @@ module.exports = function validateSpot(data) {
         errors.name = "Name must be between 1 and 40 characters"
     }
 
-    if(Validator.isEmpty(data.coordinates)){
+    // if(Validator.isEmpty(data.coordinates)){
+        if(!data.coordinates){
         errors.coordinates = 'Coordinates are required to make a spot'
-    }
+        }
+    // }
 
     return {
         errors,

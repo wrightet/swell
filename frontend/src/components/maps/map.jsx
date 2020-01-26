@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import {withRouter} from 'react-router-dom'
 import './map.css';
 
 class Mapping extends Component {
@@ -37,11 +38,16 @@ class Mapping extends Component {
             let lat=spot.coordinates[0];
             let lng=spot.coordinates[1];
 
-            new window.google.maps.Marker({
+            let mark=new window.google.maps.Marker({
                 position: {lat:lat,lng:lng},
                 map: this.state.gMap,
                 label: spot.name
             })
+
+            mark.addListener('click',()=>{
+                this.props.history.push(`/surfspots/${spot._id}`)
+            })
+
         })
 
     }
@@ -64,4 +70,4 @@ class Mapping extends Component {
 }
 
 
-export default Mapping;
+export default withRouter(Mapping);
