@@ -79,6 +79,7 @@ class LoginForm extends React.Component {
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
+                            className="login-form-input"
                         />
                         <br />
                         <br />
@@ -86,6 +87,7 @@ class LoginForm extends React.Component {
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
+                            className="login-form-input"
                         />
                         <br />
                         <br />
@@ -94,9 +96,10 @@ class LoginForm extends React.Component {
                         <br/>
                         New to Swell?
                         &nbsp;
-                        <Link to="/signup">Sign Up</Link>
+                        <Link to="/signup" className="sign-up-link">Sign Up</Link> 
+                        <button className="demo-button" onClick={this.handleDemo}>Demo User</button>
                     </div> 
-                    <button className="login-submit-button" onClick={this.handleDemo}>Demo</button>
+                   
                 </form>
                
             </div>

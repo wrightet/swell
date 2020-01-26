@@ -20,7 +20,6 @@ class SpotShow extends Component {
         const {surfSpot}=this.state;
         let lat=surfSpot.coordinates[0];
         let lng=surfSpot.coordinates[1];
-        
         this.state.gMap.setCenter({lat:lat,lng:lng});
         let mark = new window.google.maps.Marker({
             position: { lat: lat, lng: lng },
@@ -45,6 +44,7 @@ class SpotShow extends Component {
                 })})
             })
             .then(()=>this.initMap())
+            
     }
 
 
