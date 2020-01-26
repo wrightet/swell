@@ -1,12 +1,16 @@
-.Body {
+.Background {
   /* z-index: -2; */
   position: relative;
   background-color: black;
+}
+
+.Body {
+  position: relative;
 } 
 
 .background-image img {
   margin: auto;
   width: 100%;
   position: absolute;
-  z-index: -1;
+  /* z-index: -1; */
 }

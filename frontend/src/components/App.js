@@ -14,12 +14,11 @@ import wave from '../assets/images/wave.jpg';
 import SurfSessionContainer from './surf_session/surf_session_container'
 function App() {
   return (
-    <div className="Body">
-      <div>
+    <div className="Background">
         <div className="background-image">
           <img src={wave} alt="wave" />
         </div>
-      </div>
+      <div className="Body">
       <header>
         <NavbarContainer />
       </header>
@@ -38,6 +37,7 @@ function App() {
       <footer>
         <Footer />
       </footer>
+      </div>
     </div>
   );
 }
