@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 class SpotShow extends Component {
     constructor(props){
         super(props);
-
         this.state={
             surfSpot:'',
+            nearestForecast: '',
             gMap:''
         }
 
@@ -40,18 +40,19 @@ class SpotShow extends Component {
 
 
     render() {
-        const {surfSpot}=this.state
-
-        if(!surfSpot){return null}
-        return (
-            <div style={{color: 'white'}}>
-                {surfSpot.name}
-                <br/>
-                {surfSpot.description}
-                <br/>
-                <div id='show-map'></div>
-            </div>
-        )
+      console.dir(this.state)
+      const {surfSpot, nearestForecast} = this.state
+      if(!surfSpot || !nearestForecast) return null
+      return (
+          <div style={{color: 'white'}}>
+              {surfSpot.name}
+              <br/>
+              {surfSpot.description}
+              <br/>
+              <span>Wave Height: {nearestForecast.average.size.toFixed(3)} ft</span>
+              <div id='show-map'></div>
+          </div>
+      )
     }
 }
 
