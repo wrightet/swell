@@ -5,8 +5,15 @@ class SpotShow extends Component {
         super(props);
 
         this.state={
-            surfSpot:''
+            surfSpot:'',
+            gMap:''
         }
+
+        this.initMap=this.initMap.bind(this);
+    }
+
+    initMap(){
+
     }
 
     componentDidMount(){
@@ -14,6 +21,7 @@ class SpotShow extends Component {
             .then(spotRes=> 
          this.setState({surfSpot: spotRes.spot.data})
             )
+            .then(()=>this.initMap())
     }
 
 
@@ -26,6 +34,8 @@ class SpotShow extends Component {
                 {surfSpot.name}
                 <br/>
                 {surfSpot.description}
+                <br/>
+                <div id='show-map'></div>
             </div>
         )
     }
