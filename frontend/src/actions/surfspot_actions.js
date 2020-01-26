@@ -47,11 +47,8 @@ export const requestSurfSpot=(spotId)=>dispatch=>(
 
 export const createSurfSpot=(surfSpot)=>dispatch=>(
     ApiUtil.createSurfSpot(surfSpot)
-        .then( ()=>(
-            spot=>dispatch(receiveSurfSpot(spot))),
-            err=>(dispatch(receiveSpotErrors(err.response.data)))
-        )
-        
+        .then(spot=>dispatch(receiveSurfSpot(spot)))
+        .catch(err => dispatch(receiveSpotErrors(err.response.data)))       
 );
 
 export const updateSurfSpot=(surfSpot)=>dispatch=>(

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {withRouter} from 'react-router-dom'
 import surfspot from './surfspot.css'
 
 class SurfSpot extends Component {
@@ -86,7 +87,11 @@ class SurfSpot extends Component {
             description: spotDescription,
             coordinates: [checkpos['lat'],checkpos['lng']]
         }
-        createSurfSpot(surfSpot);
+        console.dir(createSurfSpot);
+        createSurfSpot(surfSpot)
+            .then((res)=>{
+                this.props.history.push(`/surfspots/${res.spot.data._id}`)
+            })
     }
 
     // Render the session errors if there are any
@@ -142,4 +147,4 @@ class SurfSpot extends Component {
 
 }
 
-export default SurfSpot;
+export default withRouter(SurfSpot);
