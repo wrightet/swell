@@ -31,26 +31,35 @@ class SpotShow extends Component {
     }
 
     componentDidMount(){
-        this.props.requestSurfSpot(this.props.match.params.id)
-            .then(spotRes=> 
-         this.setState({surfSpot: spotRes.spot.data})
-            )
+        this.props
+          .requestSurfSpot(this.props.match.params.id)
+          .then(spotRes =>
+            this.setState({ surfSpot: spotRes.spot.data }))
+            .then((long, lat) => {
+              long = this.state.surfSpot.coordinates[1];
+              lat = this.state.surfSpot.coordinates[0];
+              this.props.fetchSpitCastSpots(long, lat, 5)
+                .then((spots) => {
+                  this.setState({
+                  nearestForecast: spots[0]
+                })})
+            })
             .then(()=>this.initMap())
     }
 
 
     render() {
       console.dir(this.state)
-      const {surfSpot, nearestForecast} = this.state
-      if(!surfSpot || !nearestForecast) return null
+      const {surfSpot, nearestForecast, gMap} = this.state
+      if(!surfSpot || !nearestForecast || !gMap) return null
       return (
           <div style={{color: 'white'}}>
+              <div id='show-map'></div>
               {surfSpot.name}
               <br/>
               {surfSpot.description}
               <br/>
               <span>Wave Height: {nearestForecast.average.size.toFixed(3)} ft</span>
-              <div id='show-map'></div>
           </div>
       )
     }
