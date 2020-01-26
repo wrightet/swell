@@ -8,7 +8,7 @@ class Footer extends Component {
     return (
       <div className="footer">
         <div className="footerFlex">
-          <img src={swellLogo} alt="logo" />
+          <Link to="/"><img src={swellLogo} alt="logo" /></Link>
           <div>
             <h1>Categories</h1>
             <ul>
