@@ -13,10 +13,10 @@ class SpotShow extends Component {
     render() {
         const {surfSpot}=this.props;
 
-        if(!surfSpot) return null
-        debugger
+        if(!surfSpot) {return <div>help me</div>}
         return (
             <div style={{color: 'white'}}>
+                retiertjer
                 {surfSpot.name}
                 {surfSpot.description}
             </div>
