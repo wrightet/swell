@@ -13,6 +13,9 @@ import './App.css';
 import wave from '../assets/images/wave.jpg';
 import logo from '../assets/images/Swell.png';
 import SurfSessionContainer from './surf_session/surf_session_container'
+
+import SpotShow from './surfspots/spot_show_container'
+
 function App() {
   return (
     <div className="Body">
@@ -30,6 +33,10 @@ function App() {
         <ProtectedRoute exact path='/profile' component={ProfileContainer, SurfSessionContainer} />
         <ProtectedRoute exact path='/surfspots' component={SurfSpotContainer} />
 
+
+
+
+      <Route exact path='/surfspots/:id'  component={SpotShow}/>
       <footer>
         <Footer />
       </footer>
