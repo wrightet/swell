@@ -12,6 +12,9 @@ import SurfSpotContainer from './surfspots/surf_spot_container';
 import './App.css';
 import wave from '../assets/images/wave.jpg';
 import SurfSessionContainer from './surf_session/surf_session_container'
+
+import SpotShow from './surfspots/spot_show_container'
+
 import SurfSessionIndexContainer from './surf_session/surf_session_index_container';
 function App() {
   return (
@@ -35,6 +38,10 @@ function App() {
       />
       <ProtectedRoute exact path="/surfspots" component={SurfSpotContainer} />
 
+
+
+
+      <Route exact path='/surfspots/:id'  component={SpotShow}/>
       <footer>
         <Footer />
       </footer>
