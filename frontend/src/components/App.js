@@ -31,7 +31,7 @@ function App() {
       <ProtectedRoute
         exact
         path="/profile"
-        component={(ProfileContainer, SurfSessionContainer, SurfSessionIndexContainer)}
+        component={ProfileContainer, SurfSessionContainer, SurfSessionIndexContainer}
       />
       <ProtectedRoute exact path="/surfspots" component={SurfSpotContainer} />
 
