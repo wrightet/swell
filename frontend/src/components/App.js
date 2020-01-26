@@ -12,6 +12,7 @@ import SurfSpotContainer from './surfspots/surf_spot_container';
 import './App.css';
 import wave from '../assets/images/wave.jpg';
 import SurfSessionContainer from './surf_session/surf_session_container'
+import SurfSessionIndexContainer from './surf_session/surf_session_index_container';
 function App() {
   return (
     <div className="Background">
@@ -30,7 +31,7 @@ function App() {
       <ProtectedRoute
         exact
         path="/profile"
-        component={(ProfileContainer, SurfSessionContainer)}
+        component={ProfileContainer, SurfSessionContainer, SurfSessionIndexContainer}
       />
       <ProtectedRoute exact path="/surfspots" component={SurfSpotContainer} />
 

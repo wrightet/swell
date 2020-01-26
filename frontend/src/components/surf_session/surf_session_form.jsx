@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "./surfIndexItem.css"
 class SurfSessionForm extends React.Component {
     constructor(props){
         super(props);
