@@ -7,16 +7,20 @@ class SurfSessionIndex extends React.Component {
     }
 
     componentDidMount(){
-        this.props.requestSurfSessions();
+        
+        this.props.fetchSurfSessions(this.props.currentUser.id);
     }
     render(){
         const {sessions} = this.props;
         if (!sessions){return null;}
-
+        
        return (
            <div>
                <ul>
-                   <li><SurfSessionItem/></li>
+                   {sessions.map(session => (
+                       <li><SurfSessionItem session ={session}/></li>
+                    ))}
+                   
                </ul>
            </div>
        ) 

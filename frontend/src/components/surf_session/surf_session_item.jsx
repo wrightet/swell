@@ -1,14 +1,18 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import SurfSessionIndexContainer from './surf_session_index_container';
 
-class SurfSessionItem extends Reactl.Component {
+class SurfSessionItem extends React.Component {
     constructor(props){
         super(props)
     }
 
     render(){
         return(
-              <li>{this.props.session.body}</li>
+            <div>
+                 <p>{this.props.session.body}</p>
+            </div>
+             
         )
               
     }
