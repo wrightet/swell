@@ -8,14 +8,16 @@
     width: 200px;
     padding: 10px;
     margin-top: 2em;
-    background: lightblue;
+    background: #393A42;
+    color: white;
+
 }
 
 .loginform h2 {
     text-align: center;
 }
 
-.loginform input {
+.login-form-input {
     width: 100%;
 }
 
@@ -27,4 +29,21 @@
 
 #login-submit:hover{
     background-color: lightcyan;
+}
+
+.sign-up-link {
+    color: white;
+}
+.demo-button{
+    display: flex;
+    height: 15%;
+    width: 30%;
+    border-radius: 10%;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    /* padding: 5px; */
+    right: -31%;
+
 }

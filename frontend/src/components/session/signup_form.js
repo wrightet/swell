@@ -124,8 +124,8 @@ class SignupForm extends React.Component {
                         <input id="signup-button"type="submit" value="Submit" />
                         {this.renderErrors()}
                         <br />
-                        <p>Already a member? &nbsp; <Link to='/login'>Login</Link></p>
-                        <button className="login-submit-button" onClick={this.handleDemo}>Demo</button>
+                        <p>Already a member? &nbsp; <Link to='/login' className="sign-up-link">Login</Link></p>
+                        <button className="demo-button" onClick={this.handleDemo}>Demo User</button>
 
                     </div>
                 </form>
