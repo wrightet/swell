@@ -18,7 +18,7 @@ class SurfSessionIndex extends React.Component {
            <div>
                <ul>
                    {sessions.map(session => (
-                       <li><SurfSessionItem session ={session}/></li>
+                       <li><SurfSessionItem session={session}/></li>
                     ))}
                    
                </ul>
