@@ -5,8 +5,29 @@ class SpotShow extends Component {
         super(props);
 
         this.state={
-            surfSpot:''
+            surfSpot:'',
+            gMap:''
         }
+
+        this.initMap=this.initMap.bind(this);
+    }
+
+    initMap(){
+        this.state.gMap= new window.google.maps.Map(document.getElementById('show-map'), {
+            zoom: 13,
+            maxZoom: 15
+        });
+        const {surfSpot}=this.state;
+        let lat=surfSpot.coordinates[0];
+        let lng=surfSpot.coordinates[1];
+        
+        this.state.gMap.setCenter({lat:lat,lng:lng});
+        let mark = new window.google.maps.Marker({
+            position: { lat: lat, lng: lng },
+            map: this.state.gMap,
+            label: surfSpot.name
+        })
+        
     }
 
     componentDidMount(){
@@ -14,6 +35,7 @@ class SpotShow extends Component {
             .then(spotRes=> 
          this.setState({surfSpot: spotRes.spot.data})
             )
+            .then(()=>this.initMap())
     }
 
 
@@ -26,6 +48,8 @@ class SpotShow extends Component {
                 {surfSpot.name}
                 <br/>
                 {surfSpot.description}
+                <br/>
+                <div id='show-map'></div>
             </div>
         )
     }
