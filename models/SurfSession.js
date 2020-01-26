@@ -7,11 +7,11 @@ const SurfSessionSchema = new Schema({
     ref: 'User',
     required: true
   },
-  spotId: {
-    type: Schema.Types.ObjectId,
-    ref: 'Spot',
-    required: true
-  },
+  // spotId: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'Spot',
+  //   required: true
+  // },
   createdAt: {
     type: Date,
     default: Date.now
@@ -19,13 +19,13 @@ const SurfSessionSchema = new Schema({
   body: {
     type: String,
     required: true
-  },
-  coSurfers: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
-    }
-  ]
+  }
+  // coSurfers: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: 'User'
+  //   }
+  // ]
 })
 
 const SurfSession = mongoose.model('SurfSession', SurfSessionSchema);

@@ -1,5 +1,6 @@
 #map{
     height:500px;
+    margin-top: 20px;
     /* width:50%; */
     border: 5px solid lightcyan;
     border-radius: 5px;

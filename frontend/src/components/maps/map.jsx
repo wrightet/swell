@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom'
-import classes from './map.modules.css'
+import './map.css';
 
 class Mapping extends Component {
     constructor(props){

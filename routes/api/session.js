@@ -20,9 +20,9 @@ router.post("/",
     (req, res) => {
         const newSession  = new SurfSession({
             creatorId: req.user.id,
-            spotId: req.body.spotId,
-            body: req.body.body,
-            coSurfers: req.body.coSurfers
+            // spotId: req.body.spotId,
+            body: req.body.body
+            // coSurfers: req.body.coSurfers
         });
         
         newSession.save().then(session => res.json(session));

@@ -13,7 +13,7 @@ const surfSessionReducer = (state ={}, action) => {
             action.sessions.data.map(session => {
                 newState[session._id] = session
             })
-            return newState;
+            return action.sessions;
         case RECEIVE_SURF_SESSION:
            
             newState[action.session.data._id] = action.session.data;
