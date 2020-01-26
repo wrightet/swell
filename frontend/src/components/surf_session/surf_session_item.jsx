@@ -11,7 +11,7 @@ class SurfSessionItem extends React.Component {
        
         return(
             <div id="tes-div">
-                <h1>i'm working</h1>
+            
                  <p>{this.props.session.body}</p>
             </div>
              

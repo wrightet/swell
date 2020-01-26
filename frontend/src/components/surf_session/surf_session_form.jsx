@@ -19,7 +19,7 @@ class SurfSessionForm extends React.Component {
     render(){
         return (
             <div className="surf-session-form">
-
+         
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         <textarea
