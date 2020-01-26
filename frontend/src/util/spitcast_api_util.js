@@ -15,5 +15,6 @@ export const fetchForecast = (spotId) => {
 
 //fetch all spitcast spots
 export const fetchSpitCastSpots = (long, lat, distance) => (
-  axios.get(`/api/spitcast`, {long, lat, distance})
+  axios.post(`/api/spitcast/`, {long, lat, distance})
+    .then(res => res.data)
 )

@@ -2,12 +2,12 @@ const axios = require('axios');
 const express = require("express");
 const router = express.Router();
 
-router.get('/', 
+router.post('/', 
   (req, res) => {
-    const url = `http://api.spitcast.com/api/spot-forecast/search?longitude=${req.long}&latitude=${req.lat}&distance=${distance}`;
+    const url = `http://api.spitcast.com/api/spot-forecast/search?longitude=${req.body.long}&latitude=${req.body.lat}&distance=5`;
     axios
       .get(url)
-      .then(spitcastSpots => res.json(spitcastSpots.data));
+      .then((spots) => res.json(spots.data))
   })
 
 module.exports = router;

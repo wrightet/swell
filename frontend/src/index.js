@@ -5,6 +5,7 @@ import jwt_decode from 'jwt-decode';
 import Root from './components/Root';
 import configureStore from './store/store';
 import {logout} from './actions/session_actions';
+import {fetchSpitCastSpots} from './util/spitcast_api_util';
 
 
 document.addEventListener('DOMContentLoaded',()=>{
@@ -27,5 +28,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   } else {
     store = configureStore({});
   }
+  window.fetchSpitCastSpots = fetchSpitCastSpots;
   ReactDOM.render(<Root store={store} />, document.getElementById('root'));
 })
