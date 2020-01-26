@@ -1,5 +1,4 @@
 .Background {
-  /* z-index: -2; */
   position: relative;
   background-color: black;
 }
@@ -12,5 +11,4 @@
   margin: auto;
   width: 100%;
   position: absolute;
-  /* z-index: -1; */
 }
