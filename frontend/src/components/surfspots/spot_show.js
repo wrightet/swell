@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 
 class SpotShow extends Component {
     constructor(props){
         super(props);
         this.state={
             surfSpot:'',
-            nearestForecast: '',
             gMap:''
         }
-
+        
         this.initMap=this.initMap.bind(this);
+        this.handleDelete=this.handleDelete.bind(this);
     }
 
     initMap(){
@@ -21,7 +22,7 @@ class SpotShow extends Component {
         let lat=surfSpot.coordinates[0];
         let lng=surfSpot.coordinates[1];
         this.state.gMap.setCenter({lat:lat,lng:lng});
-        let mark = new window.google.maps.Marker({
+            new window.google.maps.Marker({
             position: { lat: lat, lng: lng },
             map: this.state.gMap,
             label: surfSpot.name
@@ -38,22 +39,36 @@ class SpotShow extends Component {
             
     }
 
+    handleDelete(surfSpotId){
+        const {requestSurfSpots,deleteSurfSpot}=this.props;
+        deleteSurfSpot(surfSpotId)
+            .then(this.props.history.push('/'))
+            .then(requestSurfSpots())
+    }
+
 
     render() {
-      console.dir(this.state)
-      const {surfSpot, nearestForecast} = this.state
-      if(!surfSpot || !nearestForecast) return null
+      const {surfSpot} = this.state
+    
+
+      if(!surfSpot) return null
       return (
           <div style={{color: 'white'}}>
               {surfSpot.name}
               <br/>
               {surfSpot.description}
               <br/>
-              <span>Wave Height: {nearestForecast.average.size.toFixed(3)} ft</span>
               <div id='show-map'></div>
+
+            {this.props.currentUser.id == surfSpot.creatorId ? 
+            <button onClick={()=>{this.handleDelete(surfSpot._id)}}>Delete surfSpot</button>
+            :''}
+
           </div>
       )
     }
 }
 
-export default SpotShow;
+
+
+export default withRouter(SpotShow);
