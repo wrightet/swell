@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import classes from './map.modules.css'
+import React, { Component } from 'react';
+import './map.css';
 
 class Mapping extends Component {
     constructor(props){

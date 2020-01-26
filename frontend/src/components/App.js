@@ -17,7 +17,7 @@ function App() {
     <div className="Body">
       <div>
         <div className="background-image">
-          <img src={wave} />
+          <img src={wave} alt="wave" />
         </div>
       </div>
       <header>
