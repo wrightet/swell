@@ -14,7 +14,7 @@ import wave from '../assets/images/wave.jpg';
 import SurfSessionContainer from './surf_session/surf_session_container'
 
 import SpotShow from './surfspots/spot_show_container'
-
+import SuperSurfSessionContainer from './surf_session/super_surf_session'
 import SurfSessionIndexContainer from './surf_session/surf_session_index_container';
 function App() {
   return (
@@ -34,7 +34,12 @@ function App() {
       <ProtectedRoute
         exact
         path="/profile"
-        component={ProfileContainer, SurfSessionContainer, SurfSessionIndexContainer}
+        component={ProfileContainer}
+      />
+      <ProtectedRoute
+        exact
+        path="/profile"
+        component={SuperSurfSessionContainer}
       />
       <ProtectedRoute exact path="/surfspots" component={SurfSpotContainer} />
 

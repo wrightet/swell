@@ -4,10 +4,16 @@
 
 #tes-dev > h1 {
     color: white;
+   
 }
 
-.surf-session-form{
-    border: 1px solid yellow;
-    height: 20px;
-    width: 10%;
+.surf-session-form > textarea{
+    
+    height: 100px;
+    width: 40%;
+  
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    position: absolute;
 }
