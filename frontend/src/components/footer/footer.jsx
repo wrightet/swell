@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import swellLogo from '../../assets/images/Swell.png';
-import classes from './footer.module.css';
+import swellLogo from '../../assets/images/swell-white.png';
+import './footer.css';
 import { Link } from "react-router-dom";
 
 class Footer extends Component {
   render() {
     return (
-      <div className={classes.footer}>
-        <div className={classes.footerFlex}>
+      <div className="footer">
+        <div className="footerFlex">
           <img src={swellLogo} alt="logo" />
           <div>
             <h1>Categories</h1>
