@@ -4,6 +4,7 @@ import React from 'react';
 const SuperSurfSessionContainer = function(){
     return(
         <div>
+            <SurfSessionContainer/>
             <SurfSessionIndexContainer/>
         </div>
 
