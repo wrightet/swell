@@ -14,13 +14,13 @@ class SurfSessionItem extends React.Component {
      
         
         return(
-            <div id="tes-div">
-            
-                 <p className="surf-post">{this.props.session.body}</p><div className="button-div"> <button 
-                 onClick={() => this.props.deleteSurfSession(this.state.creatorId,
-                  this.props.session.id)}
-                  className="delete-button"
-                  >Delete Session</button></div>
+            <div className="surf-log">
+                <p className="surf-post">{this.props.session.body}</p>
+                <div className="button-div"> 
+                    <button 
+                        className="delete-button"
+                        onClick={() => this.props.deleteSurfSession(this.state.creatorId,this.props.session.id)}
+                    >Delete Session</button></div>
                 
             </div>
              
