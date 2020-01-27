@@ -29,7 +29,7 @@ class SurfSessionForm extends React.Component {
                         className="session-text-area"/>
                     </label>
                    
-                    <input type="submit" value={this.props.formType}/>
+                    <input className="Submit" type="submit" value={this.props.formType}/>
                 </form>
             </div>
         );

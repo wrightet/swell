@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SurfSessionIndexContainer from './surf_session_index_container';
-import './surfIndexItem.css'
+import './surfIndexItem.css';
+
 class SurfSessionItem extends React.Component {
     constructor(props){
         super(props)

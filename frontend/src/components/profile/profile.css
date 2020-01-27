@@ -1,5 +1,13 @@
 .Profile {
-  width: 80%;
-  min-width: 200px;
+  color: lightgray;
+}
 
+.Profile h1 {
+  font-size: 24px;
+  text-align: center;
+  padding: 10px;
+}
+
+.Profile p {
+  text-align: center;
 }
