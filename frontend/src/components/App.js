@@ -36,11 +36,7 @@ function App() {
         path="/profile"
         component={ProfileContainer}
       />
-      <ProtectedRoute
-        exact
-        path="/profile"
-        component={SuperSurfSessionContainer}
-      />
+   
       <ProtectedRoute exact path="/surfspots" component={SurfSpotContainer} />
 
 

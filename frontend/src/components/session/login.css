@@ -8,8 +8,8 @@
     width: 200px;
     padding: 10px;
     margin-top: 2em;
-    background: #393A42;
-    color: white;
+    background: rgba(226,226,226,0.5);
+    color: #fff;
 
 }
 
@@ -22,7 +22,7 @@
 }
 
 #login-submit{
-    /* width:100%; */
+    
     border-radius: 5px;
     
 }
@@ -43,7 +43,6 @@
     position: relative;
     align-items: center;
     justify-content: center;
-    /* padding: 5px; */
     right: -31%;
 
 }

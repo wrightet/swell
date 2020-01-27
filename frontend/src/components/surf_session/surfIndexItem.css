@@ -29,10 +29,21 @@
     margin: 10px 5px;
 }
 
-.Sessions li {
-    color: lightgray;
-    border: 1 px solid red;
+.session-text-area{
+    
+    height: 20%;
+    width: 30%;
+  
+    display: block;
+    justify-content: center;
+    padding: 50px;
+   
 }
-
-
-
+.button-div {
+    display: flex;
+    justify-content: flex-end;
+}
+.surf-post {
+ /* border: 1px solid blue; */
+ color: white;
+}

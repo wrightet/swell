@@ -25,7 +25,8 @@ class SurfSessionForm extends React.Component {
                         <textarea
                         value={this.state.body}
                         placeholder="How was your surf?" 
-                        onChange={this.update('body')}/>
+                        onChange={this.update('body')}
+                        className="session-text-area"/>
                     </label>
                    
                     <input className="Submit" type="submit" value={this.props.formType}/>
