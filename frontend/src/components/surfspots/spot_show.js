@@ -34,34 +34,40 @@ class SpotShow extends Component {
           .requestSurfSpot(this.props.match.params.id)
           .then(spotRes =>
             this.setState({ surfSpot: spotRes.spot.data }))
+            .then(()=>this.initMap())
             .then((long, lat) => {
               long = this.state.surfSpot.coordinates[1];
               lat = this.state.surfSpot.coordinates[0];
-              this.props.fetchSpitCastSpots(long, lat, 5)
-                .then((spots) => {
-                  this.setState({
-                  nearestForecast: spots[0]
-                })})
-            })
-            .then(()=>this.initMap())
-            
+              this.props.fetchSpitCastSpots(long, lat)
+              .then((spots) => {
+                this.setState({
+                  nearestForecast: spots.hourly[0]
+                })
+              })
+              })
     }
 
 
     render() {
       console.dir(this.state)
-      const {surfSpot, nearestForecast, gMap} = this.state
-      if(!surfSpot || !nearestForecast || !gMap) return null
+      const {surfSpot, nearestForecast} = this.state
+      if(!surfSpot) return null
       return (
-          <div style={{color: 'white'}}>
-              <div id='show-map'></div>
-              {surfSpot.name}
-              <br/>
-              {surfSpot.description}
-              <br/>
-              <span>Wave Height: {nearestForecast.average.size.toFixed(3)} ft</span>
-          </div>
-      )
+        <div style={{ color: "white" }}>
+          <div id="show-map"></div>
+          {surfSpot.name}
+          <br />
+          {surfSpot.description}
+          <br />
+          <span>Wave Height: {nearestForecast.swellHeight_ft} ft</span>
+          <br />
+          <span>Water Temp: {nearestForecast.waterTemp_F} degrees F</span>
+          <br />
+          <span>Swell Period: {nearestForecast.swellPeriod_secs} seconds</span>
+          <br />
+          <span>Swell Direction: {nearestForecast.swellDir16Point}</span>
+        </div>
+      );
     }
 }
 
