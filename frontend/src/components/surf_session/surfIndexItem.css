@@ -1,19 +1,38 @@
-#tes-div{
-    color: lightgray;
-}
-
-#tes-dev > h1 {
-    color: white;
-   
-}
-
-.surf-session-form > textarea{
-    
-    height: 100px;
-    width: 40%;
-  
+.surf-session-form {
     display: flex;
+    border-radius: 4px;
+    box-sizing: border-box;
     justify-content: center;
-    padding: 50px;
-    position: absolute;
+    margin-top: 20px;
+    text-align: center;
 }
+
+.surf-session-form textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    /* box-sizing: border-box; */
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+.Submit {
+    background: #27AE60;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px 5px;
+}
+
+.Sessions li {
+    color: lightgray;
+    border: 1 px solid red;
+}
+
+
+

@@ -28,7 +28,7 @@ class SurfSessionForm extends React.Component {
                         onChange={this.update('body')}/>
                     </label>
                    
-                    <input type="submit" value={this.props.formType}/>
+                    <input className="Submit" type="submit" value={this.props.formType}/>
                 </form>
             </div>
         );

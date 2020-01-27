@@ -4,8 +4,8 @@ import React from 'react';
 const SuperSurfSessionContainer = function(){
     return(
         <div>
-            <SurfSessionIndexContainer/>
             <SurfSessionContainer/>
+            <SurfSessionIndexContainer/>
         </div>
 
     )

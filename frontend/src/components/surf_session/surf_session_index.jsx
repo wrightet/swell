@@ -1,6 +1,8 @@
 import React from 'react';
 import SurfSessionItem from './surf_session_item';
 import SurfSessionIndexContainer from './surf_session_index_container';
+import './surfIndexItem.css';
+
 class SurfSessionIndex extends React.Component {
     constructor(props){
         super(props)
@@ -15,7 +17,7 @@ class SurfSessionIndex extends React.Component {
         if (!sessions){return null;}
         
        return (
-           <div>
+           <div className="Sessions">
                <ul>
                    {sessions.map(session => (
                        <li><SurfSessionItem session={session}/></li>
