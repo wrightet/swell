@@ -1,6 +1,8 @@
 import React from 'react';
 import SurfSessionItem from './surf_session_item';
 import SurfSessionIndexContainer from './surf_session_index_container';
+import SurfSessionContainer from './surf_session_container';
+import "./surfIndex.css"
 class SurfSessionIndex extends React.Component {
     constructor(props){
         super(props)
@@ -9,21 +11,27 @@ class SurfSessionIndex extends React.Component {
     componentDidMount(){
         
         this.props.fetchSurfSessions(this.props.currentUser.id);
+        // debugger
     }
     render(){
-        const {sessions} = this.props;
-        if (!sessions){return null;}
-        
-       return (
-           <div>
-               <ul>
-                   {sessions.map(session => (
-                       <li><SurfSessionItem session={session}/></li>
-                    ))}
-                   
-               </ul>
-           </div>
+        const {sessions, deleteSurfSession} = this.props;
+        debugger
+        if (!sessions[0]){return null;}
+        else {
+            const realSessions = sessions[0];
+            return (
+                <div className="surf-sessions-div">
+                    <SurfSessionContainer/>
+                    <ul>
+                        {realSessions.map(session => (
+                            <li><SurfSessionItem session ={session} deleteSurfSession={deleteSurfSession}/></li>
+                            ))}
+                        
+                    </ul>
+                </div>
        ) 
+        }
+        
     }
 }
 

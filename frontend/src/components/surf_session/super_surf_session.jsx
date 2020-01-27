@@ -5,7 +5,6 @@ const SuperSurfSessionContainer = function(){
     return(
         <div>
             <SurfSessionIndexContainer/>
-            <SurfSessionContainer/>
         </div>
 
     )
