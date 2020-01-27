@@ -6,11 +6,19 @@ class SpotShow extends Component {
         super(props);
         this.state={
             surfSpot:'',
-            gMap:''
+            gMap:'',
+
+            quality:'',
+            difficulty:'',
+            title:'',
+            body:'',
+
+            reviews:''
         }
         
         this.initMap=this.initMap.bind(this);
         this.handleDelete=this.handleDelete.bind(this);
+        this.handleSubmit=this.handleSubmit.bind(this);
     }
 
     initMap(){
@@ -32,9 +40,13 @@ class SpotShow extends Component {
 
     componentDidMount(){
         this.props.requestSurfSpot(this.props.match.params.id)
-            .then(spotRes=> 
-         this.setState({surfSpot: spotRes.spot.data})
-            )
+            .then(spotRes=> {
+            this.setState({surfSpot: spotRes.spot.data});
+            this.props.fetchReviews(spotRes.spot.data._id)
+                .then(reviewRes=>{
+                    this.setState({reviews: reviewRes.reviews.data})
+                })    
+            })
             .then(()=>this.initMap())
             
     }
@@ -46,6 +58,32 @@ class SpotShow extends Component {
             .then(requestSurfSpots())
     }
 
+    update(field) {
+        return (
+            e => {
+                this.setState({ [field]: e.target.value })
+            }
+        )
+    }
+
+    handleSubmit(e){
+        e.preventDefault();
+        const{createReview,currentUser,fetchReviews}=this.props;
+        const{quality,difficulty,title,body}=this.state;
+
+        let review={
+            creatorId:currentUser.id,
+            quality:quality,
+            difficulty:difficulty,
+            title:title,
+            body:body
+        }
+
+        const{surfSpot}=this.state;
+        createReview(surfSpot._id,review)
+            .then(fetchReviews(surfSpot._id))
+
+    }
 
     render() {
       const {surfSpot} = this.state
@@ -63,6 +101,41 @@ class SpotShow extends Component {
             {this.props.currentUser.id == surfSpot.creatorId ? 
             <button onClick={()=>{this.handleDelete(surfSpot._id)}}>Delete surfSpot</button>
             :''}
+
+            {this.props.currentUser.id ? 
+            <form onSubmit={this.handleSubmit}>
+                  <label> Quality <br/>
+                    <input type='number' min='1' max='10' value={this.state.quality} onChange={this.update('quality')}></input>
+                  </label> 
+                  <br/>
+                <label> Difficulty <br />
+                      <input type='number' min='1' max='10' value={this.state.difficulty} onChange={this.update('difficulty')}></input>
+                </label>
+                  <br />
+                <label> Title <br/>
+                      <input type='text' value={this.state.title} onChange={this.update('title')}></input>
+                </label>
+                  <br />
+                  <label>Body <br />
+                      <textarea cols="30" rows="10" value={this.state.body} onChange={this.update('body')} />
+                  </label>
+                  <br />
+                <input type='submit' value='Create Review'></input>
+            </form>
+            :''}
+
+                {this.state.reviews ? 
+                <ul>  
+                {this.state.reviews.map(review=>(
+                    <li key={review._id}>
+                        Review:{review.title} <br/>
+                        Quality: {review.quality} <br/>
+                        Difficulty: {review.difficulty} <br/>
+                        {review.body} <br/>
+                    </li>
+                ))}
+                </ul> 
+                :''}
 
           </div>
       )
