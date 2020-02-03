@@ -19,7 +19,7 @@ import SurfSessionContainer from './surf_session/surf_session_container'
 
 import SpotIndex from './maps/spot_index_container'
 
-import SpotShow from './surfspots/spot_show_container'
+
 
 
 function App() {
