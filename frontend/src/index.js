@@ -6,8 +6,8 @@ import Root from './components/Root';
 import configureStore from './store/store';
 import {logout} from './actions/session_actions';
 import {fetchSpitCastSpots} from './util/spitcast_api_util';
-
-
+// import {deleteSurfSession} from './actions/surf_session_actions';
+import {deleteSurfSession} from './util/surf_session_api_util';
 document.addEventListener('DOMContentLoaded',()=>{
   let store;
 
@@ -29,5 +29,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     store = configureStore({});
   }
   window.fetchSpitCastSpots = fetchSpitCastSpots;
+  window.deleteSurfSession = deleteSurfSession;
   ReactDOM.render(<Root store={store} />, document.getElementById('root'));
 })
