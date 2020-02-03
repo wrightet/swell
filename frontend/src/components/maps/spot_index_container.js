@@ -5,7 +5,7 @@ import { requestSurfSpots } from '../../actions/surfspot_actions'
 
 const mSTP=state=>({
     currentUser: state.session.user,
-    surfSpots:Object.values(state.entities.surfspots)
+    surfSpots: Object.values(state.entities.surfspots)
 })
 
 const mDTP = dispatch => ({

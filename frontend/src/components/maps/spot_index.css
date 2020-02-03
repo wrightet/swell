@@ -36,3 +36,7 @@ h1{
 #create:hover{
     background-color: lightcyan;
 }
+
+.spots{
+    color:white;
+}

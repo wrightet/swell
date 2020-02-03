@@ -60,7 +60,8 @@ class SpotIndex extends Component {
     }
 
     render() {
-        const {currentUser} = this.props;
+        const {currentUser,surfSpots} = this.props;
+        if(!surfSpots){return null}
         return (
             <div className='spot-index'>
                 <h1>Surfs up!</h1>
@@ -68,13 +69,25 @@ class SpotIndex extends Component {
                     <div id='spot-map'>
                     </div>
                     <span className='mini-flex'>
-                        {currentUser ? 
+                        {currentUser && currentUser.id ? 
                         <div>
                             <Link to='/createsurfspot'>
                                     <button id='create'>Create Surf Spot</button>
                             </Link>
                         </div>  
                         : ""}
+                        {surfSpots[0] ? surfSpots[0].map(spot=>{
+                            
+                                return(
+                                    <div className='spots' id={`${spot._id}`}>
+                                    <h1>{spot.name}</h1>
+                                    <p>{spot.description}</p>
+                                    </div>
+                                    )
+                                    
+                            })
+                        :""
+                        }
                     </span>
                     </div>“
             </div>
