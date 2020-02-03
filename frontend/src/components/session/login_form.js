@@ -50,8 +50,9 @@ class LoginForm extends React.Component {
         this.props.processForm(user);
     }
 
-    handleDemo() {
+    handleDemo(e) {
         // const user = Object.assign({email: 'demo', password: '123456'}, this.state)
+        e.preventDefault();
         this.props.processForm({ email: 'demo1@demo.com', password: '123456' });
     }
     // Render the session errors if there are any
