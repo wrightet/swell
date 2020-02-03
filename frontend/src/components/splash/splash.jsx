@@ -22,6 +22,7 @@ export default class Splash extends Component {
                     </div>
                         <ul>
                             <li><Link to="/surfspots">Create Surfspot</Link></li>
+                            <li><Link to="/profile">Profile</Link></li>
                         </ul>
                     <br />
 

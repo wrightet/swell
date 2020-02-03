@@ -63,9 +63,7 @@ class Mapping extends Component {
         return(
             <div>
                 <div className="map-link">
-                    <ul>
-                        <li><Link to="/surfspots">Create Surfspot</Link></li>
-                    </ul>
+                
                 </div>
                 <div id='map'>
                 </div>
