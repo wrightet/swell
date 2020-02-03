@@ -11,6 +11,10 @@ import ProfileContainer from './profile/profile_container';
 import SurfSpotContainer from './surfspots/surf_spot_container';
 import './App.css';
 import wave from '../assets/images/wave.jpg';
+import SurfSessionContainer from './surf_session/surf_session_container'
+
+import SpotIndex from './maps/spot_index_container'
+
 import SpotShow from './surfspots/spot_show_container'
 
 function App() {
@@ -28,13 +32,10 @@ function App() {
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
       </Switch>
       <Route exact path="/" component={Splash} />
-      <ProtectedRoute
-        exact
-        path="/profile"
-        component={ProfileContainer}
-      />
+      <ProtectedRoute exact path="/profile" component={ProfileContainer} />
    
-      <ProtectedRoute exact path="/surfspots" component={SurfSpotContainer} />
+      <ProtectedRoute exact path="/createsurfspot" component={SurfSpotContainer} />
+      <Route exact path="/surfspots" component={SpotIndex} />
 
 
 
