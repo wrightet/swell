@@ -83,6 +83,7 @@ class SpotIndex extends Component {
                                     <p id='name' onClick={()=>
                                         this.props.history.push(`/surfspots/${spot._id}`)
                                     }>{spot.name}</p>
+                                    
                                     <p>{spot.description}</p>
                                     <br/>
                                     </div>
