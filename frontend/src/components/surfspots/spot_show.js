@@ -92,6 +92,12 @@ class SpotShow extends Component {
         const{surfSpot}=this.state;
         createReview(surfSpot._id,review)
             .then(fetchReviews(surfSpot._id))
+            .then(this.setState({
+              quality: '',
+              difficulty: '',
+              title: '',
+              body: '',
+            }))
 
     }
 
@@ -180,9 +186,9 @@ class SpotShow extends Component {
             ""
           )}
 
-          {this.state.reviews ? (
+          {this.props.reviews ? (
             <ul>
-              {this.state.reviews.map(review => (
+              {this.props.reviews.map(review => (
                 <li key={review._id}>
                   Review:{review.title} <br />
                   Quality: {review.quality} <br />

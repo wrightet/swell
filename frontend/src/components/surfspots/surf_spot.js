@@ -88,10 +88,14 @@ class SurfSpot extends Component {
             coordinates: [checkpos['lat'],checkpos['lng']]
         }
         console.dir(createSurfSpot);
+        
         createSurfSpot(surfSpot)
             .then((res)=>{
+                if(res.spot){
                 this.props.history.push(`/surfspots/${res.spot.data._id}`)
+                }
             })
+        
     }
 
     // Render the session errors if there are any

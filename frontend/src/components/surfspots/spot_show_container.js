@@ -4,11 +4,11 @@ import {requestSurfSpot, deleteSurfSpot, requestSurfSpots} from '../../actions/s
 import {fetchReviews, createReview} from '../../actions/review_actions';
 import {fetchSpitCastSpots} from '../../util/spitcast_api_util';
 
-// import {fetchSpitCastSpots} from '../../util/spitcast_api_util';
 
 const mSTP = (state,ownProps) => ({
     currentUser: state.session.user,
-    surfSpot: state.entities.surfspots[ownProps.match.params.id]
+    surfSpot: state.entities.surfspots[ownProps.match.params.id],
+    reviews: Object.values(state.entities.reviews)
 });
 
 const mDTP = dispatch => ({
