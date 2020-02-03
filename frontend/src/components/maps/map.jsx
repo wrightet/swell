@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {withRouter} from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import './map.css';
 
 class Mapping extends Component {
@@ -61,7 +61,12 @@ class Mapping extends Component {
 
     render(){
         return(
-            <div id='map'>
+            <div>
+                <div className="map-link">
+                
+                </div>
+                <div id='map'>
+                </div>
             </div>
         )
     }

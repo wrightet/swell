@@ -11,11 +11,16 @@ import ProfileContainer from './profile/profile_container';
 import SurfSpotContainer from './surfspots/surf_spot_container';
 import './App.css';
 import wave from '../assets/images/wave.jpg';
+
+import SpotShow from './surfspots/spot_show_container';
+import Mapping from './maps/map_container';
+
 import SurfSessionContainer from './surf_session/surf_session_container'
 
 import SpotIndex from './maps/spot_index_container'
 
-import SpotShow from './surfspots/spot_show_container'
+
+
 
 function App() {
   return (
@@ -27,20 +32,16 @@ function App() {
       <header>
         <NavbarContainer />
       </header>
-      <Switch>
-        <AuthRoute exact path="/login" component={LoginFormContainer} />
-        <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      </Switch>
-      <Route exact path="/" component={Splash} />
-      <ProtectedRoute exact path="/profile" component={ProfileContainer} />
-   
-      <ProtectedRoute exact path="/createsurfspot" component={SurfSpotContainer} />
-      <Route exact path="/surfspots" component={SpotIndex} />
-
-
-
-
-      <Route exact path='/surfspots/:id'  component={SpotShow}/>
+        <Switch>
+          <AuthRoute exact path="/login" component={LoginFormContainer} />
+          <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        </Switch>
+        <Route exact path="/" component={Splash} />
+        <Route exact path="/map" component={Mapping} />
+        <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+        <ProtectedRoute exact path="/createsurfspot" component={SurfSpotContainer} />
+        <Route exact path="/surfspots" component={SpotIndex} />
+        <Route exact path='/surfspots/:id'  component={SpotShow}/>
       <footer>
         <Footer />
       </footer>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom'
 import surfspot from './surfspot.css'
+import _ from 'lodash';
 
 class SurfSpot extends Component {
     constructor(props) {
@@ -76,6 +77,15 @@ class SurfSpot extends Component {
         )
     }
 
+    // capitalizeTitle(title) {
+    //   let words = title.split(" ")
+    //   let capitalized = []
+    //   words.forEach(word => {
+    //     capitalized.push(word[0].toUpperCase() + word.slice(1).toLowerCase())
+    //   })
+    //   return capitalized.join(" ");
+    // }
+
     handleSubmit(e){
         e.preventDefault();
 
@@ -83,7 +93,7 @@ class SurfSpot extends Component {
         const {spotTitle,spotDescription, checkpos} = this.state;
         const surfSpot={
             creatorId: currentUser.id,
-            name: spotTitle,
+            name: _.startCase(_.toLower(spotTitle)),
             description: spotDescription,
             coordinates: [checkpos['lat'],checkpos['lng']]
         }
