@@ -16,8 +16,7 @@ import SurfSessionContainer from './surf_session/surf_session_container'
 import SpotIndex from './maps/spot_index_container'
 
 import SpotShow from './surfspots/spot_show_container'
-import SuperSurfSessionContainer from './surf_session/super_surf_session'
-import SurfSessionIndexContainer from './surf_session/surf_session_index_container';
+
 function App() {
   return (
     <div className="Background">
