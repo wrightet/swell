@@ -9,16 +9,12 @@ class SurfSessionIndex extends React.Component {
     }
 
     componentDidMount(){
-        
         this.props.fetchSurfSessions(this.props.currentUser.id);
-     
+    }
+    componentDidUpdate(){
+        this.props.fetchSurfSessions(this.props.currentUser.id);
     }
 
-  
-
-    // componentWillUnmount(){
-    //     this.props.deleteSurfSession(this.props.creatorId, this.props.session._id)
-    // }
     render(){
         const {sessions, deleteSurfSession, fetchSurfSessions} = this.props;
        
@@ -29,7 +25,13 @@ class SurfSessionIndex extends React.Component {
                 <div className="surf-sessions-div">
                     <ul>
                         {realSessions.map(session => (
-                            <li><SurfSessionItem session={session} deleteSurfSession={deleteSurfSession} fetchSurfSessions={fetchSurfSessions} key={session._id}/></li>
+                            <li>
+                                <SurfSessionItem session={session} 
+                                deleteSurfSession={deleteSurfSession} 
+                                fetchSurfSessions={fetchSurfSessions} 
+                                key={session._id}
+                                />
+                            </li>
                             ))}
                         
                     </ul>
