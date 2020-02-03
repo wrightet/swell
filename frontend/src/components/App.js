@@ -32,29 +32,16 @@ function App() {
       <header>
         <NavbarContainer />
       </header>
-      <Switch>
-        <AuthRoute exact path="/login" component={LoginFormContainer} />
-        <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      </Switch>
-      <Route exact path="/" component={Splash} />
-
-      <Route exact path="/map" component={Mapping} />
-      <ProtectedRoute
-        exact
-        path="/profile"
-        component={ProfileContainer}
-      />
-
-      <ProtectedRoute exact path="/profile" component={ProfileContainer} />
-
-   
-      <ProtectedRoute exact path="/createsurfspot" component={SurfSpotContainer} />
-      <Route exact path="/surfspots" component={SpotIndex} />
-
-
-
-
-      <Route exact path='/surfspots/:id'  component={SpotShow}/>
+        <Switch>
+          <AuthRoute exact path="/login" component={LoginFormContainer} />
+          <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        </Switch>
+        <Route exact path="/" component={Splash} />
+        <Route exact path="/map" component={Mapping} />
+        <ProtectedRoute exact path="/profile" component={ProfileContainer} />
+        <ProtectedRoute exact path="/createsurfspot" component={SurfSpotContainer} />
+        <Route exact path="/surfspots" component={SpotIndex} />
+        <Route exact path='/surfspots/:id'  component={SpotShow}/>
       <footer>
         <Footer />
       </footer>
