@@ -13,7 +13,7 @@ class Footer extends Component {
             <h1>Categories</h1>
             <ul>
               <li><Link to="surfspots">Surf Spots</Link></li>
-              <li>Weather</li>
+              <li><Link to="/profile">Profile</Link></li>
             </ul>
           </div>
           <div>

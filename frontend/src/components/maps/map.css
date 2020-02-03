@@ -7,3 +7,22 @@
     margin-left:20%;
     margin-right:20%;
 }
+
+.map-link ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 40px;
+}
+
+.map-link a {
+    background-color: rgb(6, 55, 201);
+    padding: 10px;
+    color: rgb(227, 227, 227);
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid rgb(40, 1, 180);
+}
+
+.map-link a:hover {
+    background-color: rgba(3, 3, 190, 1);
+}
