@@ -44,7 +44,8 @@ class Navbar extends Component {
         <ul>
           <div className={classes.MenuItems}>
             <li><Link to='/'>Home</Link></li>
-            <li><Link to='/surfspots'>Surf Spots</Link></li>
+            <li><Link to='/map'>Surf Spots</Link></li>
+            <li><Link to="/profile">Profile</Link></li>
           </div>
         </ul>
       </div>
