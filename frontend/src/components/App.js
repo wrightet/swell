@@ -11,11 +11,8 @@ import ProfileContainer from './profile/profile_container';
 import SurfSpotContainer from './surfspots/surf_spot_container';
 import './App.css';
 import wave from '../assets/images/wave.jpg';
-import SurfSessionContainer from './surf_session/surf_session_container'
-
 import SpotShow from './surfspots/spot_show_container'
-import SuperSurfSessionContainer from './surf_session/super_surf_session'
-import SurfSessionIndexContainer from './surf_session/surf_session_index_container';
+
 function App() {
   return (
     <div className="Background">
