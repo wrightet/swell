@@ -45,7 +45,6 @@ class Navbar extends Component {
           <div className={classes.MenuItems}>
             <li><Link to='/'>Home</Link></li>
             <li><Link to='/surfspots'>Surf Spots</Link></li>
-            <li>Local Weather Conditions</li>
           </div>
         </ul>
       </div>
