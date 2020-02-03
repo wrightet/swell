@@ -25,14 +25,6 @@ class Footer extends Component {
               <li><a href="https://github.com/mstenflo">Martin Stenflo</a></li>
             </ul>
           </div>
-          <div>
-            <h1>Resources</h1>
-            <ul>
-              <li>Sitemap</li>
-              <li>Help</li>
-              <li>Contact</li>
-            </ul>
-          </div>
         </div>
       </div>
     );
