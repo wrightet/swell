@@ -15,7 +15,7 @@ class SurfSessionIndex extends React.Component {
     }
     render(){
         const {sessions, deleteSurfSession} = this.props;
-        debugger
+        
         if (!sessions[0]){return null;}
         else {
             const realSessions = sessions[0];

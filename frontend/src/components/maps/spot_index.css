@@ -1,0 +1,38 @@
+#spot-map{
+    height:500px;
+    width: 100%;
+    margin-top: 20px;
+    border: 5px solid lightcyan;
+    border-radius: 5px;
+    margin-left:10%;
+    margin-right:10%;
+}
+
+h1{
+    margin-left: 20%;
+    color:white;
+}
+
+.flex{
+    display: flex;
+}
+
+.mini-flex{
+    margin-right: 15%;
+}
+
+.mini-flex > div{
+    color:white
+}
+
+#create{
+    text-decoration: none;
+    background-color: white;
+    border-radius: 5px;
+    font-size: medium;
+    margin-top: 10px;
+}
+
+#create:hover{
+    background-color: lightcyan;
+}

@@ -114,7 +114,7 @@ class SpotShow extends Component {
           <br />
           <span>Swell Direction: {nearestForecast.swellDir16Point}</span>
 
-          {this.props.currentUser.id == surfSpot.creatorId ? (
+          {this.props.currentUser ? this.props.currentUser.id == surfSpot.creatorId ? (
             <button
               onClick={() => {
                 this.handleDelete(surfSpot._id);
@@ -124,9 +124,9 @@ class SpotShow extends Component {
             </button>
           ) : (
             ""
-          )}
+          ): ""}
 
-          {this.props.currentUser.id ? (
+          {this.props.currentUser ? (
             <form onSubmit={this.handleSubmit}>
               <label>
                 {" "}
