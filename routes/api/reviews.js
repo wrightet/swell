@@ -7,7 +7,7 @@ const passport = require("passport");
 router.get(
   "/", 
   (req, res) => {
-    debugger;
+   
   Review.find({ spotId: req.params.spotId })
     .sort({ createdAt: -1 })
     .then(reviews => res.json(reviews))
