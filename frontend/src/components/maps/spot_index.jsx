@@ -80,8 +80,11 @@ class SpotIndex extends Component {
                             
                                 return(
                                     <div className='spots' id={`${spot._id}`}>
-                                    <h1>{spot.name}</h1>
+                                    <p id='name' onClick={()=>
+                                        this.props.history.push(`/surfspots/${spot._id}`)
+                                    }>{spot.name}</p>
                                     <p>{spot.description}</p>
+                                    <br/>
                                     </div>
                                     )
                                     

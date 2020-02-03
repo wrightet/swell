@@ -19,6 +19,7 @@ h1{
 
 .mini-flex{
     margin-right: 15%;
+
 }
 
 .mini-flex > div{
@@ -31,6 +32,7 @@ h1{
     border-radius: 5px;
     font-size: medium;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #create:hover{
@@ -39,4 +41,20 @@ h1{
 
 .spots{
     color:white;
+    border: 2px solid cyan;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.7em;
+}
+
+#name{
+    font-size: large;
+    font-weight: bolder;
+}
+
+#name:hover{
+    cursor: pointer;
+    color:cyan;
 }
