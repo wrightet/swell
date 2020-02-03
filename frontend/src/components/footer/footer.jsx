@@ -19,10 +19,10 @@ class Footer extends Component {
           <div>
             <h1>About Us</h1>
             <ul>
-              <li><a href="https://github.com/codybreene">Cody Breene</a></li>
-              <li><a href="https://github.com/alscotty">Adam Scott</a></li>
-              <li><a href="https://github.com/wrightet">Ethan Wright</a></li>
-              <li><a href="https://github.com/mstenflo">Martin Stenflo</a></li>
+              <li><a target="_blank" href="https://github.com/codybreene">Cody Breene</a></li>
+              <li><a target="_blank" href="https://github.com/alscotty">Adam Scott</a></li>
+              <li><a target="_blank" href="https://github.com/wrightet">Ethan Wright</a></li>
+              <li><a target="_blank" href="https://github.com/mstenflo">Martin Stenflo</a></li>
             </ul>
           </div>
         </div>
