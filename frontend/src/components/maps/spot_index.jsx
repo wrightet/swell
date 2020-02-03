@@ -79,7 +79,7 @@ class SpotIndex extends Component {
                         {surfSpots[0] ? surfSpots[0].map(spot=>{
                             
                                 return(
-                                    <div className='spots' id={`${spot._id}`}>
+                                    <div className='spots' id={spot._id}>
                                     <p id='name' onClick={()=>
                                         this.props.history.push(`/surfspots/${spot._id}`)
                                     }>{spot.name}</p>
