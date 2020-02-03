@@ -25,7 +25,7 @@ class SurfSessionIndex extends React.Component {
                 <div className="surf-sessions-div">
                     <ul>
                         {realSessions.map(session => (
-                            <li>
+                            <li key={session._id}>
                                 <SurfSessionItem session={session} 
                                 deleteSurfSession={deleteSurfSession} 
                                 fetchSurfSessions={fetchSurfSessions} 

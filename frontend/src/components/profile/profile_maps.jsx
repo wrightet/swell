@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
-import './spot_index.css';
+import '../maps/spot_index.css'
 
-class SpotIndex extends Component {
+class ProfSpots extends Component {
     constructor(props) {
         super(props);
 
@@ -38,16 +38,19 @@ class SpotIndex extends Component {
             let lat = spot.coordinates[0];
             let lng = spot.coordinates[1];
 
+            if(spot.creatorId==this.props.currentUser.id){
             let mark = new window.google.maps.Marker({
                 position: { lat: lat, lng: lng },
                 map: this.state.gMap,
                 label: spot.name
             })
+        
 
             mark.addListener('click', () => {
                 this.props.history.push(`/surfspots/${spot._id}`)
             })
 
+            }
         })
 
     }
@@ -60,40 +63,40 @@ class SpotIndex extends Component {
     }
 
     render() {
-        const {currentUser,surfSpots} = this.props;
-        if(!surfSpots){return null}
+        const { currentUser, surfSpots } = this.props;
+        if (!surfSpots) { return null }
         return (
             <div className='spot-index'>
-                <h1>Surfs up!</h1>
+                <h1>Your Spots:</h1>
                 <div className='flex'>
                     <div id='spot-map'>
                     </div>
                     <span className='mini-flex'>
-                        {currentUser && currentUser.id ? 
-                        <div>
-                            <Link to='/createsurfspot'>
+                        {currentUser && currentUser.id ?
+                            <div>
+                                <Link to='/createsurfspot'>
                                     <button id='create'>Create Surf Spot</button>
-                            </Link>
-                        </div>  
-                        : ""}
-                        {surfSpots[0] ? surfSpots[0].map(spot=>{
-                            
-                                return(
-                                    <div className='spots' id={spot._id}>
-                                    <p id='name' onClick={()=>
+                                </Link>
+                            </div>
+                            : ""}
+                        {surfSpots[0] ? surfSpots[0].map(spot => {
+
+                            return (
+                                <div className='spots' id={`${spot._id}`}>
+                                    <p id='name' onClick={() =>
                                         this.props.history.push(`/surfspots/${spot._id}`)
                                     }>{spot.name}</p>
-                                    
+
                                     <p>{spot.description}</p>
-                                    <br/>
-                                    </div>
-                                    )
-                                    
-                            })
-                        :""
+                                    <br />
+                                </div>
+                            )
+
+                        })
+                            : ""
                         }
                     </span>
-                    </div>“
+                </div>“
             </div>
         )
     }
@@ -102,4 +105,4 @@ class SpotIndex extends Component {
 }
 
 
-export default withRouter(SpotIndex);
+export default withRouter(ProfSpots);

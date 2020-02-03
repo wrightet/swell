@@ -1,6 +1,7 @@
 import React from 'react';
 import './profile.css';
 import SuperSurfSession from '../surf_session/super_surf_session';
+import ProfSpots from './profile_maps_container'
 
 class Profile extends React.Component {
   
@@ -11,6 +12,8 @@ class Profile extends React.Component {
           {this.props.currentUser.firstName}</h1>
         <p>{this.props.currentUser.lastName}</p>
         <SuperSurfSession/>
+      <ProfSpots/>
+
       </div>
     );
   }
