@@ -102,7 +102,7 @@ class SpotShow extends Component {
       if(!surfSpot) return null
       return (
         <div style={{ color: "white" }}>
-          {surfSpot.name}
+          <h1>{surfSpot.name}</h1>
           <br />
           {surfSpot.description}
           <br />
