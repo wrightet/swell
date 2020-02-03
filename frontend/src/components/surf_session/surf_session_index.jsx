@@ -9,16 +9,21 @@ class SurfSessionIndex extends React.Component {
     }
 
     componentDidMount(){
-        
+        // debugger
+        this.props.fetchSurfSessions(this.props.currentUser.id);
+     
+    }
+    componentDidUpdate(){
+        // debugger
         this.props.fetchSurfSessions(this.props.currentUser.id);
      
     }
 
+    
+
   
 
-    // componentWillUnmount(){
-    //     this.props.deleteSurfSession(this.props.creatorId, this.props.session._id)
-    // }
+
     render(){
         const {sessions, deleteSurfSession, fetchSurfSessions} = this.props;
        

@@ -14,6 +14,8 @@ class SurfSessionItem extends React.Component {
             .then(fetchSurfSessions(creatorId));
     }
 
+  
+
     render(){
      
        
