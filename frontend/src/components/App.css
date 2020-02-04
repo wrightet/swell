@@ -10,6 +10,12 @@
  
 } 
 
+.spacer {
+  position: relative;
+  padding-bottom: 100px;
+  min-height: 600px;
+}
+
 
 .background-image img {
   margin: auto;
