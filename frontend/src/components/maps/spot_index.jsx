@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import './spot_index.css';
+import mappy from  '../../assets/images/map.png'
 
 class SpotIndex extends Component {
     constructor(props) {
@@ -38,10 +39,16 @@ class SpotIndex extends Component {
             let lat = spot.coordinates[0];
             let lng = spot.coordinates[1];
 
+            let icon={
+                url: mappy,
+                scaledSize: new window.google.maps.Size(50,50)
+            }
+
             let mark = new window.google.maps.Marker({
                 position: { lat: lat, lng: lng },
                 map: this.state.gMap,
-                label: spot.name
+                label: spot.name,
+                icon: icon
             })
 
             mark.addListener('click', () => {
@@ -64,7 +71,6 @@ class SpotIndex extends Component {
         if(!surfSpots){return null}
         return (
             <div className='spot-index'>
-                <h1>Surfs up!</h1>
                 <div className='flex'>
                     <div id='spot-map'>
                     </div>
@@ -79,7 +85,7 @@ class SpotIndex extends Component {
                         {surfSpots[0] ? surfSpots[0].map(spot=>{
                             
                                 return(
-                                    <div className='spots' id={spot._id}>
+                                    <div className='spots' key={spot._id}>
                                     <p id='name' onClick={()=>
                                         this.props.history.push(`/surfspots/${spot._id}`)
                                     }>{spot.name}</p>
