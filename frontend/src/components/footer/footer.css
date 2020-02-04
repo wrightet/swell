@@ -1,6 +1,6 @@
 .footer {
   box-sizing: border-box;
-  height: 246px;
+  height: 200px;
   width: 100%;
   background: rgb(43,74,98);
   /* -webkit-box-orient: vertical;
@@ -9,7 +9,8 @@
   /* -webkit-box-align: center; */
   /* background: #555; */
   /* position: relative; */
-  padding: 50px;
+  padding: 10px;
+  padding-right: 50px;
   position: absolute;
   /* bottom: 0; */
   
