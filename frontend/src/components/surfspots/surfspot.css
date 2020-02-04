@@ -20,3 +20,40 @@
     flex-direction: column;
     align-items: center;
 }
+
+.surfspot-content {
+  color: white;
+  padding: 30px;
+  width: 80%;
+  border-radius: 2%;
+  background-color: #aadddd38;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.surfspot-container {
+  display: flex;
+  justify-content: center;
+}
+
+.surfspot-map-and-content {
+  display: flex;
+}
+
+.surfspot-desc-and-metrics {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-evenly;
+}
+
+.surfspot-metrics {
+  display: flex;
+  flex-direction: column;
+}
+
+.surfspot-title {
+  text-align: center;
+  margin: 0%;
+}
