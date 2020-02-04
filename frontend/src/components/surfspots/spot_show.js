@@ -107,99 +107,117 @@ class SpotShow extends Component {
 
       if(!surfSpot) return null
       return (
-        <div style={{ color: "white" }}>
-          <h1>{surfSpot.name}</h1>
-          <br />
-          {surfSpot.description}
-          <br />
-          <div id="show-map"></div>
-          <br />
-          <span>Wave Height: {nearestForecast.swellHeight_ft} ft</span>
-          <br />
-          <span>Water Temp: {nearestForecast.waterTemp_F} degrees F</span>
-          <br />
-          <span>Swell Period: {nearestForecast.swellPeriod_secs} seconds</span>
-          <br />
-          <span>Swell Direction: {nearestForecast.swellDir16Point}</span>
-
-          {currentUser ? currentUser.id == surfSpot.creatorId ? (
-            <button
-              onClick={() => {
-                this.handleDelete(surfSpot._id);
-              }}
-            >
-              Delete surfSpot
-            </button>
-          ) : (
-            ""
-          ): ""}
-
-          {currentUser && currentUser.id ? (
-            <form onSubmit={this.handleSubmit}>
-              <label>
-                {" "}
-                Quality <br />
-                <input
-                  type="number"
-                  min="1"
-                  max="10"
-                  value={this.state.quality}
-                  onChange={this.update("quality")}
-                ></input>
-              </label>
+        <div className="surfspot-container">
+          <div className="surfspot-content" style={{ color: "white" }}>
+            <h1 className="surfspot-title">{surfSpot.name}</h1>
+            <br />
+            <div className="surfspot-map-and-content">
               <br />
-              <label>
-                {" "}
-                Difficulty <br />
-                <input
-                  type="number"
-                  min="1"
-                  max="10"
-                  value={this.state.difficulty}
-                  onChange={this.update("difficulty")}
-                ></input>
-              </label>
-              <br />
-              <label>
-                {" "}
-                Title <br />
-                <input
-                  type="text"
-                  value={this.state.title}
-                  onChange={this.update("title")}
-                ></input>
-              </label>
-              <br />
-              <label>
-                Body <br />
-                <textarea
-                  cols="30"
-                  rows="10"
-                  value={this.state.body}
-                  onChange={this.update("body")}
-                />
-              </label>
-              <br />
-              <input type="submit" value="Create Review"></input>
-            </form>
-          ) : (
-            ""
-          )}
-
-          {this.props.reviews ? (
-            <ul>
-              {this.props.reviews.map(review => (
-                <li key={review._id}>
-                  Review:{review.title} <br />
-                  Quality: {review.quality} <br />
-                  Difficulty: {review.difficulty} <br />
-                  {review.body} <br />
-                </li>
-              ))}
-            </ul>
-          ) : (
-            ""
-          )}
+              <div id="show-map"></div>
+              <div className="surfspot-desc-and-metrics">
+                <p className="surfspot-desc">Details: {surfSpot.description}</p>
+                <br />
+                <div className="surfspot-metrics">
+                  <span>Swell Forecast:</span>
+                  <br/>
+                  <span>Wave Height: {nearestForecast.swellHeight_ft} ft</span>
+                  <span>
+                    Water Temp: {nearestForecast.waterTemp_F} degrees F
+                  </span>
+                  <span>
+                    Swell Period: {nearestForecast.swellPeriod_secs} seconds
+                  </span>
+                  <span>
+                    Swell Direction: {nearestForecast.swellDir16Point}
+                  </span>
+                </div>
+              </div>
+            </div>
+            {currentUser ? (
+              currentUser.id == surfSpot.creatorId ? (
+                <button
+                  onClick={() => {
+                    this.handleDelete(surfSpot._id);
+                  }}
+                >
+                  Delete surfSpot
+                </button>
+              ) : (
+                ""
+              )
+            ) : (
+              ""
+            )}
+            <div className="surfspot-review-form">
+              {currentUser && currentUser.id ? (
+                <form onSubmit={this.handleSubmit}>
+                  <label>
+                    {" "}
+                    Quality <br />
+                    <input
+                      type="number"
+                      min="1"
+                      max="10"
+                      value={this.state.quality}
+                      onChange={this.update("quality")}
+                    ></input>
+                  </label>
+                  <br />
+                  <label>
+                    {" "}
+                    Difficulty <br />
+                    <input
+                      type="number"
+                      min="1"
+                      max="10"
+                      value={this.state.difficulty}
+                      onChange={this.update("difficulty")}
+                    ></input>
+                  </label>
+                  <br />
+                  <label>
+                    {" "}
+                    Title <br />
+                    <input
+                      type="text"
+                      value={this.state.title}
+                      onChange={this.update("title")}
+                    ></input>
+                  </label>
+                  <br />
+                  <label>
+                    Body <br />
+                    <textarea
+                      cols="30"
+                      rows="10"
+                      value={this.state.body}
+                      onChange={this.update("body")}
+                    />
+                  </label>
+                  <br />
+                  <input type="submit" value="Create Review"></input>
+                </form>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className="surfspot-reviews">
+              {this.props.reviews ? (
+                <ul>
+                  {this.props.reviews.map(review => (
+                    <li key={review._id}>
+                      Review:{review.title} <br />
+                      Quality: {review.quality} <br />
+                      Difficulty: {review.difficulty} <br />
+                      {review.body} <br />
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                ""
+              )}
+            </div>
+          </div>
         </div>
       );
     }
