@@ -76,7 +76,7 @@ class ProfSpots extends Component {
         if (!surfSpots) { return null }
         return (
             <div className='spot-index'>
-                <h1>Your Spots:</h1>
+                <h1 id='yo-spots'>Your Spots</h1>
                 <div className='flex'>
                     <div id='spot-map'>
                     </div>
@@ -91,7 +91,7 @@ class ProfSpots extends Component {
                         {surfSpots[0] ? surfSpots[0].map(spot => {
 
                             return (
-                                <div className='spots' id={`${spot._id}`}>
+                                <div className='spots' key={`${spot._id}`}>
                                     <p id='name' onClick={() =>
                                         this.props.history.push(`/surfspots/${spot._id}`)
                                     }>{spot.name}</p>
@@ -105,7 +105,7 @@ class ProfSpots extends Component {
                             : ""
                         }
                     </span>
-                </div>“
+                </div>
             </div>
         )
     }

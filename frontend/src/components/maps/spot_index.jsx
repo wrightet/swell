@@ -8,7 +8,7 @@ class SpotIndex extends Component {
         super(props);
 
         this.state = {
-            gMap: ''
+            gMap: '',
         }
 
         this.initMap = this.initMap.bind(this);
@@ -58,6 +58,25 @@ class SpotIndex extends Component {
         })
 
     }
+    
+    
+    getReviewData(spot){
+        const {fetchReviews}=this.props;
+        let totQual = 0;
+        let totDiff = 0;
+        let numReviews = 0
+        let avgQual = (totQual / numReviews);
+        let avgDiff = (totDiff / numReviews);
+        fetchReviews(spot._id)
+            .then(revRes => {
+                revRes.reviews.data.forEach(review => {
+                    totQual += review.quality;
+                    totDiff += review.difficulty;
+                    numReviews += 1;
+                })
+            });
+            
+    }
 
     //create map, get current spots, mark on map:
     componentDidMount() {
@@ -65,6 +84,9 @@ class SpotIndex extends Component {
         this.props.requestSurfSpots()
             .then(spotRes => this.makeSpots(spotRes));
     }
+
+
+
 
     render() {
         const {currentUser,surfSpots} = this.props;
@@ -83,14 +105,14 @@ class SpotIndex extends Component {
                         </div>  
                         : ""}
                         {surfSpots[0] ? surfSpots[0].map(spot=>{
-                            
+
                                 return(
                                     <div className='spots' key={spot._id}>
                                     <p id='name' onClick={()=>
                                         this.props.history.push(`/surfspots/${spot._id}`)
                                     }>{spot.name}</p>
                                     
-                                    <p>{spot.description}</p>
+                                    <p id='desc'>{spot.description}</p>
                                     <br/>
                                     </div>
                                     )
@@ -99,7 +121,7 @@ class SpotIndex extends Component {
                         :""
                         }
                     </span>
-                    </div>“
+                    </div>
             </div>
         )
     }
