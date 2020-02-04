@@ -72,7 +72,7 @@ class SpotShow extends Component {
     handleDelete(surfSpotId){
         const {requestSurfSpots,deleteSurfSpot}=this.props;
         deleteSurfSpot(surfSpotId)
-            .then(this.props.history.push('/'))
+            .then(this.props.history.push('/surfspots'))
             .then(requestSurfSpots())
     }
 
