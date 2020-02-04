@@ -9,7 +9,7 @@ const mSTP = state => ({
 
     },
     currentUser: state.session.user,
-    formType: 'Create Surf Session'
+    formType: 'Post'
 })
 
 const mDTP = dispatch => ({

@@ -23,6 +23,9 @@ class SurfSessionIndex extends React.Component {
             const realSessions = sessions[0];
             return (
                 <div className="surf-sessions-div">
+                    <h1 className='surfers-log'>Surfer's Log</h1>
+                    
+                   
                     <ul>
                         {realSessions.map(session => (
                             <li key={session._id}>
