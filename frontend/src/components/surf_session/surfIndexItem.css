@@ -56,6 +56,7 @@
     border: 0 none;
     border-radius: 3px;
     cursor: pointer;
+    display: none;
 }
 
 .delete-button:hover {
@@ -66,9 +67,23 @@
     margin: 10px;
     display: flex;
     justify-content: space-between;
+    height: 5%;
 }
 
 .surf-post {
  /* border: 1px solid blue; */
  color: white;
+ padding: 2%;
+}
+
+.surf-log:hover .delete-button {
+    display: block;
+}
+
+.session-time {
+    display: none;
+}
+
+.surf-log:hover .session-time {
+    display: block;
 }
