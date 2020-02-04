@@ -1,4 +1,15 @@
 .surf-sessions-div{
     display: flex;
+    justify-content: center;
+    width: 100%;
     
+}
+.surfers-log {
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 10%;
+    position: absolute;
+    white-space: pre-line;
+    margin: auto;
+   
 }

@@ -50,13 +50,14 @@
 }
 
 .delete-button {
-    background: rgb(197, 60, 42);
+    background: rgb(10, 9, 9);
     font-weight: bold;
     color: white;
     border: 0 none;
     border-radius: 3px;
     cursor: pointer;
     display: none;
+    width: 7%;
 }
 
 .delete-button:hover {
@@ -66,14 +67,24 @@
 .surf-log {
     margin: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     height: 5%;
+    /* background: grey; */
+    border-radius: 5px;
+    background: rgba(20, 20, 19, 0.329);
+    width: 100%;
+    padding: 4%;
 }
 
 .surf-post {
  /* border: 1px solid blue; */
  color: white;
  padding: 2%;
+ display: flex;
+ justify-content: flex-start;
+ align-items: left;
+ width: 100%;
+
 }
 
 .surf-log:hover .delete-button {
@@ -81,9 +92,13 @@
 }
 
 .session-time {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    position: relative;
+    font-size: 10px;
+    color: lightgrey
 }
 
-.surf-log:hover .session-time {
-    display: block;
-}
+
