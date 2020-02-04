@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import mappy from '../../assets/images/map.png'
 
 class SpotShow extends Component {
     constructor(props){
@@ -31,10 +32,17 @@ class SpotShow extends Component {
         let lat=surfSpot.coordinates[0];
         let lng=surfSpot.coordinates[1];
         this.state.gMap.setCenter({lat:lat,lng:lng});
+
+      let icon = {
+        url: mappy,
+        scaledSize: new window.google.maps.Size(50, 50)
+      }
+
             new window.google.maps.Marker({
             position: { lat: lat, lng: lng },
             map: this.state.gMap,
-            label: surfSpot.name
+            label: surfSpot.name,
+            icon:icon
         })
         
     }

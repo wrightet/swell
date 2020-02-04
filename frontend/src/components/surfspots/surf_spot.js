@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom'
 import surfspot from './surfspot.css'
 import _ from 'lodash';
+import mappy from '../../assets/images/map.png'
 
 class SurfSpot extends Component {
     constructor(props) {
@@ -29,12 +30,17 @@ class SurfSpot extends Component {
         if (this.state.checkMarker){
             this.state.checkMarker.setMap(null);
         }
+        let icon = {
+            url: mappy,
+            scaledSize: new window.google.maps.Size(50, 50)
+        }
 
         this.state.checkMarker=new window.google.maps.Marker({
             position:this.state.checkpos,
             map: this.state.gMap,
             animation: window.google.maps.Animation.DROP,
-            label:'SurfSpot'
+            label:'SurfSpot',
+            icon:icon
         });
 
     }
