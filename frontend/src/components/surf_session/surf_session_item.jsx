@@ -1,6 +1,6 @@
 import React from 'react';
 import './surfIndexItem.css';
-
+import {formatDateTime, formatDate, formatTime} from '../../util/date_util'
 class SurfSessionItem extends React.Component {
     constructor(props){
         super(props)
@@ -14,18 +14,24 @@ class SurfSessionItem extends React.Component {
             .then(fetchSurfSessions(creatorId));
     }
 
+    
+
   
 
     render(){
      
-       
+        
         return(
-            <div className="surf-log">
+            <div className="surf-log"> 
+            <button 
+                    className="delete-button"
+                    onClick={() => this.handleDelete(this.props.creatorId, this.props.session._id)}
+                >Delete Session
+                </button>
+                <h6 className="session-time">{formatDateTime(this.state.createdAt)}</h6>
                 <p className="surf-post">{this.props.session.body}</p>
-                    <button 
-                        className="delete-button"
-                        onClick={() => this.handleDelete(this.props.creatorId, this.props.session._id)}
-                    >Delete Session</button>
+                
+               
             </div>
              
         )
