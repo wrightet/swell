@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import '../maps/spot_index.css'
+import mappy from '../../assets/images/map.png'
 
 class ProfSpots extends Component {
     constructor(props) {
@@ -39,11 +40,19 @@ class ProfSpots extends Component {
             let lng = spot.coordinates[1];
 
             if(spot.creatorId==this.props.currentUser.id){
-            let mark = new window.google.maps.Marker({
-                position: { lat: lat, lng: lng },
-                map: this.state.gMap,
-                label: spot.name
-            })
+          
+
+                let icon = {
+                    url: mappy,
+                    scaledSize: new window.google.maps.Size(50, 50)
+                }
+
+                let mark = new window.google.maps.Marker({
+                    position: { lat: lat, lng: lng },
+                    map: this.state.gMap,
+                    label: spot.name,
+                    icon: icon
+                })
         
 
             mark.addListener('click', () => {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import './map.css';
+import mappy from '../../assets/images/map.png'
 
 class Mapping extends Component {
     constructor(props){
@@ -38,10 +39,16 @@ class Mapping extends Component {
             let lat=spot.coordinates[0];
             let lng=spot.coordinates[1];
 
-            let mark=new window.google.maps.Marker({
-                position: {lat:lat,lng:lng},
+            let icon = {
+                url: mappy,
+                scaledSize: new window.google.maps.Size(50, 50)
+            }
+
+            let mark = new window.google.maps.Marker({
+                position: { lat: lat, lng: lng },
                 map: this.state.gMap,
-                label: spot.name
+                label: spot.name,
+                icon: icon
             })
 
             mark.addListener('click',()=>{
