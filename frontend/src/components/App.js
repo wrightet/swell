@@ -32,6 +32,7 @@ function App() {
       <header>
         <NavbarContainer />
       </header>
+      <div className="spacer">
         <Switch>
           <AuthRoute exact path="/login" component={LoginFormContainer} />
           <AuthRoute exact path="/signup" component={SignupFormContainer} />
@@ -42,6 +43,8 @@ function App() {
         <ProtectedRoute exact path="/createsurfspot" component={SurfSpotContainer} />
         <Route exact path="/surfspots" component={SpotIndex} />
         <Route exact path='/surfspots/:id'  component={SpotShow}/>
+
+      </div>
       <footer>
         <Footer />
       </footer>
