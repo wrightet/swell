@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import mappy from '../../assets/images/map.png'
+import wavy from '../../assets/images/wavy.png'
+
 
 class SpotShow extends Component {
     constructor(props){
@@ -126,7 +128,10 @@ class SpotShow extends Component {
                 <p className="surfspot-desc">Details: {surfSpot.description}</p>
                 <br />
                 <div className="surfspot-metrics">
-                  <span>Swell Forecast:</span>
+                  <span>
+                    Swell Forecast {"  "}
+                  <img id= 'wavy' src={wavy} />
+                    </span>
                   <br/>
                   <span>Wave Height: {nearestForecast.swellHeight_ft} ft</span>
                   <span>
@@ -141,14 +146,16 @@ class SpotShow extends Component {
                 </div>
               </div>
             </div>
+
+            <br/>
             {currentUser ? (
               currentUser.id == surfSpot.creatorId ? (
-                <button
+                <button id='delete-button' className='show-buttons'
                   onClick={() => {
                     this.handleDelete(surfSpot._id);
                   }}
                 >
-                  Delete surfSpot
+                  Delete Spot
                 </button>
               ) : (
                 ""
@@ -159,6 +166,7 @@ class SpotShow extends Component {
             <div className="surfspot-review-form">
               {currentUser && currentUser.id ? (
                 <form onSubmit={this.handleSubmit}>
+                  <h3 id='rev'>Write a Review:</h3>
                   <label>
                     {" "}
                     Quality <br />
@@ -203,7 +211,7 @@ class SpotShow extends Component {
                     />
                   </label>
                   <br />
-                  <input type="submit" value="Create Review"></input>
+                  <input className='show-buttons' type="submit" value="Create Review"></input>
                 </form>
               ) : (
                 ""
@@ -214,7 +222,7 @@ class SpotShow extends Component {
                 <ul>
                   {this.props.reviews.map(review => (
                     <li key={review._id}>
-                      Review:{review.title} <br />
+                      {review.title} <br />
                       Quality: {review.quality} <br />
                       Difficulty: {review.difficulty} <br />
                       {review.body} <br />

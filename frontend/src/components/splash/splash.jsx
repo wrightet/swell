@@ -20,9 +20,9 @@ export default class Splash extends Component {
                         your next surf adventure.</p>
                         <p>Check out our surf map and sign in to create your own surf spots, surf logs, and to edit your user profile.</p>
                     </div>
-                        <ul>
-                            <li><Link to="/surfspots">Create Surf Spot</Link></li>
-                        </ul>
+                        {/* <ul> */}
+                            {/* <li><Link to="/surfspots">Create Surf Spot</Link></li> */}
+                        {/* </ul> */}
                     <br />
 
                 </div>

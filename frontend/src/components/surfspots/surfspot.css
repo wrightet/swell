@@ -7,6 +7,10 @@
     border-radius: 5px;
 }
 
+#delete-button{
+  width:80px;
+}
+
 .create-spot{
     display:flex;
 }
@@ -21,7 +25,7 @@
     align-items: center;
 }
 
-.surfspot-content {
+.surfspot-content{
   color: white;
   padding: 30px;
   width: 80%;
@@ -31,6 +35,36 @@
   display: flex;
   flex-direction: column;
 }
+
+#rev{
+  font-size: larger;
+  font-weight: bolder;
+}
+
+#create-button{
+    text-decoration: none;
+    background-color: lightcyan;
+    border-radius: 5px;
+    font-size: medium;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+#create-button:hover{
+    background-color: cyan;
+}
+
+.create-spot{
+    color: white;
+  padding: 30px;
+  width: 80%;
+  border-radius: 2%;
+  background-color: #aadddd38;
+  color: white;
+  margin-left: 7%;
+}
+
 
 .surfspot-container {
   display: flex;
@@ -47,13 +81,52 @@
   flex: 1;
   justify-content: space-evenly;
 }
+.surfspot-desc{
+  font-size: larger;
+
+}
 
 .surfspot-metrics {
   display: flex;
   flex-direction: column;
+  font-size: larger;
+  align-items: center;
 }
 
 .surfspot-title {
   text-align: center;
   margin: 0%;
+}
+
+.surfspot-review-form{
+   display: flex;
+  flex-direction: column;
+  font-size: larger;
+  margin-left: 15%;
+}
+
+.surfspot-reviews{
+   display: flex;
+  flex-direction: column;
+  font-size: larger;
+  margin-left: 15%;
+}
+
+.show-buttons{
+    text-decoration: none;
+    background-color: lightcyan;
+    border-radius: 5px;
+    font-size: medium;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+.show-buttons:hover{
+    background-color: cyan;
+}
+
+#wavy{
+  height:30px;
+  border-radius: 50%;
 }
