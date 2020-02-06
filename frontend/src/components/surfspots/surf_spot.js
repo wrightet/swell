@@ -134,26 +134,23 @@ class SurfSpot extends Component {
                 <span className='spot-form'>
                 <h1>Add a surf spot!</h1>
                 <br/>
-                <h3>Click on the map to checkout out spots</h3>
-                <br/>
-                Current spot: 
-                 <br/>
-                    lat:{this.state.checkpos['lat']},
-                    lng:{this.state.checkpos['lng']}
-                <br/>
+                <h3>Click on the map to checkout a new spot</h3>
                 <br/>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Spot Title <br/>
+                    <label>Title <br/>
                     <input type='text' value={this.state.spotTitle} onChange={this.update('spotTitle')}/>
+                    <br/>
                     </label>
                         <br/>
-                        Created by:{this.props.currentUser.handle}
+                        Created by:{` ${this.props.currentUser.handle}`}
+                        <br/>
                         <br/>
                     <label>Description <br />
                     <textarea cols="30" rows="10" value={this.state.spotDescription} onChange={this.update('spotDescription')}/>
                         </label>
                         <br />
-                <input type='submit' value='Create Surf Spot'/>
+                        <br />
+                <input id='create-button' type='submit' value='Create Surf Spot'/>
                 {this.renderErrors()}
                 </form>
                 </span>
