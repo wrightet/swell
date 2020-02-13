@@ -60,23 +60,23 @@ class SpotIndex extends Component {
     }
     
     
-    getReviewData(spot){
-        const {fetchReviews}=this.props;
-        let totQual = 0;
-        let totDiff = 0;
-        let numReviews = 0
-        let avgQual = (totQual / numReviews);
-        let avgDiff = (totDiff / numReviews);
-        fetchReviews(spot._id)
-            .then(revRes => {
-                revRes.reviews.data.forEach(review => {
-                    totQual += review.quality;
-                    totDiff += review.difficulty;
-                    numReviews += 1;
-                })
-            });
+    // getReviewData(spot){
+    //     const {fetchReviews}=this.props;
+    //     let totQual = 0;
+    //     let totDiff = 0;
+    //     let numReviews = 0
+    //     let avgQual = (totQual / numReviews);
+    //     let avgDiff = (totDiff / numReviews);
+    //     fetchReviews(spot._id)
+    //         .then(revRes => {
+    //             revRes.reviews.data.forEach(review => {
+    //                 totQual += review.quality;
+    //                 totDiff += review.difficulty;
+    //                 numReviews += 1;
+    //             })
+    //         });
             
-    }
+    // }
 
     //create map, get current spots, mark on map:
     componentDidMount() {
@@ -91,6 +91,7 @@ class SpotIndex extends Component {
     render() {
         const {currentUser,surfSpots} = this.props;
         if(!surfSpots){return null}
+
         return (
             <div className='spot-index'>
                 <div className='flex'>

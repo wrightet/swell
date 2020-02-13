@@ -71,11 +71,16 @@ class SpotShow extends Component {
               })
     }
 
+
     handleDelete(surfSpotId){
         const {requestSurfSpots,deleteSurfSpot}=this.props;
         deleteSurfSpot(surfSpotId)
-            .then(this.props.history.push('/surfspots'))
             .then(requestSurfSpots())
+            .then(this.props.history.push('/surfspots'))
+    }
+
+    componentWillUnmount(){
+      this.props.requestSurfSpots()
     }
 
     update(field) {
@@ -220,14 +225,16 @@ class SpotShow extends Component {
             <div className="surfspot-reviews">
               {this.props.reviews ? (
                 <ul>
-                  {this.props.reviews.map(review => (
-                    <li key={review._id}>
+                  {
+                  this.props.reviews.filter(review => review.spotId===surfSpot._id).map(review =>
+                    (<li key={review._id}>
                       {review.title} <br />
                       Quality: {review.quality} <br />
                       Difficulty: {review.difficulty} <br />
                       {review.body} <br />
                     </li>
-                  ))}
+                    )
+                    )}
                 </ul>
               ) : (
                 ""
