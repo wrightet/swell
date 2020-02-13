@@ -16,8 +16,8 @@ their sessions, allowing them to go back and remember past surfs.
 * https://surf-swell.herokuapp.com/#/
 
 ## Getting started 
-* Run npm install from the root directory. Then cd into the frontend directory and run npm install again.
-* To run Swell locally, navigate to the root directory and run npm run dev. Then open localhost:3000 in the browser.
+* Run `npm install` from the root directory. Then cd into the frontend directory and run `npm install` again.
+* To run Swell locally, navigate to the root directory and run `npm run dev`. Then open localhost:3000 in the browser.
 
 ## Technologies used
 * MongoDB
