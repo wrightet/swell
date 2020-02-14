@@ -130,13 +130,14 @@ class SpotShow extends Component {
               <br />
               <div id="show-map"></div>
               <div className="surfspot-desc-and-metrics">
-                <p className="surfspot-desc">Details: {surfSpot.description}</p>
+                <h2>About</h2>
+                <p className="surfspot-desc">{surfSpot.description}</p>
                 <br />
                 <div className="surfspot-metrics">
-                  <span>
+                  <h2>
                     Swell Forecast {"  "}
                   <img id= 'wavy' src={wavy} />
-                    </span>
+                    </h2>
                   <br/>
                   <span>Wave Height: {nearestForecast.swellHeight_ft} ft</span>
                   <span>
@@ -224,18 +225,24 @@ class SpotShow extends Component {
             </div>
             <div className="surfspot-reviews">
               {this.props.reviews ? (
-                <ul>
-                  {
-                  this.props.reviews.filter(review => review.spotId===surfSpot._id).map(review =>
-                    (<li key={review._id}>
-                      {review.title} <br />
-                      Quality: {review.quality} <br />
-                      Difficulty: {review.difficulty} <br />
-                      {review.body} <br />
-                    </li>
-                    )
-                    )}
-                </ul>
+                <div>
+                  <h2>Reviews</h2>
+                  <ul>
+                    {
+                    this.props.reviews.filter(review => review.spotId===surfSpot._id).map(review =>
+                      (<li key={review._id} className="review-wrapper">
+                        <h3>{review.title}</h3>
+                        <div className="surfspot-rating">
+                          <span>Quality: {review.quality}</span>
+                          <span className="difficulty">Difficulty: {review.difficulty}</span>
+                        </div>
+                        <div className="review-body">{review.body}</div>
+                        <br />
+                      </li>
+                      )
+                      )}
+                  </ul>
+                </div>
               ) : (
                 ""
               )}
