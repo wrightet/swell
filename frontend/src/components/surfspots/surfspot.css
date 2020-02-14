@@ -73,24 +73,18 @@
 
 .surfspot-map-and-content {
   display: flex;
+  align-items: center;
 }
 
 .surfspot-desc-and-metrics {
   display: flex;
   flex-direction: column;
   flex: 1;
-  justify-content: space-evenly;
-}
-.surfspot-desc{
-  font-size: larger;
-
 }
 
 .surfspot-metrics {
   display: flex;
   flex-direction: column;
-  font-size: larger;
-  align-items: center;
 }
 
 .surfspot-title {
@@ -108,8 +102,6 @@
 .surfspot-reviews{
    display: flex;
   flex-direction: column;
-  font-size: larger;
-  margin-left: 15%;
 }
 
 .show-buttons{
@@ -129,4 +121,25 @@
 #wavy{
   height:30px;
   border-radius: 50%;
+}
+
+.surfspot-container h2 {
+  border-bottom: 1px solid;
+}
+
+.difficulty {
+  margin-left: 5px;
+  padding-left: 5px;
+  border-left: 1px solid;
+}
+
+.surfspot-rating {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 10px;
+}
+
+.review-wrapper {
+  border: 1px solid rgba(227, 227, 227, 0.32);
+  margin-bottom: 10px;
 }
