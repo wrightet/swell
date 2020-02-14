@@ -93,10 +93,13 @@
 }
 
 .surfspot-review-form{
-   display: flex;
+  display: flex;
   flex-direction: column;
   font-size: larger;
-  margin-left: 15%;
+}
+
+.surfspot-review-form input,textarea {
+  border-radius: 5%;
 }
 
 .surfspot-reviews{
