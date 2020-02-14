@@ -1,22 +1,14 @@
 .footer {
   box-sizing: border-box;
-  height: 200px;
+  height: 220px;
   width: 100%;
-  background: rgb(43,74,98);
-  /* -webkit-box-orient: vertical;
-  -webkit-box-direction: normal; */
-  /* flex-flow: column wrap; */
-  /* -webkit-box-align: center; */
-  /* background: #555; */
-  /* position: relative; */
+  background: rgb(41, 41, 41);
   padding: 10px;
-  padding-right: 50px;
   position: absolute;
-  /* bottom: 0; */
-  
 }
 
 .footerFlex {
+  width: 95%;
   display: flex;
   justify-content: space-between;
 }
@@ -31,7 +23,6 @@
 .footer ul {
   border-radius: 5px;
   padding: 10px;
-  background-color: black;
   color: lightgray;
 }
 
