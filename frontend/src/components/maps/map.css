@@ -1,11 +1,11 @@
 #map{
-    height:500px;
+    height: 80vh;
     margin-top: 20px;
-    /* width:50%; */
+    width: 60vw;
     border: 5px solid lightcyan;
     border-radius: 5px;
-    margin-left:20%;
-    margin-right:20%;
+    margin-left:15%;
+    margin-right:15%;
 }
 
 .map-link ul {

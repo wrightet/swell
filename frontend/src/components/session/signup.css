@@ -3,11 +3,12 @@
     border-radius: 5px;
     display:flex;
     justify-content: center;
-    margin-left: 40%;
+    margin-left: auto;
+    margin-right: auto;
     padding-bottom: 20px;
-    width: 300px;
+    width: 350px;
     margin-top: 2em;
-     background: rgba(226,226,226,0.5);
+    background: rgba(226,226,226,0.5);
     color: white;
 }
 
@@ -19,8 +20,12 @@
     width: 100%;
 }
 
+.signup-form {
+    width: 250px;
+}
+
 #signup-button{
-    width:100%;
+    width:100px;
     border-radius: 5px;
     
 }
@@ -30,6 +35,11 @@
 }
 
 .sign-up-link {
+    color: white;
+    font-size: 0.8em;
+}
+
+.sign-up-link a{
     color: white;
 }
 
@@ -44,5 +54,4 @@
     justify-content: center;
     right: -31%;
     bottom: 0%;
-
 }

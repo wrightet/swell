@@ -2,7 +2,7 @@ import React from 'react';
 import SurfSessionItem from './surf_session_item';
 import SurfSessionIndexContainer from './surf_session_index_container';
 import SurfSessionContainer from './surf_session_container';
-import "./surfIndex.css"
+// import "./surfIndex.css"
 class SurfSessionIndex extends React.Component {
     constructor(props){
         super(props)
@@ -23,7 +23,7 @@ class SurfSessionIndex extends React.Component {
             const realSessions = sessions[0];
             return (
                 <div className="surf-sessions-div">
-                    <h1 className='surfers-log'>Surfer's Log</h1>
+                    <h1>Surfer's Log</h1>
                     
                    
                     <ul>
