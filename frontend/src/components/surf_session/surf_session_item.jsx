@@ -22,16 +22,16 @@ class SurfSessionItem extends React.Component {
      
         
         return(
-            <div className="surf-log"> 
-     
+            <div>
                 <h6 className="session-time">{formatDateTime(this.state.createdAt)}</h6>
-                <p className="surf-post">{this.props.session.body}</p>       <button 
-                    className="delete-button"
-                    onClick={() => this.handleDelete(this.props.creatorId, this.props.session._id)}
-                >Delete Session
-                </button>
-                
-               
+                <div className="surf-log"> 
+                    <p>{this.props.session.body}</p>
+                    <button 
+                        className="delete-button"
+                        onClick={() => this.handleDelete(this.props.creatorId, this.props.session._id)}
+                    >x
+                    </button>
+                </div>
             </div>
              
         )

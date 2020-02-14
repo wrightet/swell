@@ -1,13 +1,11 @@
 .SiteHeaderRight {
   display: flex;
   justify-content: flex-end;
-  font-size: 12px;
+  font-size: 0.8em;
   color: #CACACA;
-  /* text-align: center; */
   padding: 10px;
 }
 
 .SiteHeaderRight a {
   color: lightgray;
-  /* margin: 2px; */
 }

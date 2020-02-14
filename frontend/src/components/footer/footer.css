@@ -1,9 +1,9 @@
 .footer {
   box-sizing: border-box;
-  height: 220px;
   width: 100%;
   background: rgb(41, 41, 41);
   padding: 10px;
+  text-align: left;
   position: absolute;
 }
 
@@ -14,21 +14,19 @@
 }
 
 .footer h1 {
-  margin-bottom: 30px;
-  font-size: 18px;
+  font-size: 1.2em;
   color: rgb(228, 227, 227);
+  margin: 10px;
   text-decoration: underline;
 }
 
 .footer ul {
-  border-radius: 5px;
   padding: 10px;
-  color: lightgray;
 }
 
 .footer li {
-  line-height: 26px;
-  font-size: 14px;
+  line-height: 1.6em;
+  font-size: 0.9em;
 }
 
 .footer img {

@@ -4,13 +4,13 @@
     display: flex;
     position: relative;
     justify-content: center;
-    margin-left: 40%;
-    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
     padding: 10px;
     margin-top: 2em;
     background: rgba(226,226,226,0.5);
     color: #fff;
-
 }
 
 .loginform h2 {
@@ -22,27 +22,37 @@
 }
 
 #login-submit{
-    
     border-radius: 5px;
-    
 }
 
 #login-submit:hover{
     background-color: lightcyan;
+    cursor: pointer;
 }
 
-.sign-up-link {
-    color: white;
-}
 .demo-button{
-    display: flex;
-    height: 15%;
-    width: 30%;
-    border-radius: 10%;
+    margin: 10px;
     text-align: center;
     position: relative;
     align-items: center;
-    justify-content: center;
-    right: -31%;
+}
 
+.demo-button:hover {
+    cursor: pointer;
+    background-color: blanchedalmond;
+}
+
+.new-user {
+    text-align: center;
+    font-size: 0.8em;
+    color: white;
+}
+
+.new-user a {
+    font-size: 0.9em;
+    color: white;
+}
+
+.content {
+    width: 80%;
 }
