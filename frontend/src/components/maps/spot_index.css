@@ -55,6 +55,7 @@
 
 .spots{
     color:white;
+    padding: 10px;
     border: 2px solid rgba(0, 0, 255, 0.603);
     border-radius: 5px;
     display: flex;
@@ -62,7 +63,6 @@
     align-items: center;
     margin-bottom: 0.7em;
     width:100%;
-    /* padding:7px; */
 }
 
 #name{

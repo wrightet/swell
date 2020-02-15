@@ -56,7 +56,7 @@
 }
 
 .create-spot{
-    color: white;
+  color: white;
   padding: 30px;
   width: 80%;
   border-radius: 2%;
@@ -103,8 +103,12 @@
 }
 
 .surfspot-reviews{
-   display: flex;
+  display: flex;
   flex-direction: column;
+}
+
+.surfspot-reviews ul {
+  /* padding: 10px; */
 }
 
 .show-buttons{
@@ -145,4 +149,5 @@
 .review-wrapper {
   border: 1px solid rgba(227, 227, 227, 0.32);
   margin-bottom: 10px;
+  padding: 10px;
 }
