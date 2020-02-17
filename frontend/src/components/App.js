@@ -11,6 +11,7 @@ import ProfileContainer from './profile/profile_container';
 import SurfSpotContainer from './surfspots/surf_spot_container';
 import './App.css';
 import wave from '../assets/images/wave.jpg';
+import surfer from '../assets/images/surfer-sunset.jpg'
 
 import SpotShow from './surfspots/spot_show_container';
 import Mapping from './maps/map_container';
@@ -27,6 +28,7 @@ function App() {
     <div className="Background">
         <div className="background-image">
           <img src={wave} alt="wave" />
+          {/* <img src={surfer} alt="surfer" /> */}
         </div>
       <div className="Body">
       <header>

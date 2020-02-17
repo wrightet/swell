@@ -96,10 +96,15 @@
   display: flex;
   flex-direction: column;
   font-size: larger;
+  width:40%;
+  max-width: 400px;
+  min-width: 300px;
 }
+
 
 .surfspot-review-form input,textarea {
   border-radius: 5%;
+  width:100%;
 }
 
 .surfspot-reviews{
