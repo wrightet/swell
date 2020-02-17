@@ -2,7 +2,7 @@ footer {
   box-sizing: border-box;
   width: 100%;
   background: rgb(41, 41, 41);
-  padding: 10px;
+  padding: 2%;
   text-align: left;
 
   bottom:0px;
@@ -19,12 +19,12 @@ footer {
 .footer h1 {
   font-size: 1.2em;
   color: rgb(228, 227, 227);
-  margin: 10px;
+  margin: 2%;
   text-decoration: underline;
 }
 
 .footer ul {
-  padding: 10px;
+  padding: 2%;
 }
 
 .footer li {
@@ -33,9 +33,9 @@ footer {
 }
 
 .footer img {
-  height: 60px;
-  margin-bottom: 110px;
-  padding: 10px;
+  height: 30%;
+  margin-bottom: 60%;
+  padding: 1%;
 }
 
 .footer a {
