@@ -127,7 +127,7 @@ class SignupForm extends React.Component {
                         <div className="sign-up-link">
                             <p>Already a member? &nbsp; <Link to='/login'>Login</Link></p>
                         </div>
-                        <button className="demo-button" onClick={this.handleDemo}>Demo User</button>
+                        <button className="demo-button" onClick={this.handleDemo}>Demo</button>
 
                     </div>
                 </form>
