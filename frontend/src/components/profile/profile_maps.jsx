@@ -103,16 +103,17 @@ class ProfSpots extends Component {
         const {start, end} = this.state;
         if (!surfSpots) { return null }
         return (
-            <div className='spot-index'>
+            <div className='spot-index'>   
+            <ul className='spot-buttons'>
+                        <li><button onClick={() => this.handleBack(start, end)}>Last</button></li>
+                        <li><button onClick={() => this.handleForward(start, end, surfSpots[0].length)}>Next</button></li>
+                    </ul>
                 <h1 id='yo-spots'>Your Spots</h1>
                 <div className='flex'>
 
                     <div id='spot-map'>
                     </div>                    
-                    <ul className='spot-buttons'>
-                        <li><button onClick={() => this.handleBack(start, end)}>Last</button></li>
-                        <li><button onClick={() => this.handleForward(start, end, surfSpots[0].length)}>Next</button></li>
-                    </ul>
+                 
                     <span className='mini-flex'>
                         {currentUser && currentUser.id ?
                             <div>

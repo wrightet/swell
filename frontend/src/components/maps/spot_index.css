@@ -79,7 +79,7 @@
 .spot-buttons{
     display: flex;
     justify-content: flex-end;
-    padding-bottom: 1vh;
+    padding-bottom: .1vh;
     width: 90%;
 }
 .spot-buttons > li {
