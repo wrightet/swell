@@ -75,3 +75,21 @@
     cursor: pointer;
     color:rgba(177, 177, 177, 0.6);
 }
+
+.spot-buttons{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 1vh
+}
+.spot-buttons > li {
+    padding: 0 1vw 0 1vw;
+    
+    
+}
+.spot-buttons > li > button {
+    width: 3vw;
+    height: 3vh;
+    border-radius: 10%;
+    background-color: #cacaca;
+    
+}
