@@ -2,7 +2,6 @@
   position: absolute;
   background-color: black;
   width: 100%;
-  /* min-width: 600px; */
 }
 
 .Body {
@@ -11,6 +10,7 @@
 } 
 
 .spacer {
+
   position: relative;
   padding-bottom: 20px;
   min-height: 90vh;
@@ -19,5 +19,6 @@
 
 .background-image img {
   width: 100%;
-  position: absolute;
+  height:800px;
+  position: fixed;
 }

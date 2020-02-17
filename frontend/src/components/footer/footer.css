@@ -1,10 +1,15 @@
-.footer {
+footer {
   box-sizing: border-box;
   width: 100%;
   background: rgb(41, 41, 41);
   padding: 10px;
   text-align: left;
+
+  /* position: ; */
+  bottom:0px;
+  display: block;
 }
+
 
 .footerFlex {
   width: 95%;
