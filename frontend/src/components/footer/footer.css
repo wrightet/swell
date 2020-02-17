@@ -35,7 +35,8 @@ footer {
 
 .footer img {
   height: 60px;
-  margin-top: 110px;
+  margin-bottom: 110px;
+  padding: 10px;
 }
 
 .footer a {
