@@ -90,6 +90,8 @@ class SpotIndex extends Component {
 
     render() {
         const {currentUser,surfSpots} = this.props;
+        const start = 0;
+        const end = 8;
         if(!surfSpots){return null}
 
         return (
@@ -105,7 +107,7 @@ class SpotIndex extends Component {
                             </Link>
                         </div>  
                         : ""}
-                        {surfSpots[0] ? surfSpots[0].map(spot=>{
+                        {surfSpots[0] ? surfSpots[0].slice(start,end).map(spot=>{
 
                                 return(
                                     <div className='spots' key={spot._id}>
