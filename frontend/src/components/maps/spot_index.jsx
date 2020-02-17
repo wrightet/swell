@@ -65,10 +65,10 @@ class SpotIndex extends Component {
 
     handleBack(start, end){
         let newStart = start - 8;
-        let newEnd = end - 8
-        if( newStart <= 0){
-            newStart = 0
-            newEnd = 8
+        let newEnd = end - 8;
+        if( newStart < 0){
+            newStart = 0;
+            newEnd = 8;
         }
         
         this.setState({start: newStart, end: newEnd})
@@ -122,6 +122,10 @@ class SpotIndex extends Component {
 
         return (
             <div className='spot-index'>
+                <ul className='spot-buttons'>
+                    <li><button onClick={() => this.handleBack(start, end)}>Last</button></li>
+                    <li><button onClick={() => this.handleForward(start, end, surfSpots[0].length)}>Next</button></li>
+                </ul>
                 <div className='flex'>
                     <div id='spot-map'>
                     </div>
@@ -153,10 +157,7 @@ class SpotIndex extends Component {
                     </span>
                     
                     </div>
-                <ul>
-                    <li><button onCLick={() => this.handleBack(start, end)}>last</button></li>
-                    <li><button onClick={() => this.handleForward(start, end, surfSpots[0].length)}>next</button></li>
-                </ul>
+               
             </div>
         )
     }
