@@ -10,7 +10,7 @@ class SpotIndex extends Component {
         this.state = {
             gMap: '',
             start: 0,
-            end: 8
+            end: 6
         }
 
         this.initMap = this.initMap.bind(this);
@@ -64,11 +64,11 @@ class SpotIndex extends Component {
     }
 
     handleBack(start, end){
-        let newStart = start - 8;
-        let newEnd = end - 8;
+        let newStart = start - 6;
+        let newEnd = end - 6;
         if( newStart < 0){
             newStart = 0;
-            newEnd = 8;
+            newEnd = 6;
         }
         
         this.setState({start: newStart, end: newEnd})
@@ -76,10 +76,10 @@ class SpotIndex extends Component {
     }
 
     handleForward(start, end, length){
-        let newStart = start + 8;
-        let newEnd = end + 8
+        let newStart = start + 6;
+        let newEnd = end + 6
         if (newStart >= length) {
-            newStart = length - 8;
+            newStart = length - 6;
             newEnd = length;
         }
 
