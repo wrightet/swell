@@ -83,7 +83,7 @@
     width: 89%;
 }
 .spot-buttons > li {
-    padding: 0 1vw 0 1vw;
+    padding: 0 1vw 1vh 1vw;
     display: flex;
     justify-content: center;
    
@@ -91,7 +91,7 @@
 }
 .spot-buttons > li > button {
     width: 3vw;
-    height: 3vh;
+    height: 5vh;
     border-radius: 10%;
     background-color: #cacaca;
     
