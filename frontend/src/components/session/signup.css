@@ -45,8 +45,8 @@
 
 .demo-button{
     display: flex;
-    height: 15%;
-    width: 30%;
+    height: 10%;
+    width: 38%;
     border-radius: 10%;
     text-align: center;
     position: relative;
@@ -54,4 +54,7 @@
     justify-content: center;
     right: -31%;
     bottom: 0%;
+    /* padding-bottom: 3%; */
+    margin-bottom: 10%;
+    margin-top: 10%;
 }
