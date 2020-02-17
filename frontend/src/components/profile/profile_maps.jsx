@@ -8,11 +8,15 @@ class ProfSpots extends Component {
         super(props);
 
         this.state = {
-            gMap: ''
+            gMap: '',
+            start: 0,
+            end: 6
         }
 
         this.initMap = this.initMap.bind(this);
         this.makeSpots = this.makeSpots.bind(this);
+        this.handleBack = this.handleBack.bind(this);
+        this.handleForward = this.handleForward.bind(this);
     }
 
     //goes to current location if allowed, otherwise centers on SF
@@ -31,6 +35,29 @@ class ProfSpots extends Component {
         }, function () {
             gMap.setCenter({ lat: 37.773972, lng: -122.431297 })
         })
+    }
+
+    handleBack(start, end) {
+        let newStart = start - 6;
+        let newEnd = end - 6;
+        if (newStart < 0) {
+            newStart = 0;
+            newEnd = 6;
+        }
+
+        this.setState({ start: newStart, end: newEnd })
+
+    }
+
+    handleForward(start, end, length) {
+        let newStart = start + 6;
+        let newEnd = end + 6
+        if (newStart >= length) {
+            newStart = length - 6;
+            newEnd = length;
+        }
+
+        this.setState({ start: newStart, end: newEnd })
     }
 
     makeSpots(spotRes) {
@@ -73,13 +100,19 @@ class ProfSpots extends Component {
 
     render() {
         const { currentUser, surfSpots } = this.props;
+        const {start, end} = this.state;
         if (!surfSpots) { return null }
         return (
             <div className='spot-index'>
                 <h1 id='yo-spots'>Your Spots</h1>
                 <div className='flex'>
+
                     <div id='spot-map'>
-                    </div>
+                    </div>                    
+                    <ul className='spot-buttons'>
+                        <li><button onClick={() => this.handleBack(start, end)}>Last</button></li>
+                        <li><button onClick={() => this.handleForward(start, end, surfSpots[0].length)}>Next</button></li>
+                    </ul>
                     <span className='mini-flex'>
                         {currentUser && currentUser.id ?
                             <div>
@@ -88,7 +121,7 @@ class ProfSpots extends Component {
                                 </Link>
                             </div>
                             : ""}
-                        {surfSpots[0] ? surfSpots[0].map(spot => {
+                        {surfSpots[0] ? surfSpots[0].slice(start, end).map(spot => {
 
                             return (
                                 <div className='spots' key={`${spot._id}`}>
