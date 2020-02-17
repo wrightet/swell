@@ -9,10 +9,14 @@ class SpotIndex extends Component {
 
         this.state = {
             gMap: '',
+            start: 0,
+            end: 8
         }
 
         this.initMap = this.initMap.bind(this);
         this.makeSpots = this.makeSpots.bind(this);
+        this.handleBack = this.handleBack.bind(this);
+        this.handleForward = this.handleForward.bind(this);
     }
 
     //goes to current location if allowed, otherwise centers on SF
@@ -58,6 +62,29 @@ class SpotIndex extends Component {
         })
 
     }
+
+    handleBack(start, end){
+        let newStart = start - 8;
+        let newEnd = end - 8
+        if( newStart <= 0){
+            newStart = 0
+            newEnd = 8
+        }
+        
+        this.setState({start: newStart, end: newEnd})
+        
+    }
+
+    handleForward(start, end, length){
+        let newStart = start + 8;
+        let newEnd = end + 8
+        if (newStart >= length) {
+            newStart = length - 8;
+            newEnd = length;
+        }
+
+        this.setState({ start: newStart, end: newEnd })
+    }
     
     
     // getReviewData(spot){
@@ -90,8 +117,7 @@ class SpotIndex extends Component {
 
     render() {
         const {currentUser,surfSpots} = this.props;
-        const start = 0;
-        const end = 8;
+        const {start, end} = this.state;
         if(!surfSpots){return null}
 
         return (
@@ -117,6 +143,7 @@ class SpotIndex extends Component {
                                     
                                     <p id='desc'>{spot.description}</p>
                                     <br/>
+                                    
                                     </div>
                                     )
                                     
@@ -124,7 +151,12 @@ class SpotIndex extends Component {
                         :""
                         }
                     </span>
+                    
                     </div>
+                <ul>
+                    <li><button onCLick={() => this.handleBack(start, end)}>last</button></li>
+                    <li><button onClick={() => this.handleForward(start, end, surfSpots[0].length)}>next</button></li>
+                </ul>
             </div>
         )
     }
