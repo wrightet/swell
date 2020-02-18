@@ -3,7 +3,8 @@
   justify-content: flex-end;
   font-size: 0.8em;
   color: #CACACA;
-  padding: 3%;
+  padding: 10%;
+  width: 8vw;
 }
 
 .SiteHeaderRight a {
