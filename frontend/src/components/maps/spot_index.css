@@ -1,16 +1,16 @@
 #spot-map{
     height:80vh;
     width: 80%;
-    margin-top: 10px;
-    border: 5px solid lightcyan;
-    border-radius: 5px;
+    margin-top: 3%;
+    border: .3em solid lightcyan;
+    border-radius: 2%;
     margin-left: 1%;
     margin-right: 5%;
 }
 
 .spot-index {
   color: white;
-  padding: 30px;
+  padding: 5%;
   width: 80%;
   border-radius: 2%;
   background-color: #aadddd38;
@@ -41,11 +41,11 @@
 
 #create{
     text-decoration: none;
-    padding: 10px;
+    padding: .5em;
     background-color: lightcyan;
-    border-radius: 5px;
+    border-radius: .3em;
     font-size: medium;
-    margin-bottom: 10px;
+    margin-bottom: 1em;
     font-weight: bolder;
 }
 
@@ -55,9 +55,9 @@
 
 .spots{
     color:white;
-    padding: 10px;
-    border: 2px solid rgba(0, 0, 255, 0.603);
-    border-radius: 5px;
+    padding: 1em;
+    border: .1em solid rgba(0, 0, 255, 0.603);
+    border-radius: .3em;
     display: flex;
     flex-direction: column;
     align-items: center;

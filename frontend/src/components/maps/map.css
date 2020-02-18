@@ -1,28 +1,10 @@
 #map{
     height: 80vh;
-    margin-top: 20px;
+    margin-top: 5%;
     width: 60vw;
-    border: 5px solid lightcyan;
-    border-radius: 5px;
+    border: .2em solid lightcyan;
+    border-radius: 2%;
     margin-left:15%;
     margin-right:15%;
 }
 
-.map-link ul {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 40px;
-}
-
-.map-link a {
-    background-color: rgb(6, 55, 201);
-    padding: 10px;
-    color: rgb(227, 227, 227);
-    text-decoration: none;
-    border-radius: 5px;
-    border: 1px solid rgb(40, 1, 180);
-}
-
-.map-link a:hover {
-    background-color: rgba(3, 3, 190, 1);
-}

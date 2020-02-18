@@ -1,18 +1,18 @@
 .SiteHeader {
   font-family: Arial, Helvetica, sans-serif;
   background: transparent;
-  padding: 20px;
+  padding: 1em;
   position: relative;
 }
 
 .SiteHeader ul {
-  border-bottom: 1px solid grey;
-  border-top: 1px solid grey;
+  border-bottom: .1em solid grey;
+  border-top: .1em solid grey;
 }
 
 .SiteHeader img {
   width: 50%;
-  border-radius: 5px;
+  border-radius: .2em;
 }
 
 .SiteHeader a {
@@ -21,14 +21,14 @@
 }
 
 .Logo {
-  padding-top: 10px;
-  height: 70px;
+  padding-top: .1em;
+  height: 4em;
 }
 
 .Logo img {
   left: 45%;
   position: absolute;
-  height: 50px;
+  height: 3em;
   width: auto;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .MenuItems li {
-  padding: 10px;
+  padding: 1%;
   margin: 0;
   color: lightgray;
 }
@@ -50,7 +50,7 @@
 .Greeting {
   position: absolute;
   right: 5%;
-  padding-top: 20px;
+  padding-top: 2%;
   color: white;
 }
 

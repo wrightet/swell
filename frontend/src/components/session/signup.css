@@ -1,12 +1,12 @@
 .signup-form-container{
-    border: 1px solid black;
-    border-radius: 5px;
+    border: .1em solid black;
+    border-radius: 2%;
     display:flex;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 20px;
-    width: 350px;
+    padding-bottom: 2%;
+    width: 30%;
     margin-top: 2em;
     background: rgba(226,226,226,0.5);
     color: white;
@@ -21,12 +21,12 @@
 }
 
 .signup-form {
-    width: 250px;
+    width: 15em;
 }
 
 #signup-button{
-    width:100px;
-    border-radius: 5px;
+    width:25%;
+    border-radius: 10%;
     
 }
 

@@ -1,14 +1,14 @@
 #add-spots-map, #show-map{
     margin-top: 5%;
     margin-right: 5%;
-    height:300px;
+    height: 60vh;
     width:50%;
-    border: 5px solid lightcyan;
-    border-radius: 5px;
+    border: .5vh solid lightcyan;
+    border-radius: .3em;
 }
 
 #delete-button{
-  width:80px;
+  width: 10vw;
 }
 
 .create-spot{
@@ -19,7 +19,7 @@
     margin-left:2%;
     padding:4%;
     color:white;
-    text-shadow: 2px 2px black;
+    text-shadow: .2em .2em black;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +27,7 @@
 
 .surfspot-content{
   color: white;
-  padding: 30px;
+  padding: 5%;
   width: 80%;
   border-radius: 2%;
   background-color: #aadddd38;
@@ -44,10 +44,10 @@
 #create-button{
     text-decoration: none;
     background-color: lightcyan;
-    border-radius: 5px;
+    border-radius: .2em;
     font-size: medium;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 8%;
+    margin-bottom: 8%;
     font-weight: bolder;
 }
 
@@ -57,12 +57,13 @@
 
 .create-spot{
   color: white;
-  padding: 30px;
+  padding: 5%;
   width: 80%;
   border-radius: 2%;
   background-color: #aadddd38;
   color: white;
   margin-left: 7%;
+  
 }
 
 
@@ -97,8 +98,8 @@
   flex-direction: column;
   font-size: larger;
   width:40%;
-  max-width: 400px;
-  min-width: 300px;
+  max-width: 30vw;
+  min-width: 50vw;
 }
 
 
@@ -119,10 +120,10 @@
 .show-buttons{
     text-decoration: none;
     background-color: lightcyan;
-    border-radius: 5px;
+    border-radius: 3%;
     font-size: medium;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 2%;
+    margin-bottom: 2%;
     font-weight: bolder;
 }
 
@@ -131,28 +132,28 @@
 }
 
 #wavy{
-  height:30px;
+  height: 1.5em;
   border-radius: 50%;
 }
 
 .surfspot-container h2 {
-  border-bottom: 1px solid;
+  border-bottom: .01em solid;
 }
 
 .difficulty {
-  margin-left: 5px;
-  padding-left: 5px;
-  border-left: 1px solid;
+  margin-left: 1%;
+  padding-left: 1%;
+  border-left: .1em solid;
 }
 
 .surfspot-rating {
   display: flex;
   justify-content: flex-start;
-  padding-bottom: 10px;
+  padding-bottom: 1%;
 }
 
 .review-wrapper {
   border: 1px solid rgba(227, 227, 227, 0.32);
-  margin-bottom: 10px;
-  padding: 10px;
+  margin-bottom: 2%;
+  padding: 1%;
 }

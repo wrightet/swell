@@ -1,22 +1,22 @@
 .surf-session-form {
     display: flex;
-    border-radius: 4px;
+    border-radius: 1em;
     box-sizing: border-box;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 2%;
     text-align: center;
 }
 
 .surf-session-form textarea {
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    margin-bottom: 10px;
-    width: 400px;
-    height: 100px;
+    padding: 3%;
+    border: .1em solid #ccc;
+    border-radius: 2%;
+    margin-bottom: 2%;
+    width: 30vw;
+    height: 15vh;
     box-sizing: border-box;
     color: #2C3E50;
-    font-size: 13px;
+    font-size: .9em;
 }
 
 .Submit {
@@ -24,10 +24,10 @@
     font-weight: bold;
     color: white;
     border: 0 none;
-    border-radius: 3px;
+    border-radius: 5%;
     cursor: pointer;
-    padding: 10px;
-    margin: 10px 5px;
+    padding: 2%;
+    margin: 3% 1%;
 }
 
 .Submit:hover {
@@ -39,12 +39,12 @@
     width: 30%;
     display: block;
     justify-content: center;
-    padding: 50px;
+    padding: 20%;
    
 }
 
 .button-div {
-    padding: 0 10px;
+    padding: 0 1%;
 }
 
 .delete-button {
@@ -52,7 +52,7 @@
     font-weight: bold;
     color: white;
     border: 0 none;
-    border-radius: 3px;
+    border-radius: .2em;
     cursor: pointer;
     display: none;
 }
@@ -62,18 +62,18 @@
 }
 
 .surf-log {
-    margin: 10px;
+    margin: .8em;
     display: flex;
     justify-content: center;
     height: 5%;
-    border-radius: 5px;
+    border-radius: .2em;
     background: rgba(20, 20, 19, 0.329);
-    padding: 10px;
+    padding: 1%;
 }
 
 .surf-log p {
  color: white;
- padding: 2px;
+ padding: .5%;
  display: flex;
  justify-content: flex-start;
  align-items: left;
@@ -91,7 +91,7 @@
     justify-content: center;
     align-items: left;
     position: relative;
-    font-size: 10px;
+    font-size: .7em;
     color: lightgrey
 }
 

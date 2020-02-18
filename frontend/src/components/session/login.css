@@ -1,13 +1,13 @@
 .loginform{
-    border: 1px solid black;
-    border-radius: 5px;
+    border: .05em solid black;
+    border-radius: 3%;
     display: flex;
     position: relative;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    width: 250px;
-    padding: 10px;
+    width: 20%;
+    padding: 1em;
     margin-top: 2em;
     background: rgba(226,226,226,0.5);
     color: #fff;
@@ -22,7 +22,7 @@
 }
 
 #login-submit{
-    border-radius: 5px;
+    border-radius: 5%;
 }
 
 #login-submit:hover{
@@ -31,7 +31,7 @@
 }
 
 .demo-button{
-    margin: 10px;
+    margin: 5%;
     text-align: center;
     position: relative;
     align-items: center;

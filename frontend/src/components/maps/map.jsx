@@ -69,9 +69,7 @@ class Mapping extends Component {
     render(){
         return(
             <div>
-                <div className="map-link">
-                
-                </div>
+           
                 <div id='map'>
                 </div>
             </div>
