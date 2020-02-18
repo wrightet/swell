@@ -4,9 +4,7 @@ footer {
   background: rgb(41, 41, 41);
   padding: 2%;
   text-align: left;
-
   bottom:0%;
-  /* display: block; */
 }
 
 
@@ -28,7 +26,7 @@ footer {
 }
 
 .footer li {
-  line-height: 1.6em;
+  line-height: 5vh;
   font-size: 0.9em;
 }
 
