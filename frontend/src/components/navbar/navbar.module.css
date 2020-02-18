@@ -51,7 +51,7 @@
 .Greeting {
   position: absolute;
   right: 5%;
-  padding-top: 2%;
+  padding-top: 1vh 1vw 1vh 1vw;
   color: white;
 }
 
