@@ -88,6 +88,10 @@
   flex-direction: column;
 }
 
+.surfspot-metrics > span {
+  padding: 1vh;
+}
+
 .surfspot-title {
   text-align: center;
   margin: 0%;
