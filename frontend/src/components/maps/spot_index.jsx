@@ -122,10 +122,13 @@ class SpotIndex extends Component {
 
         return (
             <div className='spot-index'>
-                <ul className='spot-buttons'>
-                    <li><button onClick={() => this.handleBack(start, end)}>Last</button></li>
-                    <li><button onClick={() => this.handleForward(start, end, surfSpots[0].length)}>Next</button></li>
-                </ul>
+                <div className='spot-buttons-div'>
+                    <ul className='spot-buttons'>
+                        <li><button onClick={() => this.handleBack(start, end)}>Last</button></li>
+                        <li><button onClick={() => this.handleForward(start, end, surfSpots[0].length)}>Next</button></li>
+                    </ul>
+                </div>
+        
                 <div className='flex'>
                     <div id='spot-map'>
                     </div>

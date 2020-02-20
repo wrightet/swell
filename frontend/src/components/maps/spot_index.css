@@ -76,23 +76,35 @@
     color:rgba(177, 177, 177, 0.6);
 }
 
+.spot-buttons-div {
+display: flex;
+justify-content: flex-end;
+}
 .spot-buttons{
     display: flex;
-    justify-content: flex-end;
-    padding-bottom: .1vh;
-    width: 92%;
+    /* justify-content: flex-end; */
+    padding: 1vh 1vw 1vh 1vw;
+    /* padding-bottom: .1vh; */
+    width: 17vw;
+    right: 0;
+   
+  
 }
 .spot-buttons > li {
     padding: 0 1vw 1vh 1vw;
     display: flex;
     justify-content: center;
+    width: 8vw;
    
     
 }
 .spot-buttons > li > button {
-    width: 3vw;
+    width:6vw;
     height: 5vh;
     border-radius: 10%;
     background-color: #cacaca;
+    font-size: 0.7em;
+    padding: 1vh 1vw 1vh 1vw;
+ 
     
 }
