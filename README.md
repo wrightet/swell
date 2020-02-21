@@ -7,7 +7,9 @@ their sessions, allowing them to go back and remember past surfs.
 ## Users can:
 
 * Make a surf spot and see all of that spots tide information.
+![alt.text](https://github.com/wrightet/swell/blob/master/frontend/src/assets/images/tide_info.png)
 * Click an existing spot on the map to see it's tide information and reviews.
+![alt.text](https://github.com/wrightet/swell/blob/master/frontend/src/assets/images/click_spot.png)
 * Review a surf spot.
 * See all of the reviews for a given spot.
 * Journal all of their thoughts after a surf in the surfers log.
