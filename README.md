@@ -60,11 +60,14 @@ and Node.js to write JavaScript outside of the browser.
 * Allowing each spot to render it's own tide information was a hurdle we had to overcome. The api comes back with predefined tide 
 information from specific spots. While this is nice it is too rigid. Swell calculates which location is closest to the spot the user
 has defined and renders the information of that spot. This gives the user an approximate to go off of. 
+![alt.text](https://github.com/wrightet/swell/blob/master/frontend/src/assets/images/spot_calc.png)
 
 * By making reviews of spots users can help fill in some of the information that the API does not provide. Users can rate beaches
 by quality and difficuly and then add any other information they deem relevent.
+![alt.text](https://github.com/wrightet/swell/blob/master/frontend/src/assets/images/review_shot.png)
 
 * The Surfer's Log was an idea (Ethan Wright) got from an old surf coach. His coach logged each surf in a note book after each session.
 By using a surfer's log the surfer can remember what gear they brought, who they went with, and what the surf was like that day.
 As a result surfers can reflect on their log and think about what they want to do next time, or if they find themselves far from 
 the beach remember those times fondly.
+![alt.text](https://github.com/wrightet/swell/blob/master/frontend/src/assets/images/log.png)
