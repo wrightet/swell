@@ -135,11 +135,15 @@ class SpotIndex extends Component {
                     <span className='mini-flex'>
                         {currentUser && currentUser.id ? 
                         <div>
-                            <Link to='/createsurfspot'>
+                            <Link to='/createsurfspot' >
                                     <button id='create'>Create Surf Spot</button>
                             </Link>
                         </div>  
-                        : ""}
+                        : <div>
+                                <Link to='/login' id='logincreate'>Login</Link> to create a surfspot
+                            <br/>
+                            <br/>
+                            </div>}
                         {surfSpots[0] ? surfSpots[0].slice(start,end).map(spot=>{
 
                                 return(

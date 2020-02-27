@@ -23,6 +23,15 @@
     display: flex;
 }
 
+#logincreate{
+    text-decoration: none;
+    color:lightblue;
+}
+
+#logincreate:hover{
+    color: rgb(53, 179, 218)
+}
+
 .mini-flex{
     margin-right: 1%;
     display: flex;

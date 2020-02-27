@@ -11,6 +11,8 @@ class SurfSessionForm extends React.Component {
         e.preventDefault();
         
         this.props.action(this.props.currentUser.id, this.state)
+            .then(this.props.fetchSurfSessions(this.props.currentUser.id))
+            .then(this.setState({body:""}))
 
     }
     update(field) {
@@ -29,7 +31,7 @@ class SurfSessionForm extends React.Component {
                         className="session-text-area"/>
                     </label>
                    
-                    <input className="Submit" type="submit" value={this.props.formType}/>
+                    <input className="Submit" type='submit' value='Post'/>
                 </form>
             </div>
         );

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createSurfSession } from '../../actions/surf_session_actions';
+import { createSurfSession, fetchSurfSessions } from '../../actions/surf_session_actions';
 import SurfSessionForm from './surf_session_form';
 // import { requestSurfSpot,requestSurfSpots} from '../../actions/surfspot_actions';
 
@@ -14,7 +14,9 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
    
-    action: (userId, sessionData) => dispatch(createSurfSession(userId, sessionData))
+    action: (userId, sessionData) => dispatch(createSurfSession(userId, sessionData)),
+    fetchSurfSessions: (userId) => dispatch(fetchSurfSessions(userId))
+
 })
 
 export default connect(mSTP, mDTP)(SurfSessionForm);
