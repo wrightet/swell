@@ -12,7 +12,8 @@ class SurfSessionIndex extends React.Component {
         this.props.fetchSurfSessions(this.props.currentUser.id);
     }
    
-    componentWillUpdate(){
+    componentDidUpdate(prevProps, prevState){
+        if(prevProps.sessions.length !== this.props.sessions.length)
         this.props.fetchSurfSessions(this.props.currentUser.id);
     }
 

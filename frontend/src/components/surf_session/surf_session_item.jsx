@@ -14,9 +14,13 @@ class SurfSessionItem extends React.Component {
 
         deleteSurfSession(userId, ssId)
         .then(fetchSurfSessions(userId))
+        .catch(fetchSurfSessions(userId))
     }
 
-
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.session.length !== this.props.session.length)
+            this.props.fetchSurfSessions(this.props.currentUser.id);
+    }
   
 
     render(){
@@ -28,7 +32,7 @@ class SurfSessionItem extends React.Component {
                     <p>{this.props.session.body}</p>
                     <button 
                         className="delete-button"
-                        onClick={() => this.handleDelete(this.props.currentUser.id, this.props.session._id)}
+                        onClick={()=>this.handleDelete(this.props.currentUser.id, this.props.session._id)}
                     >x
                     </button>
                 </div>
