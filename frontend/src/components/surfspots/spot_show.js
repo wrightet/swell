@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import mappy from '../../assets/images/map.png'
 import wavy from '../../assets/images/wavy.png'
 
@@ -22,6 +22,7 @@ class SpotShow extends Component {
         
         this.initMap=this.initMap.bind(this);
         this.handleDelete=this.handleDelete.bind(this);
+        this.handleDeleteReview=this.handleDeleteReview.bind(this);
         this.handleSubmit=this.handleSubmit.bind(this);
     }
 
@@ -77,6 +78,12 @@ class SpotShow extends Component {
         deleteSurfSpot(surfSpotId)
             .then(requestSurfSpots())
             .then(this.props.history.push('/surfspots'))
+    }
+
+    handleDeleteReview(spotId, reviewId){
+      const {fetchReviews,deleteReview} = this.props;
+      deleteReview(spotId,reviewId)
+        .then(fetchReviews(spotId))
     }
 
     componentWillUnmount(){
@@ -220,11 +227,15 @@ class SpotShow extends Component {
                   <input className='show-buttons' type="submit" value="Create Review"></input>
                 </form>
               ) : (
-                ""
+                  <div>
+                    <Link to='/login' id='logincreate'>Login</Link> to write a review
+                            <br />
+                    <br />
+                  </div>
               )}
             </div>
             <div className="surfspot-reviews">
-              {this.props.reviews ? (
+              {this.props.reviews && this.props.currentUser ? (
                 <div>
                   <h2>Reviews</h2>
                   <ul>
@@ -238,6 +249,15 @@ class SpotShow extends Component {
                         </div>
                         <div className="review-body">{review.body}</div>
                         <br />
+                        {review.creatorId===this.props.currentUser.id ? (
+                          <button id='delete-button' className='show-buttons'
+                            onClick={() => {
+                              this.handleDeleteReview(surfSpot._id, review._id);
+                            }}
+                          >
+                            Delete Review
+                          </button>
+                        ) : ""}
                       </li>
                       )
                       )}
