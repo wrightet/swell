@@ -131,6 +131,10 @@
     background-color: cyan;
 }
 
+#instruct {
+  width:80%;
+}
+
 #wavy{
   height: 4vh;
   border-radius: 50%;

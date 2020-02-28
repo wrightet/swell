@@ -67,6 +67,14 @@ class SurfSpot extends Component {
             this.useLatLng(e)
         })
 
+        let searchBar=document.getElementById("search");
+        let searchBox = new window.google.maps.places.SearchBox(searchBar)
+
+        new window.google.maps.event.addListener(searchBox, 'places_changed', ()=>{
+            let places=searchBox.getPlaces();
+            gMap.setCenter(places[0].geometry.location)
+        })
+
 
     }
 
@@ -82,15 +90,6 @@ class SurfSpot extends Component {
             }
         )
     }
-
-    // capitalizeTitle(title) {
-    //   let words = title.split(" ")
-    //   let capitalized = []
-    //   words.forEach(word => {
-    //     capitalized.push(word[0].toUpperCase() + word.slice(1).toLowerCase())
-    //   })
-    //   return capitalized.join(" ");
-    // }
 
     handleSubmit(e){
         e.preventDefault();
@@ -134,7 +133,8 @@ class SurfSpot extends Component {
                 <span className='spot-form'>
                 <h1>Add a surf spot!</h1>
                 <br/>
-                <h3>Click on the map to checkout a new spot</h3>
+                <input id="search" type='text' placeholder='Search other locations'/>
+                <h3 id='instruct'>Click on the map to checkout a new spot</h3>
                 <br/>
                 <form onSubmit={this.handleSubmit}>
                     <label>Title <br/>
