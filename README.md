@@ -11,8 +11,11 @@ their sessions, allowing them to go back and remember past surfs.
 * Click an existing spot on the map to see it's tide information and reviews.
 ![alt.text](https://github.com/wrightet/swell/blob/master/frontend/src/assets/images/click_spot.png)
 * Review a surf spot.
+![alt.text](https://github.com/wrightet/swell/blob/master/frontend/src/assets/images/review_form.png)
 * See all of the reviews for a given spot.
+![alt.text](https://github.com/wrightet/swell/blob/master/frontend/src/assets/images/reviews.png)
 * Journal all of their thoughts after a surf in the surfers log.
+![alt.text](https://github.com/wrightet/swell/blob/master/frontend/src/assets/images/surf_log.png)
 
 ## Link to the live site
 * https://surf-swell.herokuapp.com/#/
