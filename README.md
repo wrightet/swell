@@ -65,7 +65,7 @@ and Node.js to write JavaScript outside of the browser.
 * Allowing each spot to render it's own tide information was a hurdle we had to overcome. The api comes back with predefined tide 
 information from specific spots. While this is nice it is too rigid. Swell calculates which location is closest to the spot the user
 has defined and renders the information of that spot. This gives the user an approximate to go off of. 
-
+![alt.text](https://github.com/wrightet/swell/blob/master/frontend/src/assets/images/tide_info.png)
 ````
   .then((long, lat) => {
               long = this.state.surfSpot.coordinates[1];
