@@ -4,6 +4,9 @@ Welcome to Swell! This app allows users to see approximate tide information abou
 Users can review spots to fill in any information about the beach not provided. The surfers log allows users to journal
 their sessions, allowing them to go back and remember past surfs.
 
+## Link to the live site
+* https://surf-swell.herokuapp.com/#/
+
 ## Users can:
 
 * Make a surf spot and see all of that spots tide information.
@@ -17,23 +20,17 @@ their sessions, allowing them to go back and remember past surfs.
 * Journal all of their thoughts after a surf in the surfers log.
 ![alt.text](https://github.com/wrightet/swell/blob/master/frontend/src/assets/images/surf_log.png)
 
-## Link to the live site
-* https://surf-swell.herokuapp.com/#/
-
-## Getting started 
-* Run `npm install` from the root directory. Then cd into the frontend directory and run `npm install` again.
-* To run Swell locally, navigate to the root directory and run `npm run dev`. Then open localhost:3000 in the browser.
 
 ## Technologies used
 * MongoDB
-* Express ~ 4.17.1
-* React ~ 16.12.0
-* Node.js ~ v10.13.0
-* Redux ~ 4.0.5
-* Axios ~ 0.19.1
-* Passport ~ 0.4.1
-* Mongoose ~ 5.8.9
-* Validator ~ 12.1.0
+* Express
+* React 
+* Node.js
+* Redux
+* Axios
+* Passport
+* Mongoose
+* Validator
 
 
 ## Discussion of Technologies Used
